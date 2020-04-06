@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//screen 명세
+		var output = '';
+		for ( var key in screen) {
+			output += '※ ' + key + ' : ' + screen[key] + '\n';
+		}
+		console.log(output);
+		
+		//window 명세
+		var output2 = '';
+		for ( var key in window) {
+			if (key == 'external') {
+				continue;
+			}
+			output2 += '☆ ' + key + '-' + window[key] + '\n';
+		}
+		console.log(output2);
+
+		
+		var child;
+		var openWindow = function(url) {
+			var width = 600;
+			var height = 400;
+			
+			//화면 가운데로 출력
+			var left = screen.width/2 - width/2;
+			var top = screen.height/2 - height/2;
+
+			var option = 'top=' + top + ',left=' + left + ',width=' + width
+					+ ',height=' + height + ',menubar=1' + ',scrollbars=1' + ',location=1';//p219옵션
+
+			child = window.open(url, 'winopen', option);
+		}
+	</script>
+	<a href="javascript:openWindow('http://m.naver.com')">네이버 열기</a>
+	<br>
+	<a href="javascript:openWindow('http://m.google.com')">구글 열기</a>
+	<!-- 자바 스크립트 함수 호출 -->
+	<br>
+</body>
+</html>

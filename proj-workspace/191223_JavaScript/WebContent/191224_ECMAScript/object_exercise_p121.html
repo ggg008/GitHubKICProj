@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 변수를 선언합니다
+		var product = {
+			name : 'Microsoft Visual Studio 2012 Ultimate',
+			price : '15,000,000원',
+			language : '한국어1',
+			supportOS : 'Win 32/64',
+			subscription : true
+		}
+		// 출력합니다
+		var output = '';
+		for ( var key in product) {
+			output += '●' + key + ': ' + product[key] + '\n';
+		}
+		alert(output);
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+		//for(var i = 0; i < arr.length; ++i){
+		//	console.log(arr[i]);
+		//}
+
+		arr.forEach(function(element, index, array) {//가지고 있는 요소만큼 반복
+			console.log('loop' + ' ' + element + ' ' + index + ' ' + array);
+		})
+		
+		//arr 전체의 합
+		console.log('\n');
+		console.log('arr 전체의 합');
+		
+		var sum = 0;
+		for(var i =0; i < arr.length; ++i){
+			sum += arr[i];
+		}
+		console.log(sum);
+		
+		
+		sum = 0;
+		arr.forEach(function(element) {
+			sum += element;
+		})
+		console.log(sum);
+		
+		//각 요소를 제곱하는 새로운 배열 생성
+		console.log('\n');
+		console.log('각 요소를 제곱하는 새로운 배열 생성');
+		var result = arr.map( function(element) {//요소(element)를 이용한 새로운 가공이 필요할때
+			return element * element;
+		} )
+		console.log(result);
+		
+		
+		
+	</script>
+</body>
+</html>

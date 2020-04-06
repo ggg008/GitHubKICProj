@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 배열의 object
+		var data1 = [];
+		// object
+		var data2 = {};
+
+		console.log(typeof (data1));
+		console.log(typeof (data2));
+
+		var product = {
+			// 멤버필드
+			name : "7D 건조망고",
+			type : "당절임",
+			components : "망고, 설탕, 기타",
+			regino : "필리핀"
+		}
+
+		console.log(typeof (product));
+		console.log(product);
+		
+		console.log(product.name);
+		console.log(product.type);
+		
+		
+		console.log(product['name']);
+		console.log(product['type']);
+		
+		//주소값을 복사
+		var product2 = product;
+
+		console.log(product.name);
+		console.log(product2.name);
+		product2.name = "7D 건조메론";
+
+		console.log(product.name);
+		console.log(product2.name);
+
+		
+	</script>
+</body>
+</html>

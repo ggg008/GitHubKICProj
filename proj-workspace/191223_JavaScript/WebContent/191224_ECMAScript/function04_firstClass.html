@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Function4</title>
+
+<script type="text/javascript">
+// callback - 함수에서 함수 호출
+	var rfunc = function() {
+		return function() {
+			console.log('함수 호출');
+		};
+	};
+	
+	var rfunc2 = function(type) {
+		console.log('함수 호출0');
+		if(type == 1) {
+			return function() {
+				console.log('함수 호출1');
+			};
+		} else {
+			return function() {
+				console.log('함수 호출2');
+			};			
+		}
+		
+	}
+	
+</script>
+
+
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		
+	
+		var result = rfunc();
+		result();
+		rfunc();
+		
+		rfunc()();
+		
+		console.log(rfunc());
+
+		rfunc2();
+		//rfunc2(1)();
+		//rfunc2(2)();
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str1 = 'Hello World 안녕 Hello';
+
+		console.log(str1.length);
+
+		//한 글자 추출
+		console.log(str1.charAt(10));
+		console.log(str1[10]);
+
+		//맨 마지막 글자
+		console.log(str1.charAt(str1.length - 1));
+		console.log(str1[str1.length - 1]);
+
+		//문자열 추출
+		console.log(str1.substr(6, 5)); // 시작, 길이
+		console.log(str1.substring(6, 11)); // 시작, 마지막
+		console.log(str1.slice(6, 11)); // 시작, 마지막
+
+		//문자열 검색
+		console.log(str1.indexOf('l'));
+		console.log(str1.indexOf('l', 4));//위치 지정
+		console.log(str1.lastIndexOf('l'));
+		console.log(str1.indexOf('z'));//검색안되면..
+		
+		//대소문자변환
+		console.log('abc'.toUpperCase());
+		console.log('ABC'.toLowerCase());
+		
+		//문자열 치환
+		console.log(str1.replace('Hello', '안녕'));
+		
+		//문자열 병합
+		console.log(str1.concat('1', '2', '3'));
+		
+		//구분자 단위로 문자열 분리
+		var str2 = '사과,딸기,수박';
+		var arr1 = str2.split(',');
+		console.log(arr1.length);
+		
+		for(var ln in arr1){
+			console.log(arr1[ln]);
+		}
+		
+		
+	</script>
+</body>
+</html>
+

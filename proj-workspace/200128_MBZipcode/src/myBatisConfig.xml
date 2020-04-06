@@ -1,0 +1,20 @@
+<?xml version= "1.0" encoding ="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 커스텀 설정 -->
+<configuration>
+	<environments default="mariadb"> <!-- 여러값중에 기본값은 id mariadb 라는뜻 -->
+		<environment id="mariadb">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED"> <!-- 커넥션 풀 방식 -->
+				<property name="driver" value="org.mariadb.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/project"/>
+				<property name="username" value="project"/>
+				<property name="password" value="123456"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mapper.xml"/>
+	</mappers>
+</configuration>
+<!-- / -->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="test1.html" name="frm1"></form>
+	<form action="test2.html" name="frm2"></form>
+	<form action="test3.html" name="frm3"></form>
+
+	<script type="text/javascript">
+		//자바스크립트를 통한 Html에 접근법
+		//body >> form
+		console.log(typeof (document.forms));
+		// 배열 객체 취급(form을 배열화)
+		console.log(document.forms.length);
+
+		console.log(document.forms[0].action);
+		console.log(document.forms[2].action);
+
+		console.log(document.frm1.action);
+		console.log(document.frm3.action);
+	</script>
+
+</body>
+</html>

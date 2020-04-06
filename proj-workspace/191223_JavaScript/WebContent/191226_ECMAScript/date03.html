@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var now = new Date();
+		var before = new Date(2019, 12-1, 1);
+		
+		var interval1 = now - before;
+		
+		//의미 - 타임스탬프
+		console.log('\n');
+		console.log('의미 - 타임스탬프');
+		console.log(interval1);
+		
+		console.log(now.getTime());
+		console.log(before.getTime());
+
+		console.log(now.toLocaleString());
+		console.log(before.toLocaleString());
+		
+
+		var interval2 = now.getTime() - before.getTime();
+		console.log(interval2);
+		console.log(new Date(interval2).getDate() - 1);
+		
+		
+		// 일차
+		console.log('\n');
+		console.log('일차');
+		var dayInterval1 = interval1 / (1000*60*60*24);
+		console.log(dayInterval1);
+		
+
+		console.log(now.getDate());
+		console.log(before.getDate());
+		var interval3 = now.getDate() - before.getDate();
+		console.log(interval3);
+		
+		
+		
+	</script>
+</body>
+</html>	

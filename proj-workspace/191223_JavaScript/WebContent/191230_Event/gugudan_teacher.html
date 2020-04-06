@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+}
+
+table, td {
+	padding: 5px;
+	border: 1px solid gray;
+}
+</style>
+<script type="text/javascript">
+	var viewGugudan = function() {
+		var div = document.getElementById('result');
+
+		var startdan = parseInt(document.frm.startdan.value);
+		var enddan = parseInt(document.frm.enddan.value);
+
+		var output = '<table>\n';
+		for (var i = startdan; i <= enddan; ++i) {
+			output += '<tr>\n';
+			for (var j = 1; j <= 9; ++j) {
+				output += '<td>' + i + 'X' + j + '=' + (i * j) + '</td>\n';
+			}
+			output += '</tr>\n';
+		}
+		output += '</table>\n';
+		//console.log(output);
+		//console.log('출력완료');
+
+		div.innerHTML = output;
+	};
+</script>
+
+
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<form name="frm">
+					시작단 : <input type="text" name="startdan">
+					<!-- 접근법이 다름 .~ -->
+					~ 끝단 : <input type="text" name="enddan">
+					<!--  -->
+					<input type="button" value="구구단 출력" onclick="viewGugudan()">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<div id='result'></div>
+	<!-- 접근법이 다름 '' -->
+</body>
+</html>

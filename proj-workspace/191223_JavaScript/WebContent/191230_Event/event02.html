@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var addEvent = function() {
+		var addEvent = document.getElementById('btn1');
+
+		//동적 이벤트 처리
+		//toggle 기능화
+		btn1.onclick = function() {
+			alert('click');
+			btn1.onclick = null;//일회용화
+		};
+	};
+</script>
+</head>
+<body>
+	<input type="button" value="클릭생성" onclick="addEvent()" />
+	<input type="button" id="btn1" value="클릭이벤트" />
+</body>
+</html>

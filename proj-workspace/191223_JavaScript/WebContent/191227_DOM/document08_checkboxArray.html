@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//자바스크립트를 통한 Html에 접근법
+	var checkfrm = function() {		
+		//name = f 배열화 됨
+		//console.log(document.frm.f.length);
+		
+		for(var i = 0; i < document.frm.f.length; ++i){
+			//console.log( i + ' : ' + document.frm.f[i].checked);
+			if(document.frm.f[i].checked){
+				console.log(document.frm.f[i].value);
+			}
+		}
+	};
+</script>
+</head>
+<body>
+
+	<form name="frm">
+		<!-- html - gui / javascript - logic -->
+		<input type="checkbox" name="f" value="사과" />사과<br> 
+		<input type="checkbox" name="f" value="감귤" checked="checked" />감귤<br>
+		<input type="checkbox" name="f" value="수박" />수박<br> 
+		<input type="checkbox" name="f" value="딸기" />딸기<br> 
+		<input type="button" value="내용읽기" onclick="checkfrm()" />
+	</form>
+
+
+</body>
+</html>

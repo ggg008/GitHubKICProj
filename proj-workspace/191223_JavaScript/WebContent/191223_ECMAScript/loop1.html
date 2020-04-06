@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		document.write('<table width="800" border="1">');
+		document.write('<tr>');
+
+		for (var i = 0; i <= 9; ++i) {
+			document.write('<tr>');
+
+			for (var j = 0; j <= 9; ++j) {
+				if (i == 0) {
+					if (j == 0) {
+						document.write('<td></td>');
+					} else {
+						document.write('<td align="center">&nbsp; X ' + j + '</td>');
+					}
+				} else {
+					if (j == 0) {
+						document.write('<td>&nbsp;' + i + '단 </td>');
+					} else {
+						document.write('<td>&nbsp;' + i + ' X ' + j + ' = '	+ (i * j) + '</td>');
+					}
+				}
+			}
+			document.write('</tr>');
+		}
+
+		document.write('</tr>');
+		document.write('</table>');
+	</script>
+
+</body>
+</html>

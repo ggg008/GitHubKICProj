@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+https://search.naver.com/search.naver
+?
+sm=top_hty
+&
+fbm=0
+&
+ie=utf8
+&
+query=stawars
+ -->
+ 
+ <!-- 
+ 	post - header라는곳에 데이터 숨겨서 넘김(암호화 아님)(길이 제한이 없다)
+ 	get - url에 포함되어 넘어감(최대 길이 1024 byte)
+ -->
+ 
+ 
+ <form action="https://search.naver.com/search.naver" method="post">
+ <input type="hidden" name="sm" value="top_hty">
+ <input type="hidden" name="fbm" value="1">
+ <input type="hidden" name="ie" value="utf8">
+ <input type="text" name="query">
+ <input type="submit" name="검색하기">
+ </form>
+</body>
+</html>

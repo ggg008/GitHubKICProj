@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//생성자에서 가능한 프로토 타입
+		function Student(name, kor, mat) {
+			this.name = name;
+			this.kor = kor;
+			this.mat = mat;
+			
+		}
+		
+		//메서드 공유
+		Student.prototype.getSum = function() {
+			return this.kor + this.mat;
+		};
+		
+		var stu = new Student('홍길동', 96, 77);
+		var stu2 = new Student('박문수', 42, 96);
+		
+		console.log( stu.getSum() );
+		console.log( stu2.getSum() );
+		
+		
+	</script>
+
+</body>
+</html>

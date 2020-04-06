@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//자바스크립트를 통한 Html에 접근법
+	var calculator = function() {
+		var data1 = parseInt(document.frm.data1.value);//읽기
+		var data2 = parseInt(document.frm.data2.value);//읽기
+		
+		document.frm.result.value = data1 + data2;//쓰기
+	}
+</script>
+</head>
+<body>
+
+	<form name="frm">
+		<!-- html - gui / javascript - logic -->
+		<input type="text" name="data1"/> + <input type="text" name="data2" />
+		<input type="button" value="결과" onclick="calculator()" />
+		<input type="text" name="result" readonly="readonly" />
+	</form>
+
+
+</body>
+</html>

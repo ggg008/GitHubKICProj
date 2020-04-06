@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		var arr1 = new Array(1, 2, 3, 4);
+		var arr2 = new Array(5, 6, 7, 8);
+	
+		// string concat 
+		var arr3 = arr1.concat(arr2);
+		console.log(arr3);
+		
+		var strArr = '사과,딸기,수박'.split(',');
+		console.log(strArr[0]);
+		console.log(strArr[2]);
+		var str1 = strArr.join();// default ,
+		console.log(str1);
+		
+		var str2 = strArr.join('|');// default ,
+		console.log(str2);
+		
+		// 데이터의 변화 없음
+		console.log(strArr[0]);
+		
+		// 추출(스택)
+		var value = strArr.pop();
+		console.log(value);
+		
+		strArr.push('키위');
+		console.log(strArr);
+		
+		strArr.reverse();
+		console.log(strArr);
+		
+		var subArr = strArr.slice(1, 3); // 1~2 (3전 까지)
+		console.log(subArr);
+		
+		
+	</script>
+</body>
+</html>

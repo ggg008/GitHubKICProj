@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//주민번호(xxxxxx-xxxxxxx)를 입력받아서 true / false를 리턴하는 checkJumin함수
+
+	var checkJumin = function(jumin) {
+		var strJumin = jumin.replace('-', '');
+		var bits = [ 2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 1 ];
+		var sum = 0;
+		
+		for (var i = 0; i < bits.length; ++i) {
+			sum += Number(strJumin.substr(i, i + 1)) * bits[i];
+		}
+
+		var last = Number(strJumin.substring(12, 13));
+		var result = (11 - (sum % 11)) % 10;
+
+		if (last == result) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		if(checkJumin('860906-1065724')) {
+			console.log('맞음');
+		} else {
+			console.log('틀림');
+		}
+	</script>
+</body>
+</html>

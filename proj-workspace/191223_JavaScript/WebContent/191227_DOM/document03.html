@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//자바스크립트를 통한 Html에 접근법
+		//절차에 맞게...
+		//onlad에 할당 문서를 읽고나서의미, 이벤트에 의해서 순서
+		
+		
+		
+		// 마우스 클릭으로 동작을 하고 플때
+		window.onload = function() {// 틀자마자 바로 로드
+			console.log(document.frm1.action);
+			console.log(document.frm3.action);
+		};
+		
+		var checkfrm = function() {
+			console.log(document.frm1.action);
+			console.log(document.frm3.action);
+		}
+		
+	</script>
+</head>
+<body>
+
+	<form action="test1.html" name="frm1"></form>
+	<form action="test2.html" name="frm2"></form>
+	<form action="test3.html" name="frm3"></form>
+
+	<a href="javascript:checkfrm()">폼체크</a><br>	
+	
+	<input type="button" value="폼체크" onclick="checkfrm()"/><br>	
+	<button onclick="checkfrm()">폼체크</button><br>		
+
+</body>
+</html>

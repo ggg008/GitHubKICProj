@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#target {
+	width: 90px;
+	height: 32px;
+	padding: 10px;
+	border: 1px solid black;
+}
+#target2 {
+	width: 90px;
+	height: 32px;
+	padding: 10px;
+	border: 1px solid black;
+}
+</style>
+<script type="text/javascript">
+	var dragstart = function(e) {
+		//html 데이터 전송법(html 태그가 바뀐다)
+		e.dataTransfer.setData('text', e.target.id);
+	}
+
+	var dragover = function(e) {
+		e.preventDefault();
+	}
+
+	var drop = function(e) {
+		e.preventDefault();
+		//html 데이터 전송법
+		var data = e.dataTransfer.getData('text');
+		e.target.appendChild(document.getElementById(data));
+	}
+</script>
+
+</head>
+<body>
+	<div id="target" ondrop="drop(event)" ondragover="dragover(event)"></div>
+	<br>
+	<div id="target2" ondrop="drop(event)" ondragover="dragover(event)"></div>
+	<br>
+	<img src="./img_w3slogo.gif" width="88" height="31" id="data"
+		draggable="true" ondragstart="dragstart(event)">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//자바스크립트를 통한 Html에 접근법
+	var sumfrm = function() {
+		var data1 = document.frm.data1.value;//읽기
+		var data2 = document.frm.data2.value;//읽기
+		document.frm.data3.value = Number(data1) + Number(data2);//쓰기
+
+		//console.log(data1);
+		//console.log(typeof (data1));
+	}
+</script>
+</head>
+<body>
+
+	<form name="frm">
+		<!-- html - gui / javascript - logic -->
+		<input type="text" name="data1" /> + <input type="text" name="data2" />
+		<input type="button" value="더하기" onclick="sumfrm()" /> = <input
+			type="text" name="data3" /><br>
+	</form>
+
+
+</body>
+</html>

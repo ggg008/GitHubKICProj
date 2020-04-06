@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var checkfrm = function() {
+		console.log(document.frm.s.options.length);
+		console.log(document.frm.s.options.selectedIndex);
+
+		console.log(document.frm.s.options[document.frm.s.options.selectedIndex].text);
+		console.log(document.frm.s.options[document.frm.s.options.selectedIndex].value);
+		
+		var form = document.frm;
+		var index = form.s.options.selectedIndex;
+		console.log(document.frm.s.options[index].text);
+	};
+
+</script>
+</head>
+<body>
+
+	<form name="frm">
+		<select name="s">
+			<option value="1">사과</option>
+			<option value="2">딸기</option>
+			<option value="3" selected="selected">감귤</option>
+			<option value="4">수박</option>
+		</select>
+		<input type="button" value="내용읽기" onclick="checkfrm()">
+	</form>
+
+
+</body>
+</html>

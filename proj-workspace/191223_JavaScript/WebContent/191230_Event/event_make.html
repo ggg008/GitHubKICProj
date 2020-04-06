@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 디폴트 이벤트 제거하기 p263
+	var checkfrm1 = function() {
+		if(document.frm.id.value == ""){
+			alert("아이디가 없습니다.");
+			return false;
+		}
+	};
+	
+	var checkfrm2 = function() {
+		if(document.frm.id.value != document.frm.id2.value){
+			alert("아이디가 다릅니다.", "1111");
+			//prompt("아이디가 다릅니다.", "1111");
+			return;
+		}
+		document.frm.submit();
+	};
+</script>
+</head>
+<body>
+	<form action="test.html" name="frm" onsubmit="return checkfrm1()"><!-- return 함수() 디폴트 이벤트 제거 -->
+		아이디 : <input type="text" name="id">
+		<input type="text" name="id2">
+		
+		<input type="button" value="전송하기" onclick="checkfrm2()">
+	
+	</form>
+	
+	
+</body>
+</html>

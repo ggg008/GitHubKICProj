@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//window 명세
+		var output = '';
+		for ( var key in window) {
+			if (key != 'external') {
+				output += '★ ' + key + ' ▶ ' + window[key] + '\n';
+			}
+		}
+
+		console.log(output);
+		
+		console.log(window['screenTop']);
+		console.log(window['screenLeft']);
+		
+		//기본 내장 함수 => window 객체의 메서드이다
+		
+		window.alert("alert");
+		
+		
+	</script>
+</body>
+</html>
