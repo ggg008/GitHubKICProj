@@ -21,7 +21,7 @@
 	try {
 		Context initCtx = new InitialContext();
 		Context envCtx = (Context)initCtx.lookup("java:comp/env"); //톰캣 환경설정에 접근
-		DataSource dataSource = (DataSource)envCtx.lookup("jdbc/mariadb2"); //커넥션 풀링(Datasource) 접근(context.xml 이용)
+		DataSource dataSource = (DataSource)envCtx.lookup("jdbc/mariadb"); //커넥션 풀링(Datasource) 접근(context.xml 이용)
 		
 		conn = dataSource.getConnection();//풀링에서 커넥션 가져옴
 		
