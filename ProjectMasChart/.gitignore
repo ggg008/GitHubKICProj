@@ -1,3 +1,4 @@
+/build/
 
 # Created by https://www.gitignore.io/api/eclipse
 # Edit at https://www.gitignore.io/?templates=eclipse
@@ -72,4 +73,3 @@ local.properties
 .sts4-cache/
 
 # End of https://www.gitignore.io/api/eclipse
-/ProjectMasChart/
