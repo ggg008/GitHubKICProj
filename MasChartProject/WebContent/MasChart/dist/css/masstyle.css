@@ -5170,6 +5170,9 @@ input[type=submit].btn-block {
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
+    /* 
+    background-color: #1F262D;
+     */    
     background-clip: border-box;
     border: 0px solid transparent;
     border-radius: 0px
@@ -10609,7 +10612,7 @@ html[dir=ltr] body .p-l-0 {
 .page-wrapper {
     background: #eeeeee;
     position: relative;
-    margin-left: 250px
+    margin-left: 350px
 }
 
 .page-wrapper>.container-fluid {
@@ -10624,13 +10627,13 @@ html[dir=ltr] body .p-l-0 {
 #main-wrapper {}
 
 #main-wrapper[data-sidebartype=full] .page-wrapper {
-    margin-left: 250px
+    margin-left: 350px
 }
 
 @media (min-width:768px) {
     #main-wrapper {}
     #main-wrapper[data-sidebartype=full] .topbar .top-navbar .navbar-header {
-        width: 250px
+        width: 350px
     }
     #main-wrapper.mini-sidebar .topbar .top-navbar .navbar-header {
         width: 65px
@@ -10639,7 +10642,7 @@ html[dir=ltr] body .p-l-0 {
         display: none
     }
     #main-wrapper.mini-sidebar .topbar .top-navbar .navbar-header.expand-logo {
-        width: 250px
+        width: 350px
     }
     #main-wrapper.mini-sidebar .topbar .top-navbar .navbar-header.expand-logo .logo-text {
         display: block
@@ -10681,10 +10684,10 @@ html[dir=ltr] body .p-l-0 {
         margin-left: 0px
     }
     #main-wrapper[data-sidebartype=mini-sidebar] .left-sidebar {
-        left: -250px
+        left: -350px
     }
     #main-wrapper[data-sidebartype=mini-sidebar] .left-sidebarNeo {
-        left: -250px
+        left: -350px
     }
     #main-wrapper.show-sidebar .left-sidebar {
         left: 0
@@ -11505,15 +11508,15 @@ ul.list-style-none li a:hover {
 
 .left-sidebar {
     position: absolute;
-    width: 250px;
+    width: 350px;
     height: 100%;
     top: 0px;
     padding-left: 65px;
     z-index: 10;
     padding-top: 64px;    
     background: #fff;
-    -webkit-box-shadow: 1px 65px 20px rgba(0, 0, 0, 0.08);
-    box-shadow: 1px 65px 20px rgba(0, 0, 0, 0.08)
+    -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08)
 }
 
 .left-sidebarNeo {
