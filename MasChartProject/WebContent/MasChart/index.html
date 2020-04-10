@@ -253,16 +253,17 @@
                 <nav class="sidebar-nav">
                 	
                     <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link sidebartogglerChart waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu"></span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-dark sidebar-link" href="./authentication-login.html" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebartoggler1 waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebartoggler2 waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebartoggler3 waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebartoggler4 waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebartoggler5 waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a></li>
-                        
-                        
+                        <li class="sidebar-item"> <a class="sidebar-link waves-dark sidebar-link" href="./authentication-register.html" aria-expanded="false"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"></span></a></li>                        
+                        <li class="sidebar-item"> <a class="sidebar-link sidebartogglerCommunity waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu"></span></a></li>                        
+                        <li class="sidebar-item"> <a class="sidebar-link sidebartogglerTheme waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a></li>
+                                                
                         <!-- 
+                         -->
+                         
+                        <!-- 
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a></li>
                         <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
                          -->
                        
@@ -292,16 +293,20 @@
                     </ul>
                      -->
                      
-                	<div class="sidebarContents">
-                    	<h3> 1번이다 </h3>	                	
+                	<div class="sidebarContents" id="sidebarContents1">
+                    	<h3> 1번 컨텐츠 </h3>	                	
                     </div>
                      
                     
-                	<div class="sidebarContents">
-                    	<h3> 2번이다 </h3>	                	
+                	<div class="sidebarContents" id="sidebarContentsTheme">
+                    	<h3> 테마변경 </h3>	                	
+                    </div>
+                    
+                	<div class="sidebarContents" id="sidebarContentsChart">
+                    	<h3> 차트 리스트</h3>	                	
                     </div>
                      
-                	<div class="sidebarContents">
+                	<div class="sidebarContents" id="sidebarContentsCommunity">
                     	<!-- column -->
                         <div class="card" style="background-color:#1F262D; color:#dbeeff"  >
                             <div class="card-body">
@@ -349,11 +354,7 @@
                                 </div>
                             </div>
                         </div>                        
-                    </div>    
-                    
-                	<div class="sidebarContents">
-                    	<h3> 후후후후후후 </h3>	                	
-                    </div>
+                    </div>  
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
