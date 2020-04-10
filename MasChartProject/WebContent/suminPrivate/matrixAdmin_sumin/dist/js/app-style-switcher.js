@@ -56,7 +56,7 @@ $(function() {
     function handlesidebarbg() {
         $('.theme-color .theme-item .theme-link').on("click", function() {
             var sidebarbgskin = $(this).attr("data-sidebarbg");
-            $('.left-sidebar').attr("data-sidebarbg", sidebarbgskin);
+//            $('.left-sidebar').attr("data-sidebarbg", sidebarbgskin);
         });
     };
     handlesidebarbg();

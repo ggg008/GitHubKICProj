@@ -9,14 +9,14 @@ $(function() {
     // sidebar-hover
     // ==============================================================
 
-    $(".left-sidebar").hover(
-        function() {
-            $(".navbar-header").addClass("expand-logo");
-        },
-        function() {
-            $(".navbar-header").removeClass("expand-logo");
-        }
-    );
+//    $(".left-sidebar").hover(
+//        function() {
+//            $(".navbar-header").addClass("expand-logo");
+//        },
+//        function() {
+//            $(".navbar-header").removeClass("expand-logo");
+//        }
+//    );
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").on('click', function() {
         $("#main-wrapper").toggleClass("show-sidebar");
