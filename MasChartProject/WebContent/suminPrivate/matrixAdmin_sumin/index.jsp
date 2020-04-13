@@ -228,7 +228,7 @@
 	if(session.getAttribute("sess_id") != null) {
 %>      
                         
-                        <li class="nav-item dropdown">
+                        <li id="login-form" class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome Mr.tester !</a>
@@ -1106,6 +1106,10 @@
     <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="dist/js/pages/chart/chart-page-init.js"></script>
+    <script type="text/javascript">
+    
+    	console.log(sessionStorage.getItem("sess_id"));    
+    </script>
 
 </body>
 
