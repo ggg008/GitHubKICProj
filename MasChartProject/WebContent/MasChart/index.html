@@ -26,6 +26,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 </head>
 
 <body>
@@ -494,8 +496,13 @@
                                 <div class="row">
                                     <!-- column -->
                                     <div class="col-lg-11">
-                                        <div class="flot-chart">
+                                        <div>
+                                        <!-- 
                                             <div class="flot-chart-content" id="flot-line-chart"></div>
+                                             <div w3-include-html="chart-view.html"></div>
+                                             -->
+											<div id="container" style="height: 400px; min-width: 310px"></div>
+                                             
                                         </div>
                                     </div>
                                     <div class="col-lg-1">
@@ -519,36 +526,36 @@
                                             </div>
                                              -->
                                             <div class="col-md-3 col-lg-12 m-t-15">
-                                                <div class="bg-dark p-10 text-white text-center card-hover">
+                                                <div class="p-10 text-white text-center" style="background-color:#9a2efe;">
                                                    <i class="fa fa-cart-plus m-b-5 font-16"></i>
-                                                   <h5 class="m-b-0 m-t-5">656</h5>
-                                                   <small class="font-light">Price</small>
+                                                   <h5 class="m-b-0 m-t-5">6712.0</h5>
+                                                   <small class="font-light">Last</small>
                                                 </div>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
                                             	<a class="testing" href="javascript:void(1)">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
-	                                                   <i class="fa fa-tag m-b-5 font-16"></i>
-	                                                   <h5 class="m-b-0 m-t-5">9540</h5>
-	                                                   <small class="font-light">Volume</small>
+	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
+	                                                   <h5 class="m-b-0 m-t-5"></h5>
+	                                                   <small class="font-light">1m</small>
 	                                                </div>
                                                 </a>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
                                             	<a class="testing" href="javascript:void('Change')">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
-	                                                   <i class="fa fa-table m-b-5 font-16"></i>
-	                                                   <h5 class="m-b-0 m-t-5">100</h5>
-	                                                   <small class="font-light">Change</small>
+	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
+	                                                   <h5 class="m-b-0 m-t-5"></h5>
+	                                                   <small class="font-light">1h</small>
 	                                                </div>
                                                 </a>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
                                             	<a class="testing" href="javascript:void('Change2')">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
-	                                                   <i class="fa fa-globe m-b-5 font-16"></i>
-	                                                   <h5 class="m-b-0 m-t-5">8540</h5>
-	                                                   <small class="font-light">Change %</small>
+	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
+	                                                   <h5 class="m-b-0 m-t-5"></h5>
+	                                                   <small class="font-light">D</small>
 	                                                </div>
                                                 </a>
                                             </div>
@@ -1089,7 +1096,21 @@
     <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="dist/js/pages/chart/chart-page-init.js"></script>
-
+    <!--msk 추가! -->
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>	
+    <script src="dist/js/chartview.js"></script>
+    <!--w3include 자바스크립트 -->
+	<!-- 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="dist/js/w3includeHTML.js"></script>
+    <script type="text/javascript">
+    	//includeHTML();
+     	$(function(){
+         	$("#chart-view").load("chart-view.html"); 
+       	});
+    </script>
+ -->
 </body>
 
 </html>

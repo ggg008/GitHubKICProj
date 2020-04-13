@@ -16093,6 +16093,13 @@ label {
     padding-right: 15px
 }
 
+.highcharts-candlestick-series .highcharts-point-up {
+	/* 
+	stroke: green;
+	 */
+	fill: green;
+}
+
 @media (min-width:768px) {
     .bc-content {
         -webkit-box-pack: end;
