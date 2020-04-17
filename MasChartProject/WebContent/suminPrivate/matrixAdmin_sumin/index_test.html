@@ -153,19 +153,18 @@
 
                         <li id="login-form" class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" class="rounded-circle" width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                            <div id="dropdown-logined-menu" class="dropdown-menu dropdown-menu-right user-dd animated">
+                           <!-- 
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome !</a>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Name</a>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>
-                                <!-- 
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                 -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="./dist/jsp/logout.jsp"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
                                 <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                            -->
                             </div>
+
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -1055,9 +1054,6 @@
 				    	$('#login-form').hide();
 					}
 					
-					console.log(json.sessID);
-					var id = json.sessID;
-					
 				},
 				error : function(error) {
 					// 404일때
@@ -1067,6 +1063,19 @@
 				}
 			})
 			
+		});
+	    
+	    $(function() {
+	    	var html = '';
+	    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome' + json.seeID + '!</a>';
+	    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Name</a>';
+	    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>';
+	    	html +='<div class="dropdown-divider"></div>';
+	    	html +='<a class="dropdown-item" href="./dist/jsp/logout.jsp"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>';
+	    	html +='<div class="dropdown-divider"></div>';
+	    	html +='<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>';
+	    	$("#dropdown-logined-menu").append(html);
+	    	
 		});
     </script>
 
