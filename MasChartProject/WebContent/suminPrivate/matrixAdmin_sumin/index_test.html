@@ -154,7 +154,7 @@
                         <li id="login-form" class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome Mr.tester !</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome !</a>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Name</a>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>
                                 <!-- 
@@ -185,19 +185,19 @@
                 	
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item">
-                        	<a class="sidebar-link sidebartogglerChart waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Chart List" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu"></span></a>
+                        	<a class="sidebar-link sidebartogglerChart waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Chart List" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu"></span></a>
                         </li>
                         <li class="sidebar-item">
-                        	<a class="sidebar-link waves-dark sidebar-link" href="./authentication-login.html" data-toggle="tooltip" data-placement="right" title="Login" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu"></span></a>
+                        	<a class="sidebar-link waves-dark sidebar-link" href="./authentication-login.html" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Login" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu"></span></a>
                         </li>
                         <li class="sidebar-item">
-                        	<a class="sidebar-link waves-dark sidebar-link" href="./authentication-register.html" data-toggle="tooltip" data-placement="right" title="Sign Up" aria-expanded="false"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"></span></a>
+                        	<a class="sidebar-link waves-dark sidebar-link" href="./authentication-register.html" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Sign Up" aria-expanded="false"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"></span></a>
                         </li>                        
                         <li class="sidebar-item">
-                        	<a class="sidebar-link sidebartogglerCommunity waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Private Chats" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu"></span></a>
+                        	<a class="sidebar-link sidebartogglerCommunity waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Board" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu"></span></a>
                         </li>                        
                         <li class="sidebar-item">
-                        	<a class="sidebar-link sidebartogglerTheme waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-placement="right" title="Change Themes" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a>
+                        	<a class="sidebar-link sidebartogglerTheme waves-effect waves-dark sidebar-link" href="javascript:void(0)" data-toggle="tooltip" data-trigger="hover" data-placement="right" title="Change Themes" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu"></span></a>
                         </li>
                                                 
 
@@ -1035,8 +1035,11 @@
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="dist/js/pages/chart/chart-page-init.js"></script>
     <script type="text/javascript">
-    
-	     $.ajax({
+	    $(document).ready(function() {
+			
+	    	$('[data-toggle="tooltip"]').tooltip();
+			
+	    	$.ajax({
 				// 다국어이면 url 인코딩
 				url : './dist/json/sess-getter.jsp',
 				type : 'get',
@@ -1044,13 +1047,17 @@
 				success : function(json) {				
 					//return json.flag;
 					
-					if(json.isLogin) {
+					if(json.sessID != null) {
 						//alert('로그인');
 						$('#login-form').show();
 					} else {
 						//alert('로그아웃');
 				    	$('#login-form').hide();
 					}
+					
+					console.log(json.sessID);
+					var id = json.sessID;
+					
 				},
 				error : function(error) {
 					// 404일때
@@ -1059,11 +1066,8 @@
 					return 1;
 				}
 			})
-    </script>
-    <script>
-    $(document).ready(function() {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+			
+		});
     </script>
 
 </body>
