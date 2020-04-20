@@ -1061,7 +1061,7 @@
 							
 							// 로그인 확인
 							alert('로그인');
-							console.log(json.sessID);				    	
+							//console.log(json.sessID);				    	
 					    	
 							/*
 					    	var html = '';
@@ -1077,9 +1077,13 @@
 					    	html +='</div>'
 					    	$("#login-form").append(html);  
 					    	*/
-
 					    	
+					    	$('body').find('.ti-user m-r-5 m-l-5').each(function(index, item) {
+								console.log(item);
+							})
+
 					    	$('#login-form').show();
+							
 							$('.sidebar-item').eq(1).hide();
 							$('.sidebar-item').eq(2).hide();
 							$('.nav-link').eq(0).hide();
@@ -1089,6 +1093,7 @@
 						} else {
 							//alert('로그아웃');
 					    	$('#login-form').hide();
+					    	
 							$('.sidebar-item').eq(1).show();
 							$('.sidebar-item').eq(2).show();
 							$('.nav-link').eq(0).show();
