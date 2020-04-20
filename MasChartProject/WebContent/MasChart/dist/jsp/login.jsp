@@ -6,7 +6,7 @@
 	String password = request.getParameter("pwinput");
 	
 	int flag = 1;
-	if(id.equals("tester") && password.equals("1234")) {
+	if(id.equals("pepe") && password.equals("1234")) {
 		session.setAttribute("sess_id", id);
 		flag = 0;
 	}
