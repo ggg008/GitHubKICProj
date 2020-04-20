@@ -3758,13 +3758,13 @@ input[type=submit].btn-block {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     z-index: 1000;
     display: none;
     float: left;
     min-width: 10rem;
     padding: 0.5rem 0;
-    margin: 0.125rem -6.5rem 0;
+    margin: 0.125rem 0 0;
     font-size: 0.875rem;
     color: #3e5569;
     text-align: left;
@@ -3779,6 +3779,7 @@ input[type=submit].btn-block {
     right: 0;
     left: auto
 }
+
 
 .dropup .dropdown-menu {
     top: auto;
@@ -10683,12 +10684,15 @@ html[dir=ltr] body .p-l-0 {
     #main-wrapper[data-sidebartype=mini-sidebar] .page-wrapper {
         margin-left: 0px
     }
+    
     #main-wrapper[data-sidebartype=mini-sidebar] .left-sidebar {
         left: -350px
     }
+    
     #main-wrapper[data-sidebartype=mini-sidebar] .left-sidebarNeo {
         left: -350px
     }
+    
     #main-wrapper.show-sidebar .left-sidebar {
         left: 0
     }
