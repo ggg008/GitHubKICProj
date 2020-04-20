@@ -1061,25 +1061,10 @@
 							
 							// 로그인 확인
 							alert('로그인');
-							console.log(json.sessID);				    	
-					    	
-							/*
-					    	var html = '';
-					    	html +='<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>';
-					    	html +='<div class="dropdown-menu dropdown-menu-right user-dd animated">';
-					    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Welcome&nbsp;' + json.sessID + '!</a>';
-					    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Name</a>';
-					    	html +='<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>';
-					    	html +='<div class="dropdown-divider"></div>';
-					    	html +='<a class="dropdown-item" href="./dist/jsp/logout.jsp"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>';
-					    	html +='<div class="dropdown-divider"></div>';
-					    	html +='<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>';
-					    	html +='</div>'
-					    	$("#login-form").append(html);  
-					    	*/
-
-					    	
+							//console.log(json.sessID); //tester				    	
+ 	
 					    	$('#login-form').show();
+							
 							$('.sidebar-item').eq(1).hide();
 							$('.sidebar-item').eq(2).hide();
 							$('.nav-link').eq(0).hide();
@@ -1089,6 +1074,7 @@
 						} else {
 							//alert('로그아웃');
 					    	$('#login-form').hide();
+					    	
 							$('.sidebar-item').eq(1).show();
 							$('.sidebar-item').eq(2).show();
 							$('.nav-link').eq(0).show();
