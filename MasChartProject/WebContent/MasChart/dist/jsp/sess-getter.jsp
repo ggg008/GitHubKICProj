@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%    
     JSONObject result = new JSONObject();
-	result.put("isLogin", session.getAttribute("sess_id") != null);	
+	result.put("sessID", session.getAttribute("sess_id"));	
 	
 	out.println(result);
 %>

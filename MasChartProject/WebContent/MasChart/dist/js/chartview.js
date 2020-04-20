@@ -117,6 +117,8 @@
 	var symbolA = 'BTC';
 	var symbolB = 'USD';	
 		
+	var chart = null;
+	
 	var draw3 = function(paramHistoryTime, paramSymbolA, paramSymbolB){
 		
 		console.log('call draw3');
@@ -136,7 +138,12 @@
 				chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 			});
 		}).done(function(){
-			Highcharts.stockChart('container',{
+			chart = Highcharts.stockChart('container', {
+				loading: {
+	    	        hideDuration: 1000,
+	    	        showDuration: 1000
+	    	    },
+				
 				title: {
 					text: 'BTC/USD ' + historyTime.replace('histo', '') 
 				},
@@ -154,6 +161,14 @@
 					inputEnabled: false
 				},
 				
+				exporting: {
+			        buttons: {
+			            contextButton: {
+			                text: 'Export'
+			            }
+			        }
+			    },
+				
 				/* 
 				plotOptions: {
 					candlestick: {						
@@ -169,30 +184,55 @@
 					tooltip: {
 						valueDecimals: 8
 					}
-				}]
+				}],
+				
+				subtitle: {
+			        text: '* Footnote aligned right',
+			        align: 'right',
+			        floating: true,
+			        x: -10,
+			        y: +80
+				}
+				
 			});
+			
+			realtimePrice();
 		});
 	}
+	
+	var realtimePrice = function() {
+		$.getJSON('https://min-api.cryptocompare.com/data/price?fsym='+ symbolA +'&tsyms=' + symbolB, function (data) {
+
+			$('#chart-price').text(data.USD);
+		});
+		
+	};
 	draw3();	
 	
-	$(function() {
-	    $('.testing2').on("click", function( param ) {
-	    	console.log('뿅2!' + param);
-	    	
-	    	alert('뿅2!');
-	    });
-	    
-	    $('.minuteBtn').on("click", function( param ) {
+	
+	$('#minuteBtn').on("click", function() {
 //	    	alert('minuteBtn!');
-	    	draw3('histominute');
-	    });
-	    $('.hourBtn').on("click", function( param ) {
-//	    	alert('hourBtn!');
-	    	draw3('histohour');
-	    });
-	    $('.dayBtn').on("click", function( param ) {
-//	    	alert('dayBtn!');
-	    	draw3('histoday');
-	    });
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histominute');
 	});
+	
+	$('#hourBtn').on("click", function() {
+//	    	alert('hourBtn!');
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histohour');
+	});
+	
+	$('#dayBtn').on("click", function() {
+//	    	alert('hourBtn!');
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histoday');
+	});
+	
+
 	
