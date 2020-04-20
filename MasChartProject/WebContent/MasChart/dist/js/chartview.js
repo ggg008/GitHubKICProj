@@ -161,6 +161,14 @@
 					inputEnabled: false
 				},
 				
+				exporting: {
+			        buttons: {
+			            contextButton: {
+			                text: 'Export'
+			            }
+			        }
+			    },
+				
 				/* 
 				plotOptions: {
 					candlestick: {						
@@ -176,7 +184,16 @@
 					tooltip: {
 						valueDecimals: 8
 					}
-				}]
+				}],
+				
+				subtitle: {
+			        text: '* Footnote aligned right',
+			        align: 'right',
+			        floating: true,
+			        x: -10,
+			        y: +80
+				}
+				
 			});
 			
 			realtimePrice();
