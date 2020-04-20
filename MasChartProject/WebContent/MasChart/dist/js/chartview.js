@@ -113,9 +113,22 @@
 	// Apply the theme
 	Highcharts.setOptions(Highcharts.theme);
 	
-	function draw3(){
+	var historyTime = 'histohour';
+	var symbolA = 'BTC';
+	var symbolB = 'USD';	
+		
+	var draw3 = function(paramHistoryTime, paramSymbolA, paramSymbolB){
+		
+		console.log('call draw3');
+		
+		historyTime = paramHistoryTime != undefined && paramHistoryTime !== '' ? paramHistoryTime : historyTime;
+		symbolA = paramSymbolA != undefined && paramSymbolA !== ''  ? paramSymbolA : symbolA;
+		symbolB = paramSymbolB != undefined && paramSymbolB !== ''  ? paramSymbolB : symbolB;
+		
+		
+		
 		var chartdata = [];
-		$.getJSON('https://min-api.cryptocompare.com/data/v2/histohour?fsym=BTC&tsym=USD&limit=1000', function (data) {
+		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=1000', function (data) {
 			//console.log(data);
 			$.each(data.Data.Data, function(i, item){
 				//console.log(item);
@@ -125,7 +138,7 @@
 		}).done(function(){
 			Highcharts.stockChart('container',{
 				title: {
-					text: 'BTC/USD Hour'
+					text: 'BTC/USD ' + historyTime.replace('histo', '') 
 				},
 				
 				rangeSelector: {
@@ -150,7 +163,7 @@
 				},
 				 */
 				series: [{
-					name: 'BTC_USD_Hour',
+					name: 'ChartView',
 					type: 'candlestick',
 					data: chartdata,
 					tooltip: {
@@ -160,4 +173,26 @@
 			});
 		});
 	}
-	draw3();
+	draw3();	
+	
+	$(function() {
+	    $('.testing2').on("click", function( param ) {
+	    	console.log('뿅2!' + param);
+	    	
+	    	alert('뿅2!');
+	    });
+	    
+	    $('.minuteBtn').on("click", function( param ) {
+//	    	alert('minuteBtn!');
+	    	draw3('histominute');
+	    });
+	    $('.hourBtn').on("click", function( param ) {
+//	    	alert('hourBtn!');
+	    	draw3('histohour');
+	    });
+	    $('.dayBtn').on("click", function( param ) {
+//	    	alert('dayBtn!');
+	    	draw3('histoday');
+	    });
+	});
+	

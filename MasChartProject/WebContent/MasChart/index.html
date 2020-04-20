@@ -546,7 +546,7 @@
                                                 </div>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
-                                            	<a class="testing" href="javascript:void(1)">
+                                            	<a class="minuteBtn" href="javascript:void()">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
 	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
 	                                                   <h5 class="m-b-0 m-t-5"></h5>
@@ -555,7 +555,7 @@
                                                 </a>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
-                                            	<a class="testing" href="javascript:void('Change')">
+                                            	<a class="hourBtn" href="javascript:void()">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
 	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
 	                                                   <h5 class="m-b-0 m-t-5"></h5>
@@ -564,7 +564,7 @@
                                                 </a>
                                             </div>
                                              <div class="col-md-3 col-lg-12 m-t-15">
-                                            	<a class="testing" href="javascript:void('Change2')">
+                                            	<a class="dayBtn" href="javascript:void()">
 	                                                <div class="bg-dark p-10 text-white text-center card-hover">
 	                                                   <i class="fa fa-plus m-b-5 font-16"></i>
 	                                                   <h5 class="m-b-0 m-t-5"></h5>
@@ -1137,9 +1137,18 @@
 					if(json.isLogin) {
 						//alert('로그인');
 						$('#login-form').show();
+						$('.sidebar-item').eq(1).hide();
+						$('.sidebar-item').eq(2).hide();
+						$('.nav-link').eq(0).hide();
+						$('.nav-link').eq(1).hide();
+						
 					} else {
 						//alert('로그아웃');
 				    	$('#login-form').hide();
+						$('.sidebar-item').eq(1).show();
+						$('.sidebar-item').eq(2).show();
+						$('.nav-link').eq(0).show();
+						$('.nav-link').eq(1).show();
 					}
 				},
 				error : function(error) {
@@ -1149,6 +1158,8 @@
 					return 1;
 				}
 			})
+			
+		
     </script>
 </body>
 
