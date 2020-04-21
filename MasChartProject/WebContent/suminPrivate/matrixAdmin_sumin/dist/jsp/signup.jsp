@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.naming.NamingException" %>
+<%@ page import="javax.sql.DataSource" %>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = request.getParameter("signupId");
@@ -21,9 +28,65 @@
 		flag = 0;
 	}
 	
-	if(flag == 0) {
-        out.println("location.href='./signup_ok.jsp';");
-	}
+	Connection conn = null;
+	PreparedStatement pstmt = null;
 	
+	if(flag == 0) {
+		//out.println("alert('회원가입이 완료되었습니다.');");
+        //out.println("location.href='../../authentication-login.html';");
+        
+      
+		/* ==============================================================================================
+        |
+        | create database mas_project;
+        |
+		| create table signup (																		|
+		|	seq           int             not null      primary key     auto_increment,					|
+		|	username      varchar(50)     not null,    													|
+		|	email         varchar(100)    not null,														|
+		|	password      varchar(50)     not null,														|
+		|	wdate         datetime        not null														|
+		|   );																							|
+		|																								|
+		|	insert into signup values (0, 'master', 'gold9128@gmail.com', '123456', NOW());			|
+		|																								|
+        ============================================================================================= */
+		
+        try {
+        		Context initCtx = new InitialContext();
+				Context envCtx = (Context)initCtx.lookup("java:comp/env");
+				DataSource dataSource = (DataSource)envCtx.lookup("jdbc/mariadb");
+				conn = dataSource.getConnection();
+		
+				String sql = "insert into signup values (0, ?, ?, ?, now())";
+    		    pstmt = conn.prepareStatement(sql);
+   	  	 	    pstmt.setString(1, id);
+    		    pstmt.setString(2, email);
+    		    pstmt.setString(3, password);
+        
+     		   int result = pstmt.executeUpdate();
+     		   if(result == 1) {
+     			  flag = 2;
+     		   }
+     		   
+        
+        } catch(NamingException e) {
+        	System.out.println("에러:" + e.getMessage());
+        } catch(SQLException e) {
+        	System.out.println("에러:" + e.getMessage());
+        } finally {
+        	if(pstmt != null) pstmt.close();
+        	if(conn != null) conn.close();
+        }
+
+		
+		if(flag == 2) {
+			out.println("alert('회원가입이 완료되었습니다.')");
+	        out.println("location.href='../../authentication-login.html';");
+		} else {
+			out.println("alert('회원가입에 실패하였습니다.')");
+			out.println("history.back();");
+		}
+	}
 	out.println("</script>");
 %>
