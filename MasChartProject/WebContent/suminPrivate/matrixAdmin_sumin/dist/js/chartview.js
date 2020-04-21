@@ -113,9 +113,24 @@
 	// Apply the theme
 	Highcharts.setOptions(Highcharts.theme);
 	
-	function draw3(){
+	var historyTime = 'histohour';
+	var symbolA = 'BTC';
+	var symbolB = 'USD';	
+		
+	var chart = null;
+	
+	var draw3 = function(paramHistoryTime, paramSymbolA, paramSymbolB){
+		
+		console.log('call draw3');
+		
+		historyTime = paramHistoryTime != undefined && paramHistoryTime !== '' ? paramHistoryTime : historyTime;
+		symbolA = paramSymbolA != undefined && paramSymbolA !== ''  ? paramSymbolA : symbolA;
+		symbolB = paramSymbolB != undefined && paramSymbolB !== ''  ? paramSymbolB : symbolB;
+		
+		
+		
 		var chartdata = [];
-		$.getJSON('https://min-api.cryptocompare.com/data/v2/histohour?fsym=BTC&tsym=USD&limit=1000', function (data) {
+		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=1000', function (data) {
 			//console.log(data);
 			$.each(data.Data.Data, function(i, item){
 				//console.log(item);
@@ -123,9 +138,14 @@
 				chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 			});
 		}).done(function(){
-			Highcharts.stockChart('container',{
+			chart = Highcharts.stockChart('container', {
+				loading: {
+	    	        hideDuration: 1000,
+	    	        showDuration: 1000
+	    	    },
+				
 				title: {
-					text: 'BTC/USD Hour'
+					text: 'BTC/USD ' + historyTime.replace('histo', '') 
 				},
 				
 				rangeSelector: {
@@ -141,6 +161,14 @@
 					inputEnabled: false
 				},
 				
+				exporting: {
+			        buttons: {
+			            contextButton: {
+			                text: 'Export'
+			            }
+			        }
+			    },
+				
 				/* 
 				plotOptions: {
 					candlestick: {						
@@ -150,14 +178,61 @@
 				},
 				 */
 				series: [{
-					name: 'BTC_USD_Hour',
+					name: 'ChartView',
 					type: 'candlestick',
 					data: chartdata,
 					tooltip: {
 						valueDecimals: 8
 					}
-				}]
+				}],
+				
+				subtitle: {
+			        text: '* Footnote aligned right',
+			        align: 'right',
+			        floating: true,
+			        x: -10,
+			        y: +80
+				}
+				
 			});
+			
+			realtimePrice();
 		});
 	}
-	draw3();
+	
+	var realtimePrice = function() {
+		$.getJSON('https://min-api.cryptocompare.com/data/price?fsym='+ symbolA +'&tsyms=' + symbolB, function (data) {
+
+			$('#chart-price').text(data.USD);
+		});
+		
+	};
+	draw3();	
+	
+	
+	$('#minuteBtn').on("click", function() {
+//	    	alert('minuteBtn!');
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histominute');
+	});
+	
+	$('#hourBtn').on("click", function() {
+//	    	alert('hourBtn!');
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histohour');
+	});
+	
+	$('#dayBtn').on("click", function() {
+//	    	alert('hourBtn!');
+		if(chart != null) {
+			chart.showLoading();			
+		}
+		draw3('histoday');
+	});
+	
+
+	
