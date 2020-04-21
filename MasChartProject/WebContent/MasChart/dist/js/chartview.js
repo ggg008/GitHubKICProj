@@ -42,7 +42,7 @@
 	   },
 	   subtitle: {
 	       style: {
-	           color: 'black'
+	           color: '#6e6e70'
 	       }
 	   },
 	   tooltip: {
@@ -78,7 +78,10 @@
 	   
 	   plotOptions: {
 	       series: {
-	           shadow: true
+				animation: {
+				    duration: 1000
+				},
+				shadow: true
 	       },
 	       candlestick: {
 	           lineColor: '#404048'
@@ -89,6 +92,9 @@
 	   },
 	   // Highstock specific
 	   navigator: {
+		   series: {
+			   color: '#343a40',
+		   },
 	       xAxis: {
 	           gridLineColor: '#D0D0D8'
 	       }
@@ -113,7 +119,7 @@
 	// Apply the theme
 	Highcharts.setOptions(Highcharts.theme);
 	
-	var historyTime = 'histohour';
+	var historyTime = 'histominute';
 	var symbolA = 'BTC';
 	var symbolB = 'USD';	
 		
@@ -122,6 +128,8 @@
 	var standardTime = 0;
 	var updateTime = 0;
 	var timeUnit = 0;
+	
+	var subtitleDeco = 'Countdown To Bar Close ▶ ';
 	
 	var draw3 = function(paramHistoryTime, paramSymbolA, paramSymbolB){
 		
@@ -134,11 +142,40 @@
 		
 		
 		var customBtns = [];
-		customBtns.push({type: 'all',count: 1,text: 'All'});
-//		customBtns.push({type: 'hour',count: 1,text: '1h'});
-//		customBtns.push({type: 'day',count: 1,text: '1d'});
+		var timeDeco = '--:--';
 		
-		var chartdata = [];
+		switch (historyTime) {
+		case 'histominute':
+			$('#card-subtitle').text('Overview of Latest Minute');	
+			timeUnit = 60;
+			customBtns.push({type: 'hour',count: 1,text: '1h'});
+			customBtns.push({type: 'hour',count: 2,text: '2h'});
+			customBtns.push({type: 'hour',count: 4,text: '4h'});
+			break;
+		case 'histohour':
+			$('#card-subtitle').text('Overview of Latest Hour');
+			timeUnit = 60 * 60;
+			customBtns.push({type: 'day',count: 1,text: '1d'});
+			customBtns.push({type: 'day',count: 3,text: '3d'});
+			customBtns.push({type: 'day',count: 7,text: '7d'});
+			break;
+		case 'histoday':
+			$('#card-subtitle').text('Overview of Latest Day');	
+			timeUnit = 60 * 60 * 24;		
+			customBtns.push({type: 'month',count: 1,text: '1m'});
+			customBtns.push({type: 'year',count: 1,text: '1y'});
+			timeDeco = '--:' + timeDeco;
+			
+			break;
+
+		default:
+			break;
+		}
+
+		customBtns.push({type: 'all',count: 1,text: 'All'});
+		var selBtn = customBtns.length - 1;
+		
+		var chartdata = [];		
 		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=2000', function (data) {
 			//console.log(data);
 			$.each(data.Data.Data, function(i, item){
@@ -146,6 +183,11 @@
 				
 				chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 			});
+			
+			if(chart != null) {
+				chart.showLoading('Loading data from server...');				
+			}
+			
 		}).done(function(){
 			chart = Highcharts.stockChart('container', {
 				loading: {
@@ -159,7 +201,6 @@
 				
 				rangeSelector: {
 					buttons: customBtns,
-					selected: 0,
 					inputEnabled: false
 				},
 				
@@ -189,23 +230,32 @@
 				}],
 				
 				subtitle: {
-			        text: '* 00:00:00',
+			        text: subtitleDeco + timeDeco,
 			        align: 'right',
 			        floating: true,
 			        x: 0,
 			        y: +60
 				},
 				
-				plotOptions: {
-			        series: {
-			            animation: {
-			                duration: 1000
-			            }
-			        }
-			    },
+				xAxis: {
+		            events: {
+		                afterSetExtremes: function() {
+							console.log('change navigator');
+						}
+		            },
+		        },
+				
 				
 			});
 			
+			//갱신 시간 계산 알고리즘
+			var nowT = Math.floor(new Date() / 1000);
+			standardTime = nowT - (nowT % timeUnit);
+			updateTime = standardTime + timeUnit;
+
+	        chart.hideLoading();
+			
+
 //			chart.rangeSelector.buttons.push(day);
 //			console.log(chart.rangeSelector);			
 //			console.log(chart.rangeSelector.buttonOptions);
@@ -213,37 +263,40 @@
 //			chart.rangeSelector.buttons.splice(1, 2);		
 //			chart.reflow();
 //			console.log(chart.rangeSelector.buttonOptions);
-			
-			
-			switch (historyTime) {
-			case 'histominute':
-				$('#card-subtitle').text('Overview of Latest Minute');	
-				timeUnit = 60;
-				break;
-			case 'histohour':
-				$('#card-subtitle').text('Overview of Latest Hour');
-				timeUnit = 60 * 60;
-				break;
-			case 'histoday':
-				$('#card-subtitle').text('Overview of Latest Day');	
-				timeUnit = 60 * 60 * 24;
-				
-				
-				break;
-
-			default:
-				break;
-			}
-			
-			//갱신 시간 계산 알고리즘
-			var nowT = Math.floor(new Date() / 1000);
-			standardTime = nowT - (nowT % timeUnit);
-			updateTime = standardTime + timeUnit;
-			
-
 		});
 		
+	}	
+	draw3();
+	
+	
+	var draw3DataUpdate = function() {
+		console.log('call draw3DataUpdate');
+		
+		if(chart != null) {
+			chart.showLoading('Loading data from server...');				
+		}
+		
+		var chartdata = [];
+		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=2000', function (data) {
+			//console.log(data);
+			$.each(data.Data.Data, function(i, item){
+				//console.log(item);
+				
+				chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
+			});
+			
+			chart.series[0].setData(chartdata);
+			
+	        chart.hideLoading();
+	        
+		})
+				
+		//갱신 시간 계산 알고리즘
+		var nowT = Math.floor(new Date() / 1000);
+		standardTime = nowT - (nowT % timeUnit);
+		updateTime = standardTime + timeUnit;
 	}
+	
 	
 	var realtimePrice = function() {
 		$.getJSON('https://min-api.cryptocompare.com/data/price?fsym='+ symbolA +'&tsyms=' + symbolB, function (data) {
@@ -252,27 +305,17 @@
 		});
 		
 	};
-	draw3();	
 	
 	
 	$('#minuteBtn').on("click", function() {
-		if(chart != null) {
-			chart.showLoading();			
-		}
 		draw3('histominute');
 	});
 	
-	$('#hourBtn').on("click", function() {
-		if(chart != null) {
-			chart.showLoading();			
-		}
+	$('#hourBtn').on("click", function() {		
 		draw3('histohour');
 	});
 	
-	$('#dayBtn').on("click", function() {
-		if(chart != null) {
-			chart.showLoading();			
-		}
+	$('#dayBtn').on("click", function() {		
 		draw3('histoday');
 	});
 
@@ -299,7 +342,7 @@
 			remainTimeStr += (10 <= remainTimeMinute ? remainTimeMinute : '0' + remainTimeMinute) + ':';
 			remainTimeStr += (10 <= remainTimeSecond ? remainTimeSecond : '0' + remainTimeSecond);
 						
-			$('.highcharts-subtitle').eq(0).html('* ' + remainTimeStr );
+			$('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr );
 		}
 		
 		if(updateTime <= standardTime + sec ) {
@@ -307,7 +350,7 @@
 			updateTime = updateTime + timeUnit;
 			console.log('새로운 기준시 ' + standardTime + ' : ' + updateTime );
 			
-			draw3();
+			draw3DataUpdate();
 		}
 		
 	}, 1000);
