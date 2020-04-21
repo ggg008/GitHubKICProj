@@ -119,6 +119,10 @@
 		
 	var chart = null;
 	
+	var standardTime = 0;
+	var updateTime = 0;
+	var timeUnit = 0;
+	
 	var draw3 = function(paramHistoryTime, paramSymbolA, paramSymbolB){
 		
 		console.log('call draw3');
@@ -129,8 +133,11 @@
 		
 		
 		
+		var day = {type: 'day',count: 1,text: '1d'};
+		var dayx = '';
+		
 		var chartdata = [];
-		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=1000', function (data) {
+		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=2000', function (data) {
 			//console.log(data);
 			$.each(data.Data.Data, function(i, item){
 				//console.log(item);
@@ -151,11 +158,13 @@
 				rangeSelector: {
 					buttons: [
 						
+						{type: 'all',count: 1,text: 'All'},
 						/* 
 						{type: 'hour',count: 1,text: '1h'},						
 						{type: 'day',count: 1,text: '1d'},  
-						*/
-						{type: 'all',count: 1,text: 'All'}
+						day,
+						dayx,
+						 */
 					],
 					selected: 0,
 					inputEnabled: false
@@ -190,27 +199,55 @@
 			        text: '* Footnote aligned right',
 			        align: 'right',
 			        floating: true,
-			        x: -10,
+			        x: 0,
 			        y: +80
-				}
+				},
+				
+				plotOptions: {
+			        series: {
+			            animation: {
+			                duration: 1000
+			            }
+			        }
+			    },
 				
 			});
 			
+//			chart.rangeSelector.buttons.push(day);
+//			console.log(chart.rangeSelector);			
+//			console.log(chart.rangeSelector.buttonOptions);
+//			chart.rangeSelector.buttonOptions.splice(1, 2);	
+//			chart.rangeSelector.buttons.splice(1, 2);		
+//			chart.reflow();
+//			console.log(chart.rangeSelector.buttonOptions);
+			
 			realtimePrice();
+			
+			
 			switch (historyTime) {
 			case 'histominute':
-				$('#card-subtitle').text('Overview of Latest Minute');				
+				$('#card-subtitle').text('Overview of Latest Minute');	
+				timeUnit = 60;
 				break;
 			case 'histohour':
-				$('#card-subtitle').text('Overview of Latest Hour');			
+				$('#card-subtitle').text('Overview of Latest Hour');
+				timeUnit = 60 * 60;
 				break;
 			case 'histoday':
-				$('#card-subtitle').text('Overview of Latest Day');			
+				$('#card-subtitle').text('Overview of Latest Day');	
+				timeUnit = 60 * 60 * 24;
+				
+				
 				break;
 
 			default:
 				break;
 			}
+			
+			//갱신 시간 계산 알고리즘
+			var nowT = Math.floor(new Date() / 1000);
+			standardTime = nowT - nowT % timeUnit;
+			updateTime = standardTime + timeUnit;
 		});
 	}
 	
@@ -244,6 +281,37 @@
 		}
 		draw3('histoday');
 	});
+
+
+	setInterval(function() {	
+		
+		var sec = Math.floor(new Date() / 1000) - standardTime;
+
+		if(chart != null) {				
+//			console.log(chart.subtitle);				
+//			console.log($('.highcharts-subtitle').eq(0).text());
+			
+			var remainTime = timeUnit - sec;
+			var remainTimeHour = parseInt(remainTime / (60 * 60));
+			var remainTimeMinute = parseInt(1 <= remainTimeHour ? (remainTime % 3600) : remainTime / 60);
+			var remainTimeSecond = parseInt(1 <= remainTimeMinute ? remainTime % 60 : remainTime);
+			
+			
+//			var remainTimeStr = 0 < remainTimeHour ? 10 <= remainTime / 60 * 60 ? remainTime / 60 * 60 + ':' : ':' : '';
+//			remainTimeStr += remainTime.getMinutes() + ':' + remainTime.getSeconds();
+						
+			$('.highcharts-subtitle').eq(0).text( remainTimeHour + ' : ' + remainTimeMinute + ' : ' + remainTimeSecond + ' = ' + remainTime);
+		}
+		
+		if(updateTime <= standardTime + sec ) {
+			standardTime = updateTime;
+			updateTime = updateTime + timeUnit;
+			console.log('새로운 기준시 ' + standardTime + ' : ' + updateTime );
+			
+			draw3();
+		}
+		
+	}, 1000);
 	
 
 	
