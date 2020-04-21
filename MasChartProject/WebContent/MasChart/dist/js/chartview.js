@@ -145,7 +145,7 @@
 	    	    },
 				
 				title: {
-					text: 'BTC/USD ' + historyTime.replace('histo', '') 
+					text: 'BTC/USD' + historyTime.replace('histo', ' ')
 				},
 				
 				rangeSelector: {
@@ -197,6 +197,20 @@
 			});
 			
 			realtimePrice();
+			switch (historyTime) {
+			case 'histominute':
+				$('#card-subtitle').text('Overview of Latest Minute');				
+				break;
+			case 'histohour':
+				$('#card-subtitle').text('Overview of Latest Hour');			
+				break;
+			case 'histoday':
+				$('#card-subtitle').text('Overview of Latest Day');			
+				break;
+
+			default:
+				break;
+			}
 		});
 	}
 	
@@ -211,7 +225,6 @@
 	
 	
 	$('#minuteBtn').on("click", function() {
-//	    	alert('minuteBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
@@ -219,7 +232,6 @@
 	});
 	
 	$('#hourBtn').on("click", function() {
-//	    	alert('hourBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
@@ -227,7 +239,6 @@
 	});
 	
 	$('#dayBtn').on("click", function() {
-//	    	alert('hourBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
