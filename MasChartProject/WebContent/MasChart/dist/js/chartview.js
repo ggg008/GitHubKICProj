@@ -133,8 +133,10 @@
 		
 		
 		
-		var day = {type: 'day',count: 1,text: '1d'};
-		var dayx = '';
+		var customBtns = [];
+		customBtns.push({type: 'all',count: 1,text: 'All'});
+//		customBtns.push({type: 'hour',count: 1,text: '1h'});
+//		customBtns.push({type: 'day',count: 1,text: '1d'});
 		
 		var chartdata = [];
 		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=2000', function (data) {
@@ -156,16 +158,7 @@
 				},
 				
 				rangeSelector: {
-					buttons: [
-						
-						{type: 'all',count: 1,text: 'All'},
-						/* 
-						{type: 'hour',count: 1,text: '1h'},						
-						{type: 'day',count: 1,text: '1d'},  
-						day,
-						dayx,
-						 */
-					],
+					buttons: customBtns,
 					selected: 0,
 					inputEnabled: false
 				},
@@ -196,11 +189,11 @@
 				}],
 				
 				subtitle: {
-			        text: '* Footnote aligned right',
+			        text: '* 00:00:00',
 			        align: 'right',
 			        floating: true,
 			        x: 0,
-			        y: +80
+			        y: +60
 				},
 				
 				plotOptions: {
@@ -220,8 +213,6 @@
 //			chart.rangeSelector.buttons.splice(1, 2);		
 //			chart.reflow();
 //			console.log(chart.rangeSelector.buttonOptions);
-			
-			realtimePrice();
 			
 			
 			switch (historyTime) {
@@ -246,9 +237,12 @@
 			
 			//갱신 시간 계산 알고리즘
 			var nowT = Math.floor(new Date() / 1000);
-			standardTime = nowT - nowT % timeUnit;
+			standardTime = nowT - (nowT % timeUnit);
 			updateTime = standardTime + timeUnit;
+			
+
 		});
+		
 	}
 	
 	var realtimePrice = function() {
@@ -283,7 +277,11 @@
 	});
 
 
+
+	
 	setInterval(function() {	
+		
+		realtimePrice();
 		
 		var sec = Math.floor(new Date() / 1000) - standardTime;
 
@@ -293,14 +291,15 @@
 			
 			var remainTime = timeUnit - sec;
 			var remainTimeHour = parseInt(remainTime / (60 * 60));
-			var remainTimeMinute = parseInt(1 <= remainTimeHour ? (remainTime % 3600) : remainTime / 60);
+			var remainTimeMinute = parseInt(1 <= remainTimeHour ? (remainTime % 3600) / 60 : remainTime / 60);
 			var remainTimeSecond = parseInt(1 <= remainTimeMinute ? remainTime % 60 : remainTime);
 			
 			
-//			var remainTimeStr = 0 < remainTimeHour ? 10 <= remainTime / 60 * 60 ? remainTime / 60 * 60 + ':' : ':' : '';
-//			remainTimeStr += remainTime.getMinutes() + ':' + remainTime.getSeconds();
+			var remainTimeStr = 0 < remainTimeHour ? (10 <= remainTimeHour ? remainTimeHour +':' : '0' + remainTimeHour + ':') : '';
+			remainTimeStr += (10 <= remainTimeMinute ? remainTimeMinute : '0' + remainTimeMinute) + ':';
+			remainTimeStr += (10 <= remainTimeSecond ? remainTimeSecond : '0' + remainTimeSecond);
 						
-			$('.highcharts-subtitle').eq(0).text( remainTimeHour + ' : ' + remainTimeMinute + ' : ' + remainTimeSecond + ' = ' + remainTime);
+			$('.highcharts-subtitle').eq(0).html('* ' + remainTimeStr );
 		}
 		
 		if(updateTime <= standardTime + sec ) {
