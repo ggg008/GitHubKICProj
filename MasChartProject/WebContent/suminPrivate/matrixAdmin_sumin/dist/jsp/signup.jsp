@@ -4,9 +4,9 @@
 <%@ page import="javax.naming.InitialContext" %>
 <%@ page import="javax.naming.NamingException" %>
 <%@ page import="javax.sql.DataSource" %>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
+<%@ page import="java.sql.SQLException"%>
+<%@ page import="java.sql.PreparedStatement"%>
+<%@ page import="java.sql.Connection"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = request.getParameter("signupId");
