@@ -225,7 +225,6 @@
 	
 	
 	$('#minuteBtn').on("click", function() {
-//	    	alert('minuteBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
@@ -233,7 +232,6 @@
 	});
 	
 	$('#hourBtn').on("click", function() {
-//	    	alert('hourBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
@@ -241,7 +239,6 @@
 	});
 	
 	$('#dayBtn').on("click", function() {
-//	    	alert('hourBtn!');
 		if(chart != null) {
 			chart.showLoading();			
 		}
