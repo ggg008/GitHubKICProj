@@ -37,21 +37,21 @@
         //out.println("location.href='../../authentication-login.html';");
         
       
-		/* =====JDBC=====================================================================================
-        |																								|
-        | create database mas_project;																	|
-        |																								|
-		| create table signup (																			|
-		|	seq           int             not null      primary key     auto_increment,					|
-		|	username      varchar(50)     not null,    													|
-		|	email         varchar(100)    not null,														|
-		|	password      varchar(50)     not null,														|
-		|	wdate         datetime        not null														|
-		|   );																							|
-		|																								|
-		|	insert into signup values (0, 'master', 'gold9128@gmail.com', '123456', NOW());				|
-		|																								|
-        ============================================================================================= */
+		/* =====JDBC============================================================
+        |																		|
+        | create database maschart;											 	|
+        |																		|
+		| create table signup (													|
+		|	id            	varchar(50)     not null		primary key,		|
+		|	email  	      	varchar(100)    not null, 	   						|
+		|	name          	varchar(50),										|
+		|	password      	varchar(50)     not null,							|
+		|	wdate         	datetime        not null,							|
+		|	userimgname		varchar(200),										|
+		|	userimgsize		int													|
+		|   );																	|
+		|																		|																							|
+        ====================================================================== */
 		
         try {
         		Context initCtx = new InitialContext();
@@ -59,7 +59,7 @@
 				DataSource dataSource = (DataSource)envCtx.lookup("jdbc/mariadb");
 				conn = dataSource.getConnection();
 		
-				String sql = "insert into signup values (0, ?, ?, ?, now())";
+				String sql = "insert into signup values (?, ?, null, ?, now(), null, null)";
     		    pstmt = conn.prepareStatement(sql);
    	  	 	    pstmt.setString(1, id);
     		    pstmt.setString(2, email);
