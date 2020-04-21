@@ -32,15 +32,16 @@
 	PreparedStatement pstmt = null;
 	
 	if(flag == 0) {
+		
 		//out.println("alert('회원가입이 완료되었습니다.');");
         //out.println("location.href='../../authentication-login.html';");
         
       
-		/* ==============================================================================================
-        |
-        | create database mas_project;
-        |
-		| create table signup (																		|
+		/* =====JDBC=====================================================================================
+        |																								|
+        | create database mas_project;																	|
+        |																								|
+		| create table signup (																			|
 		|	seq           int             not null      primary key     auto_increment,					|
 		|	username      varchar(50)     not null,    													|
 		|	email         varchar(100)    not null,														|
@@ -48,7 +49,7 @@
 		|	wdate         datetime        not null														|
 		|   );																							|
 		|																								|
-		|	insert into signup values (0, 'master', 'gold9128@gmail.com', '123456', NOW());			|
+		|	insert into signup values (0, 'master', 'gold9128@gmail.com', '123456', NOW());				|
 		|																								|
         ============================================================================================= */
 		
