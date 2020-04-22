@@ -113,11 +113,26 @@
 	   },
 	   scrollbar: {
 	       trackBorderColor: '#C0C0C8'
-	   }
+	   },
+		
+		exporting: {
+	        buttons: {
+	            contextButton: {
+	                text: 'Export'
+	            }
+	        }
+	    },
+		loading: {
+	        hideDuration: 100,
+	        showDuration: 100
+	    },
 	};
 
 	// Apply the theme
 	Highcharts.setOptions(Highcharts.theme);
+	
+	console.log(typeof Highcharts);
+	console.log(Highcharts);
 	
 	var historyTime = 'histominute';
 	var symbolA = 'BTC';
@@ -125,9 +140,19 @@
 		
 	var chart = null;
 	
+	var utcWeight = -2;//utc 시간보정	
 	var standardTime = 0;
 	var updateTime = 0;
 	var timeUnit = 0;
+	
+	var timeSetter = function() {
+
+		//갱신 시간 계산 알고리즘
+		var now = Math.floor(new Date() / 1000) + utcWeight; 	
+		standardTime = now - (now % timeUnit);
+		updateTime = standardTime + timeUnit;		
+//		console.log('time setter ' + standardTime + ' + ' + updateTime);
+	}
 	
 	var subtitleDeco = 'Countdown To Bar Close ▶ ';
 	
@@ -142,30 +167,34 @@
 		
 		
 		var customBtns = [];
+		var selBtn = null;
 		var timeDeco = '--:--';
+
+		$('#chart-title').text('BTC/USD Chart');
 		
 		switch (historyTime) {
 		case 'histominute':
-			$('#card-subtitle').text('Overview of Latest Minute');	
+			$('#chart-subtitle').text('Overview of Latest Minute');	
 			timeUnit = 60;
 			customBtns.push({type: 'hour',count: 1,text: '1h'});
 			customBtns.push({type: 'hour',count: 2,text: '2h'});
 			customBtns.push({type: 'hour',count: 4,text: '4h'});
+			selBtn = 0;
 			break;
 		case 'histohour':
-			$('#card-subtitle').text('Overview of Latest Hour');
+			$('#chart-subtitle').text('Overview of Latest Hour');
 			timeUnit = 60 * 60;
 			customBtns.push({type: 'day',count: 1,text: '1d'});
 			customBtns.push({type: 'day',count: 3,text: '3d'});
 			customBtns.push({type: 'day',count: 7,text: '7d'});
+			selBtn = 2;
 			break;
 		case 'histoday':
-			$('#card-subtitle').text('Overview of Latest Day');	
+			$('#chart-subtitle').text('Overview of Latest Day');	
 			timeUnit = 60 * 60 * 24;		
 			customBtns.push({type: 'month',count: 1,text: '1m'});
-			customBtns.push({type: 'year',count: 1,text: '1y'});
-			timeDeco = '--:' + timeDeco;
-			
+			customBtns.push({type: 'year',count: 1,text: '1y'});			
+			timeDeco = '--:' + timeDeco;			
 			break;
 
 		default:
@@ -173,7 +202,9 @@
 		}
 
 		customBtns.push({type: 'all',count: 1,text: 'All'});
-		var selBtn = customBtns.length - 1;
+		if(selBtn == null) {
+			selBtn = customBtns.length - 1;			
+		}
 		
 		var chartdata = [];		
 		$.getJSON('https://min-api.cryptocompare.com/data/v2/'+ historyTime +'?fsym='+ symbolA +'&tsym='+ symbolB +'&limit=2000', function (data) {
@@ -185,15 +216,12 @@
 			});
 			
 			if(chart != null) {
-				chart.showLoading('Loading data from server...');				
+				chart.showCustomLoading('Loading data from server...');	
+				
 			}
 			
 		}).done(function(){
 			chart = Highcharts.stockChart('container', {
-				loading: {
-	    	        hideDuration: 1000,
-	    	        showDuration: 1000
-	    	    },
 				
 				title: {
 					text: 'BTC/USD' + historyTime.replace('histo', ' ')
@@ -201,16 +229,9 @@
 				
 				rangeSelector: {
 					buttons: customBtns,
+					selected : selBtn,
 					inputEnabled: false
 				},
-				
-				exporting: {
-			        buttons: {
-			            contextButton: {
-			                text: 'Export'
-			            }
-			        }
-			    },
 				
 				/* 
 				plotOptions: {
@@ -221,7 +242,7 @@
 				},
 				 */
 				series: [{
-					name: 'ChartView',
+					name: 'BTC/USD',
 					type: 'candlestick',
 					data: chartdata,
 					tooltip: {
@@ -234,7 +255,7 @@
 			        align: 'right',
 			        floating: true,
 			        x: 0,
-			        y: +60
+			        y: +49
 				},
 				
 				xAxis: {
@@ -246,16 +267,23 @@
 		        },
 				
 				
-			});
-			
-			//갱신 시간 계산 알고리즘
-			var nowT = Math.floor(new Date() / 1000);
-			standardTime = nowT - (nowT % timeUnit);
-			updateTime = standardTime + timeUnit;
+			});			
+	    	
+	    	chart.showCustomLoading = function(str) {
+	    		this.showLoading(str);
+	    		this.isLoading = true;
+	    	};
+	    	
+	    	chart.hideCustomLoading = function() {
+	    		this.hideLoading();
+	    		this.isLoading = false;
+	    	};			
+	    	console.log(chart);
+	    	
+	    	chart.hideCustomLoading();
 
-	        chart.hideLoading();
-			
-
+	    	timeSetter();
+	    	
 //			chart.rangeSelector.buttons.push(day);
 //			console.log(chart.rangeSelector);			
 //			console.log(chart.rangeSelector.buttonOptions);
@@ -268,12 +296,11 @@
 	}	
 	draw3();
 	
-	
 	var draw3DataUpdate = function() {
 		console.log('call draw3DataUpdate');
 		
 		if(chart != null) {
-			chart.showLoading('Loading data from server...');				
+			chart.showCustomLoading('Loading data from server...');				
 		}
 		
 		var chartdata = [];
@@ -287,14 +314,11 @@
 			
 			chart.series[0].setData(chartdata);
 			
-	        chart.hideLoading();
+	        chart.hideCustomLoading();
 	        
 		})
-				
-		//갱신 시간 계산 알고리즘
-		var nowT = Math.floor(new Date() / 1000);
-		standardTime = nowT - (nowT % timeUnit);
-		updateTime = standardTime + timeUnit;
+		
+		timeSetter();
 	}
 	
 	
@@ -326,12 +350,9 @@
 		
 		realtimePrice();
 		
-		var sec = Math.floor(new Date() / 1000) - standardTime;
+		var sec = Math.floor(new Date() / 1000) + utcWeight - standardTime;
 
-		if(chart != null) {				
-//			console.log(chart.subtitle);				
-//			console.log($('.highcharts-subtitle').eq(0).text());
-			
+		if(chart != null) {							
 			var remainTime = timeUnit - sec;
 			var remainTimeHour = parseInt(remainTime / (60 * 60));
 			var remainTimeMinute = parseInt(1 <= remainTimeHour ? (remainTime % 3600) / 60 : remainTime / 60);
@@ -342,13 +363,13 @@
 			remainTimeStr += (10 <= remainTimeMinute ? remainTimeMinute : '0' + remainTimeMinute) + ':';
 			remainTimeStr += (10 <= remainTimeSecond ? remainTimeSecond : '0' + remainTimeSecond);
 						
-			$('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr );
+			$('.highcharts-subtitle').eq(0).html(chart.isLoading ? timeDeco : subtitleDeco + remainTimeStr );				
 		}
 		
 		if(updateTime <= standardTime + sec ) {
 			standardTime = updateTime;
 			updateTime = updateTime + timeUnit;
-			console.log('새로운 기준시 ' + standardTime + ' : ' + updateTime );
+			console.log('새로운 기준 ' + standardTime + ' : ' + updateTime );
 			
 			draw3DataUpdate();
 		}
