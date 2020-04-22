@@ -149,7 +149,6 @@
 
 	console.log(cookieJson);
 	cookieJson = JSON.parse(cookieJson);	
-	console.log(cookieJson);
 	
 	
 	var historyTime = cookieJson.historyTime != undefined ? cookieJson.historyTime : 'histominute';
@@ -186,15 +185,11 @@
 	    var date = new Date();
 		date.setDate(date.getDate() + 30);//한달유지 
 	
-		var cookiesHistoryTime = 'historyTime='+historyTime+';expires=' + date.toString();
-		var cookiesSymbolA = 'symbolA='+symbolA+';expires=' + date.toString();
-		var cookiesSymbolB = 'symbolB='+symbolB+';expires=' + date.toString();
-		
-		document.cookie = cookiesHistoryTime;
-		document.cookie = cookiesSymbolA;
-		document.cookie = cookiesSymbolB;
-		
-		console.log(cookies);
+		document.cookie = 'historyTime='+historyTime+';expires=' + date.toString();
+		document.cookie = 'symbolA='+symbolA+';expires=' + date.toString();
+		document.cookie = 'symbolB='+symbolB+';expires=' + date.toString();
+				
+		console.log(document.cookie);
 	
 	    var customBtns = [];
 	    var selBtn = null;
@@ -386,8 +381,10 @@
 	        remainTimeStr += (10 <= remainTimeSecond ? remainTimeSecond : '0' + remainTimeSecond);
 
 	        remainTimeStr = 
-	        	remainTimeHour < 0 || 100 <= remainTimeHour || remainTimeMinute < 0 || 100 <= remainTimeMinute || remainTimeSecond < 0 || 100 <= remainTimeSecond 
-	        		? timeDeco : remainTimeStr;
+	        	remainTimeHour < 0 || 100 <= remainTimeHour || 
+	        	remainTimeMinute < 0 || 100 <= remainTimeMinute || 
+	        	remainTimeSecond < 0 || 100 <= remainTimeSecond 
+	        	? timeDeco : remainTimeStr;
 	        
 	        $('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr);
 	    }
