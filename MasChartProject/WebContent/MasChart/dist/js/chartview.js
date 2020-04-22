@@ -130,10 +130,7 @@
 
 	// Apply the theme
 	Highcharts.setOptions(Highcharts.theme);
-	
-	console.log(typeof Highcharts);
-	console.log(Highcharts);
-	
+		
 	var historyTime = 'histominute';
 	var symbolA = 'BTC';
 	var symbolB = 'USD';	
@@ -261,7 +258,7 @@
 				xAxis: {
 		            events: {
 		                afterSetExtremes: function() {
-							console.log('change navigator');
+//							console.log('change navigator');
 						}
 		            },
 		        },
@@ -278,7 +275,7 @@
 	    		this.hideLoading();
 	    		this.isLoading = false;
 	    	};			
-	    	console.log(chart);
+//	    	console.log(chart);
 	    	
 	    	chart.hideCustomLoading();
 
