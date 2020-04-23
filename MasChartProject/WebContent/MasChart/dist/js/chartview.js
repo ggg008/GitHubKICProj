@@ -344,8 +344,7 @@
 	var realtimePrice = function () {
 	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + symbolA + '&tsyms=' + symbolB, function (data) {
 	        $('#chart-price').text(data.USD);
-	    });
-	
+	    });	
 	};
 	
 	
