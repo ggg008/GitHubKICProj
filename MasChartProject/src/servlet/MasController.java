@@ -63,15 +63,24 @@ public class MasController extends HttpServlet
 			if (path.equals("/*.do") || path.equals("/index.do")) {
 				
 				url = "/index.html";
+			} else if (path.equals("/proxyLastPrice.do")) {
 				
-			} 
-			/*
-			else if (path.equals("/view.do")) {
+				url = "/proxyLastPrice.jsp";
+				
+			} else if (path.equals("/proxyChart.do")) {
+				
+				url = "/proxyChart.jsp";
+				
+			} else { 
+				
+				url = "/error.jsp";
+			}
+				/*
+			} else if (path.equals("/view.do")) {
 				scAction = new ViewAction();
 				scAction.execute(request, response);
 
 				url = "/board_view1.jsp";
-				
 			} else if (path.equals("/write.do")) {
 				scAction = new WriteAction();
 				scAction.execute(request, response);
@@ -107,13 +116,7 @@ public class MasController extends HttpServlet
 				scAction.execute(request, response);
 
 				url = "/board_delete1_ok.jsp";
-				
-			} 
 			*/
-			else {
-				
-				url = "/error.jsp";
-			}
 			
 			//forward와 동일 - 요청 재지정
 			RequestDispatcher dispatcher = request.getRequestDispatcher(urlPath + url);

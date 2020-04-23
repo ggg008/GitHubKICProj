@@ -236,7 +236,8 @@
 	    }
 	
 	    var chartdata = [];
-	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
+//	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
+    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ symbolA +'&tsym=' + symbolB, function (data) {
 	        //console.log(data);
 	        $.each(data.Data.Data, function (i, item) {
 	            //console.log(item);
@@ -324,7 +325,8 @@
 	    }
 	
 	    var chartdata = [];
-	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
+//	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
+    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ symbolA +'&tsym=' + symbolB, function (data) {
 	        //console.log(data);
 	        $.each(data.Data.Data, function (i, item) {
 	            //console.log(item);
@@ -344,8 +346,12 @@
 	
 	
 	var realtimePrice = function () {
-	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + symbolA + '&tsyms=' + symbolB, function (data) {
-	        $('#chart-price').text(data.USD);
+//	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + symbolA + '&tsyms=' + symbolB, function (data) {
+	    $.getJSON('./proxyLastPrice.do?fsym='+ symbolA +'&tsyms=' + symbolB, function (data) {
+	        $('#chart-price').text(data.KRW);
+	        
+	        console.log(data);
+	        
 	    });	
 	    if(chart.series[0] != null){
 	    	
