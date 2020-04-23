@@ -54,7 +54,6 @@ public class MasController extends HttpServlet
 			
 			String path = request.getRequestURI().replaceAll(request.getContextPath(), "");
 			
-//			String urlPath = "/WEB-INF/paging2";
 			String urlPath = "/WEB-INF/MasChart";
 			String url = "";
 			
@@ -73,9 +72,17 @@ public class MasController extends HttpServlet
 				
 			} else { 
 				
-				url = "/error.jsp";
+				url = "/error-404.html";
 			}
-				/*
+			
+			/*
+			if( action == null || action.equals("") || action.equals("list")) {
+				//모델 처리구간
+				scAction = new ListAction();
+				scAction.execute(request, response);
+				
+				url = "/board_list1.jsp";
+				
 			} else if (path.equals("/view.do")) {
 				scAction = new ViewAction();
 				scAction.execute(request, response);
@@ -116,6 +123,10 @@ public class MasController extends HttpServlet
 				scAction.execute(request, response);
 
 				url = "/board_delete1_ok.jsp";
+			} else { 
+			
+				url = "/error.jsp";
+			}
 			*/
 			
 			//forward와 동일 - 요청 재지정
