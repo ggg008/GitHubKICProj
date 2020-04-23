@@ -52,7 +52,7 @@
 		|   );																	|
 		|																		|																							|
         ====================================================================== */
-		
+		/*
         try {
         		Context initCtx = new InitialContext();
 				Context envCtx = (Context)initCtx.lookup("java:comp/env");
@@ -88,7 +88,7 @@
 			out.println("alert('회원가입에 실패하였습니다.')");
 			out.println("history.back();");
 		}
-		
+		*/
 	}
 	out.println("</script>");
 %>
