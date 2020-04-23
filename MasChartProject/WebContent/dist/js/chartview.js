@@ -334,7 +334,8 @@
 	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 	        });
 	
-	        if(chart.series[0] != null) {
+//	        console.log(chart.series);
+	        if(chart.series != null) {
 	        	chart.series[0].setData(chartdata);	        	
 	        }
 	
@@ -351,7 +352,7 @@
 	        $('#chart-price').text(data.USD);
 //	        console.log(data);
 	    });	
-	    if(chart.series[0] != null){
+//	    if(chart.series != null){
 	    	
 //	    	var dataEmt = [];
 //	    	var dataArr = chart.series[0].data;
@@ -361,7 +362,7 @@
 //	    	chart.series[0].setData(dataEmt);
 //	    	chart.series[0].setData(dataArr);
 //	    	console.log(chart.series[0].data[2000]);
-	    }
+//	    }
 	    
 	};
 	
