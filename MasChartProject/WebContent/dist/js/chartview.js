@@ -132,8 +132,8 @@
 	Highcharts.setOptions(Highcharts.theme);
 	
 	var cookies = document.cookie;
-	console.log(cookies.length);
-	console.log(cookies);
+	//console.log(cookies.length);
+	//console.log(cookies);
 	
 	cookies.trim();
 	cookies = cookies.split('; ');
@@ -147,7 +147,7 @@
 	
 	cookieJson += '}';
 
-	console.log(cookieJson);
+	//console.log(cookieJson);
 	cookieJson = JSON.parse(cookieJson);	
 	
 	
@@ -193,7 +193,7 @@
 		document.cookie = 'fromSymbol='+fromSymbol+';expires=' + date.toString();
 		document.cookie = 'toSymbol='+toSymbol+';expires=' + date.toString();
 				
-		console.log(document.cookie);
+		//console.log(document.cookie);
 	
 	    var customBtns = [];
 	    var selBtn = null;
