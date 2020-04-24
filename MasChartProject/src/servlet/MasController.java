@@ -72,6 +72,11 @@ public class MasController extends HttpServlet
 			} else if (path.equals("/authentication-login.do")) {
 				
 				url = "/authentication-login.html";
+				
+			} else if (path.equals("/logout.do")) {
+				
+				urlPath = "";
+				url = "/dist/jsp/logout.jsp";
 			
 			} else if (path.equals("/authentication-register.do")) {
 				
