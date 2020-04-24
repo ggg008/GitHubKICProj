@@ -4,6 +4,7 @@
 
 <c:import var="data" charEncoding="utf-8" 
 	url="https://min-api.cryptocompare.com/data/price?fsym=${ param.fsym }&tsyms=${ param.tsyms }"/>
+	
 
 ${ data }
 
