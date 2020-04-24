@@ -59,11 +59,15 @@ public class MasController extends HttpServlet
 				
 			} else if (path.equals("/proxyLastPrice.do")) {
 				
-				url = "/proxyLastPrice.jsp";
+				urlPath = "";
+				url = "/dist/jsp/proxyLastPrice.jsp";
+				//System.out.println(url);
 				
 			} else if (path.equals("/proxyChart.do")) {
 				
-				url = "/proxyChart.jsp";
+				urlPath = "";
+				url = "/dist/jsp/proxyChart.jsp";
+				//System.out.println(url);
 				
 			} else if (path.equals("/authentication-login.do")) {
 				

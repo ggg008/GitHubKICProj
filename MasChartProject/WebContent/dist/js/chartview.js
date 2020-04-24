@@ -152,8 +152,8 @@
 	
 	
 	var historyTime = cookieJson.historyTime != undefined ? cookieJson.historyTime : 'histominute';
-	var symbolA = cookieJson.symbolA != undefined ? cookieJson.symbolA : 'BTC';
-	var symbolB = cookieJson.symbolB != undefined ? cookieJson.symbolB : 'USD';
+	var fromSymbol = cookieJson.fromSymbol != undefined ? cookieJson.fromSymbol : 'BTC';
+	var toSymbol = cookieJson.toSymbol != undefined ? cookieJson.toSymbol : 'USD';
 	
 	var chart = null;
 	
@@ -176,18 +176,22 @@
 	var draw3 = function (paramHistoryTime, paramSymbolA, paramSymbolB) {
 	
 	    console.log('call draw3');
+		
+        if (chart != null) {
+            chart.showCustomLoading('Loading data from server...');
+        }
 	
 	    historyTime = paramHistoryTime != undefined && paramHistoryTime !== '' ? paramHistoryTime : historyTime;
-	    symbolA = paramSymbolA != undefined && paramSymbolA !== '' ? paramSymbolA : symbolA;
-	    symbolB = paramSymbolB != undefined && paramSymbolB !== '' ? paramSymbolB : symbolB;
+	    fromSymbol = paramSymbolA != undefined && paramSymbolA !== '' ? paramSymbolA : fromSymbol;
+	    toSymbol = paramSymbolB != undefined && paramSymbolB !== '' ? paramSymbolB : toSymbol;
 	
 	    //input cookie
 	    var date = new Date();
 		date.setDate(date.getDate() + 30);//한달유지 
 	
 		document.cookie = 'historyTime='+historyTime+';expires=' + date.toString();
-		document.cookie = 'symbolA='+symbolA+';expires=' + date.toString();
-		document.cookie = 'symbolB='+symbolB+';expires=' + date.toString();
+		document.cookie = 'fromSymbol='+fromSymbol+';expires=' + date.toString();
+		document.cookie = 'toSymbol='+toSymbol+';expires=' + date.toString();
 				
 		console.log(document.cookie);
 	
@@ -236,19 +240,19 @@
 	    }
 	
 	    var chartdata = [];
-//	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
-    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ symbolA +'&tsym=' + symbolB, function (data) {
-	        //console.log(data);
+	    //https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=2000
+	    /*
+    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ fromSymbol +'&tsym=' + toSymbol, function (data) {
+    		if(data.Response !== "Success") {
+				console.log('Fail!!');
+				console.log(data);    			
+			}
 	        $.each(data.Data.Data, function (i, item) {
 	            //console.log(item);
 	
 	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 	        });
-	
-	        if (chart != null) {
-	            chart.showCustomLoading('Loading data from server...');
-	
-	        }
+	        console.log(chartdata);
 	
 	    }).done(function () {
 	        chart = Highcharts.stockChart('container', {
@@ -289,7 +293,6 @@
 	
 	
 	        });
-	
 	        chart.showCustomLoading = function (str) {
 	            this.showLoading(str);
 	            this.isLoading = true;
@@ -313,6 +316,7 @@
 	        //			chart.reflow();
 	        //			console.log(chart.rangeSelector.buttonOptions);
 	    });
+	     */
 	
 	}
 	draw3();
@@ -325,9 +329,13 @@
 	    }
 	
 	    var chartdata = [];
-//	    $.getJSON('https://min-api.cryptocompare.com/data/v2/' + historyTime + '?fsym=' + symbolA + '&tsym=' + symbolB + '&limit=2000', function (data) {
-    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ symbolA +'&tsym=' + symbolB, function (data) {
-	        //console.log(data);
+	    /*
+    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ fromSymbol +'&tsym=' + toSymbol, function (data) {
+    		if(data.Response !== "Success") {
+    			console.log('Fail!!');
+    			console.log(data);    			
+    		}
+    		
 	        $.each(data.Data.Data, function (i, item) {
 	            //console.log(item);
 	
@@ -342,16 +350,19 @@
 	        chart.hideCustomLoading();
 	
 	    })	
+	    */
 	    timeSetter();
 	}
 	
 	
 	var realtimePrice = function () {
-//	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + symbolA + '&tsyms=' + symbolB, function (data) {
-	    $.getJSON('./proxyLastPrice.do?fsym='+ symbolA +'&tsyms=' + symbolB, function (data) {
+//	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + fromSymbol + '&tsyms=' + toSymbol, function (data) {
+		/*
+	    $.getJSON('./proxyLastPrice.do?fsym='+ fromSymbol +'&tsyms=' + toSymbol, function (data) {
 	        $('#chart-price').text(data.USD);
 //	        console.log(data);
 	    });	
+	    */
 //	    if(chart.series != null){
 	    	
 //	    	var dataEmt = [];
@@ -380,10 +391,16 @@
 	});
 	
 	
-	
+	var limitConst = 30;
+	var limit = (standardTime + utcWeight) % limitConst;
 	setInterval(function () {
 	
-	    realtimePrice();
+		--limit;
+		
+		if(limit <= 0) {
+			limit = limitConst;
+			realtimePrice();
+		}
 	
 	    var sec = Math.floor(new Date() / 1000) + utcWeight - standardTime;
 	
@@ -401,10 +418,14 @@
 	        remainTimeStr = 
 	        	remainTimeHour < 0 || 100 <= remainTimeHour || 
 	        	remainTimeMinute < 0 || 100 <= remainTimeMinute || 
-	        	remainTimeSecond < 0 || 100 <= remainTimeSecond 
+	        	remainTimeSecond < 0 || 100 <= remainTimeSecond ||
+	        	chart.isLoading
 	        	? timeDeco : remainTimeStr;
 	        
+	        var log = '\n log : ';
+	        log +=  limit;
 	        $('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr);
+	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
 	    }
 	
 	    if (updateTime <= standardTime + sec) {
