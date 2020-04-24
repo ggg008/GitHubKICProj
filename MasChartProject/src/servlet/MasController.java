@@ -74,6 +74,12 @@ public class MasController extends HttpServlet
 				urlPath = "";
 				url = "/dist/jsp/proxyChart.jsp";
 				//System.out.println(url);
+
+			} else if (path.equals("/proxyTest.do")) {
+				
+				urlPath = "";
+				url = "/dist/jsp/proxyNaverNews.jsp";
+				//System.out.println(url);
 				
 			} else if (path.equals("/authentication-login.do")) {
 				// 로그인
