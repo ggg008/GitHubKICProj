@@ -81,11 +81,12 @@ public class MasController extends HttpServlet
 				url = "/authentication-register.html";
 				
 			} else if (path.equals("/signup.do")) {
-				
+				//System.out.println("1");
 				masAction = new SignupOkAction();
 				masAction.execute(request, response);
-				
-				url = "../dist/jsp/signup.jsp";
+				//System.out.println("2");
+				urlPath = "";
+				url = "/dist/jsp/signup.jsp";
 			
 				
 			} else if (path.equals("/form-basic.do")) {

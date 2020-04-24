@@ -13,7 +13,7 @@
 	
     out.println("<script type='text/javascript'>");
     if(flag == 0) {
-          out.println("alert('로그인 되었습니다.');");
+          //out.println("alert('로그인 되었습니다.');");
           out.println("location.href='../../index.do';");
     } else {
           out.println("alert('아이디나 비밀번호가 틀립니다.');");
