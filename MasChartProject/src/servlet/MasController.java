@@ -10,15 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import subController.Action;
-import subController.DeleteAction;
-import subController.DeleteOkAction;
-import subController.ListAction;
-import subController.ModifyAction;
-import subController.ModifyOkAction;
-import subController.ViewAction;
-import subController.WriteAction;
-import subController.WriteOkAction;
+import subController.MasAction;
+import subController.SignupAction;
+import subController.SignupOkAction;
 
 /**
  * Servlet implementation class MasController
@@ -57,7 +51,7 @@ public class MasController extends HttpServlet
 			String urlPath = "/WEB-INF/MasChart";
 			String url = "";
 			
-			Action scAction = null;
+			MasAction masAction = null;
 			
 			if (path.equals("/*.do") || path.equals("/index.do")) {
 				
@@ -72,12 +66,23 @@ public class MasController extends HttpServlet
 				url = "/proxyChart.jsp";
 				
 			} else if (path.equals("/authentication-login.do")) {
-				// 로그인
+				
 				url = "/authentication-login.html";
 			
 			} else if (path.equals("/authentication-register.do")) {
-				// 회원가입
+				
+				masAction = new SignupAction();
+				masAction.execute(request, response);
+				
 				url = "/authentication-register.html";
+				
+			} else if (path.equals("/signup.do")) {
+				
+				masAction = new SignupOkAction();
+				masAction.execute(request, response);
+				
+				url = "../dist/jsp/signup.jsp";
+			
 				
 			} else if (path.equals("/form-basic.do")) {
 				// 프로필 보기 및 수정
