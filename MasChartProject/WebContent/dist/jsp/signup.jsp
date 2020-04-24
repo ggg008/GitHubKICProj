@@ -34,7 +34,7 @@
 	if(flag == 0) {
 		
 		out.println("alert('회원가입이 완료되었습니다.');");
-        out.println("location.href='../../authentication-login.html';");
+        out.println("location.href='../../authentication-login.do';");
         
       
 		/* =====JDBC============================================================

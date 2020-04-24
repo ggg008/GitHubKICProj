@@ -57,11 +57,12 @@ public class MasController extends HttpServlet
 			String urlPath = "/WEB-INF/MasChart";
 			String url = "";
 			
-			
 			Action scAction = null;
+			
 			if (path.equals("/*.do") || path.equals("/index.do")) {
 				
 				url = "/index.html";
+				
 			} else if (path.equals("/proxyLastPrice.do")) {
 				
 				url = "/proxyLastPrice.jsp";
@@ -69,6 +70,18 @@ public class MasController extends HttpServlet
 			} else if (path.equals("/proxyChart.do")) {
 				
 				url = "/proxyChart.jsp";
+				
+			} else if (path.equals("/authentication-login.do")) {
+				// 로그인
+				url = "/authentication-login.html";
+			
+			} else if (path.equals("/authentication-register.do")) {
+				// 회원가입
+				url = "/authentication-register.html";
+				
+			} else if (path.equals("/form-basic.do")) {
+				// 프로필 보기 및 수정
+				url = "/form-basic.html";
 				
 			} else { 
 				

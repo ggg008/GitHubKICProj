@@ -5,7 +5,7 @@
 
 	out.println("<script type='text/javascript'>");
 	//out.println("alert('로그아웃 되었습니다.');");
-	out.println("location.href='../../index.html';");
+	out.println("location.href='../../index.do';");
 	out.println("</script>");
     
 %>
