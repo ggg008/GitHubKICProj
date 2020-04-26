@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Crawler.ChartDataCollector;
+import Crawler.SeleniumTest;
 import modelPaging.CandlestickTO;
 import modelPaging.MasDAO;
 import subController.ChartAction;
@@ -29,8 +30,6 @@ public class MasController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	ChartDataCollector chartDataCollector;
-//		Parser parser = new Parser();
-//		SeleniumTest sTest = new SeleniumTest();
 
 	public MasController()
 	{
@@ -47,19 +46,7 @@ public class MasController extends HttpServlet
 			e.printStackTrace();
 		}
 		chartDataCollector = new ChartDataCollector();
-		
-		MasDAO mDao = new MasDAO();
-		
-		CandlestickTO cTo = new CandlestickTO();
-		cTo.setCandleKey("te");
-		
-//		ArrayList<CandlestickTO> cList = mDao.outputCandlestick(cTo);
-//		
-//		for(CandlestickTO resultCTo : cList) {
-//			System.out.println(resultCTo.getCandleKey() + " : " + resultCTo.getCandleJSON());
-//		}
-		
-		System.out.println("-전체 데이터 카운트 : " + mDao.countCandelstick(null));
+//		SeleniumTest sTest = new SeleniumTest();
 	}
 	
 	/**

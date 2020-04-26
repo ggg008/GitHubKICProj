@@ -1,0 +1,1342 @@
+<div class="ng-binding">
+ 1
+</div><div class="current-price-value ng-binding highlight-up value-up" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 7,561.47 
+</div><div class="ng-binding">
+  $ 204.74 M 
+</div><div class="ng-binding">
+  $ 3.26 B 
+</div><div class="ng-binding">
+  $ 1.88 B 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 138.72 B 
+</div><div class="ng-binding">
+  B+ 
+</div><div class="ng-binding">
+ 2
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 194.06 
+</div><div class="ng-binding">
+  $ 68.81 M 
+</div><div class="ng-binding">
+  $ 1.58 B 
+</div><div class="ng-binding">
+  $ 843.17 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 21.48 B 
+</div><div class="ng-binding">
+  B+ 
+</div><div class="ng-binding">
+ 3
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 2.708 
+</div><div class="ng-binding">
+  $ 3.69 M 
+</div><div class="ng-binding">
+  $ 405.28 M 
+</div><div class="ng-binding">
+  $ 228.32 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 2.76 B 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 4
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 239.44 
+</div><div class="ng-binding">
+  $ 9.00 M 
+</div><div class="ng-binding">
+  $ 360.01 M 
+</div><div class="ng-binding">
+  $ 199.88 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 4.40 B 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 5
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 44.48 
+</div><div class="ng-binding">
+  $ 10.38 M 
+</div><div class="ng-binding">
+  $ 301.39 M 
+</div><div class="ng-binding">
+  $ 184.82 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 2.89 B 
+</div><div class="ng-binding">
+  B- 
+</div><div class="ng-binding">
+ 6
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 195.16 
+</div><div class="ng-binding">
+  $ 1.40 M 
+</div><div class="ng-binding">
+  $ 220.22 M 
+</div><div class="ng-binding">
+  $ 155.40 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 3.59 B 
+</div><div class="ng-binding">
+  D+ 
+</div><div class="ng-binding">
+ 7
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 5.863 
+</div><div class="ng-binding">
+  $ 1.80 M 
+</div><div class="ng-binding">
+  $ 254.07 M 
+</div><div class="ng-binding">
+  $ 155.15 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 671.61 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 8
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 3.724 
+</div><div class="ng-binding">
+  $ 13.43 M 
+</div><div class="ng-binding">
+  $ 108.37 M 
+</div><div class="ng-binding">
+  $ 102.85 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 3.72 B 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 9
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1944 
+</div><div class="ng-binding">
+  $ 14.87 M 
+</div><div class="ng-binding">
+  $ 151.43 M 
+</div><div class="ng-binding">
+  $ 99.59 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 19.44 B 
+</div><div class="ng-binding">
+  B- 
+</div><div class="ng-binding">
+ 10
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 86.39 
+</div><div class="ng-binding">
+  $ 1.83 M 
+</div><div class="ng-binding">
+  $ 132.15 M 
+</div><div class="ng-binding">
+  $ 97.14 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 817.12 M 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 11
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 2.790 
+</div><div class="ng-binding">
+  $ 16.73 M 
+</div><div class="ng-binding">
+  $ 91.10 M 
+</div><div class="ng-binding">
+  $ 88.80 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 2.26 B 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 12
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01397 
+</div><div class="ng-binding">
+  $ 157.46 k 
+</div><div class="ng-binding">
+  $ 99.72 M 
+</div><div class="ng-binding">
+  $ 73.86 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 932.42 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 13
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 4.879 
+</div><div class="ng-binding">
+  $ 5,795.87 
+</div><div class="ng-binding">
+  $ 73.62 M 
+</div><div class="ng-binding">
+  $ 72.77 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.46 B 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 14
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 16.20 
+</div><div class="ng-binding">
+  $ 35.23 M 
+</div><div class="ng-binding">
+  $ 163.78 M 
+</div><div class="ng-binding">
+  $ 68.67 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 2.52 B 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 15
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 2.827 
+</div><div class="ng-binding">
+  $ 2.09 M 
+</div><div class="ng-binding">
+  $ 71.24 M 
+</div><div class="ng-binding">
+  $ 54.79 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 539.08 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 16
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.6105 
+</div><div class="ng-binding">
+  $ 7.68 M 
+</div><div class="ng-binding">
+  $ 46.40 M 
+</div><div class="ng-binding">
+  $ 46.24 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 128.78 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 17
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 44.58 
+</div><div class="ng-binding">
+  $ 542.99 k 
+</div><div class="ng-binding">
+  $ 68.44 M 
+</div><div class="ng-binding">
+  $ 35.28 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 402.21 M 
+</div><div class="ng-binding">
+  B- 
+</div><div class="ng-binding">
+ 18
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2659 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 32.00 M 
+</div><div class="ng-binding">
+  $ 31.86 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 26.59 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 19
+</div><div class="current-price-value ng-binding highlight-down value-down" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 5.066 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 30.94 M 
+</div><div class="ng-binding">
+  $ 30.77 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding highlight-down">
+  $ 160.03 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 20
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 8.382 
+</div><div class="ng-binding">
+  $ 476.70 k 
+</div><div class="ng-binding">
+  $ 81.07 M 
+</div><div class="ng-binding">
+  $ 30.79 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 838.20 M 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 21
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.4648 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 32.63 M 
+</div><div class="ng-binding">
+  $ 28.44 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 296.22 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 22
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.484 
+</div><div class="ng-binding">
+  $ 49.80 k 
+</div><div class="ng-binding">
+  $ 99.30 M 
+</div><div class="ng-binding">
+  $ 26.53 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 148.38 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 23
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2134 
+</div><div class="ng-binding">
+  $ 1.71 M 
+</div><div class="ng-binding">
+  $ 29.61 M 
+</div><div class="ng-binding">
+  $ 24.22 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 136.88 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 24
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.001 
+</div><div class="ng-binding">
+  $ 7.96 M 
+</div><div class="ng-binding">
+  $ 38.27 M 
+</div><div class="ng-binding">
+  $ 23.85 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 4.65 B 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 25
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.04218 
+</div><div class="ng-binding">
+  $ 348.14 k 
+</div><div class="ng-binding">
+  $ 26.28 M 
+</div><div class="ng-binding">
+  $ 23.77 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.09 B 
+</div><div class="ng-binding">
+  B- 
+</div><div class="ng-binding">
+ 26
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.05996 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 23.76 M 
+</div><div class="ng-binding">
+  $ 23.18 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 84.37 M 
+</div><div class="ng-binding">
+  D 
+</div><div class="ng-binding">
+ 27
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1516 
+</div><div class="ng-binding">
+  $ 302.62 k 
+</div><div class="ng-binding">
+  $ 28.53 M 
+</div><div class="ng-binding">
+  $ 22.78 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 151.60 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 28
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1830 
+</div><div class="ng-binding">
+  $ 110.44 k 
+</div><div class="ng-binding">
+  $ 23.05 M 
+</div><div class="ng-binding">
+  $ 21.96 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 274.48 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 29
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.06138 
+</div><div class="ng-binding">
+  $ 3.41 M 
+</div><div class="ng-binding">
+  $ 150.02 M 
+</div><div class="ng-binding">
+  $ 21.21 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.24 B 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 30
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 60.88 
+</div><div class="ng-binding">
+  $ 192.06 k 
+</div><div class="ng-binding">
+  $ 20.93 M 
+</div><div class="ng-binding">
+  $ 20.35 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.07 B 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 31
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.3653 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 19.51 M 
+</div><div class="ng-binding">
+  $ 19.51 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 219.18 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 32
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.6366 
+</div><div class="ng-binding">
+  $ 93.28 k 
+</div><div class="ng-binding">
+  $ 35.76 M 
+</div><div class="ng-binding">
+  $ 18.87 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 89.28 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 33
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.001500 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 17.36 M 
+</div><div class="ng-binding">
+  $ 17.36 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 15.00 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 34
+</div><div class="current-price-value ng-binding highlight-up value-up" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.009906 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 13.97 M 
+</div><div class="ng-binding">
+  $ 13.97 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding highlight-up">
+  $ 99.06 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 35
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01563 
+</div><div class="ng-binding">
+  $ 585.84 k 
+</div><div class="ng-binding">
+  $ 14.52 M 
+</div><div class="ng-binding">
+  $ 13.58 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 204.33 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 36
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 3.965 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 39.31 M 
+</div><div class="ng-binding">
+  $ 13.58 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.98 B 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 37
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01996 
+</div><div class="ng-binding">
+  $ 3,212.64 
+</div><div class="ng-binding">
+  $ 13.28 M 
+</div><div class="ng-binding">
+  $ 13.28 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 15.28 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 38
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.003554 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 13.87 M 
+</div><div class="ng-binding">
+  $ 13.21 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 74.63 M 
+</div><div class="ng-binding">
+  D 
+</div><div class="ng-binding">
+ 39
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2819 
+</div><div class="ng-binding">
+  $ 33.24 k 
+</div><div class="ng-binding">
+  $ 15.50 M 
+</div><div class="ng-binding">
+  $ 12.28 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 112.82 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 40
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.000 
+</div><div class="ng-binding">
+  $ 27.20 k 
+</div><div class="ng-binding">
+  $ 113.75 M 
+</div><div class="ng-binding">
+  $ 11.43 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 259.96 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 41
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.8295 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 11.22 M 
+</div><div class="ng-binding">
+  $ 11.22 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 82.95 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 42
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.02507 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 10.88 M 
+</div><div class="ng-binding">
+  $ 10.87 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 71.61 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 43
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1719 
+</div><div class="ng-binding">
+  $ 231.41 k 
+</div><div class="ng-binding">
+  $ 10.21 M 
+</div><div class="ng-binding">
+  $ 10.21 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 477.80 M 
+</div><div class="ng-binding">
+  B 
+</div><div class="ng-binding">
+ 44
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01512 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 9.68 M 
+</div><div class="ng-binding">
+  $ 9.52 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 151.23 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 45
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.000 
+</div><div class="ng-binding">
+  $ 273.61 k 
+</div><div class="ng-binding">
+  $ 10.31 M 
+</div><div class="ng-binding">
+  $ 9.10 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 755.39 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 46
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.004159 
+</div><div class="ng-binding">
+  $ 109.38 
+</div><div class="ng-binding">
+  $ 9.53 M 
+</div><div class="ng-binding">
+  $ 8.53 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 230.63 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 47
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.008663 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 8.30 M 
+</div><div class="ng-binding">
+  $ 8.29 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 8.66 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 48
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01316 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 8.38 M 
+</div><div class="ng-binding">
+  $ 8.29 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 13.16 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 49
+</div><div class="current-price-value ng-binding highlight-up value-up" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.5909 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 8.08 M 
+</div><div class="ng-binding">
+  $ 8.08 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 50
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.05293 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 7.48 M 
+</div><div class="ng-binding">
+  $ 7.48 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 51
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.02072 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 7.38 M 
+</div><div class="ng-binding">
+  $ 7.36 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 52
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2036 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 6.84 M 
+</div><div class="ng-binding">
+  $ 6.84 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 20.36 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 53
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.242 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 8.58 M 
+</div><div class="ng-binding">
+  $ 6.74 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 12.58 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 54
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1406 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 6.53 M 
+</div><div class="ng-binding">
+  $ 6.53 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 55
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.08948 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 6.37 M 
+</div><div class="ng-binding">
+  $ 6.15 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 26.83 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 56
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1136 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 6.44 M 
+</div><div class="ng-binding">
+  $ 5.51 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 113.57 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 57
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.09157 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 5.34 M 
+</div><div class="ng-binding">
+  $ 5.19 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 17.03 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 58
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1855 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 4.78 M 
+</div><div class="ng-binding">
+  $ 4.78 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 20.07 M 
+</div><div class="ng-binding">
+  D- 
+</div><div class="ng-binding">
+ 59
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.03342 
+</div><div class="ng-binding">
+  $ 49.81 k 
+</div><div class="ng-binding">
+  $ 4.80 M 
+</div><div class="ng-binding">
+  $ 4.79 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 112.88 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 60
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.02888 
+</div><div class="ng-binding">
+  $ 747.37 
+</div><div class="ng-binding">
+  $ 4.66 M 
+</div><div class="ng-binding">
+  $ 4.65 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 63.49 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 61
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.9996 
+</div><div class="ng-binding">
+  $ 47.71 k 
+</div><div class="ng-binding">
+  $ 178.72 M 
+</div><div class="ng-binding">
+  $ 4.56 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 131.77 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 62
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2071 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 5.69 M 
+</div><div class="ng-binding">
+  $ 4.53 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 8.28 M 
+</div><div class="ng-binding">
+  D- 
+</div><div class="ng-binding">
+ 63
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.08907 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 4.35 M 
+</div><div class="ng-binding">
+  $ 4.35 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 64
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.06450 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 4.26 M 
+</div><div class="ng-binding">
+  $ 4.21 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 56.76 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 65
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1624 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 4.10 M 
+</div><div class="ng-binding">
+  $ 4.10 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.62 B 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 66
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 9.346 
+</div><div class="ng-binding">
+  $ 33.94 k 
+</div><div class="ng-binding">
+  $ 4.75 M 
+</div><div class="ng-binding">
+  $ 4.10 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 160.77 M 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 67
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1621 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 3.99 M 
+</div><div class="ng-binding">
+  $ 3.99 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 16.16 M 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 68
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.002193 
+</div><div class="ng-binding">
+  $ 6,265.30 
+</div><div class="ng-binding">
+  $ 55.09 M 
+</div><div class="ng-binding">
+  $ 3.97 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 272.57 M 
+</div><div class="ng-binding">
+  C+ 
+</div><div class="ng-binding">
+ 69
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.02064 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 3.97 M 
+</div><div class="ng-binding">
+  $ 3.97 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 20.64 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 70
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2722 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 4.16 M 
+</div><div class="ng-binding">
+  $ 3.89 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 27.22 M 
+</div><div class="ng-binding">
+  D 
+</div><div class="ng-binding">
+ 71
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1863 
+</div><div class="ng-binding">
+  $ 699.55 k 
+</div><div class="ng-binding">
+  $ 4.48 M 
+</div><div class="ng-binding">
+  $ 3.75 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 186.30 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 72
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.005520 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 6.56 M 
+</div><div class="ng-binding">
+  $ 3.71 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 5.52 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 73
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.08325 
+</div><div class="ng-binding">
+  $ 36.93 
+</div><div class="ng-binding">
+  $ 3.71 M 
+</div><div class="ng-binding">
+  $ 3.69 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 2.76 B 
+</div><div class="ng-binding">
+  C- 
+</div><div class="ng-binding">
+ 74
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 3.097 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 3.64 M 
+</div><div class="ng-binding">
+  $ 3.64 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 157.99 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 75
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.004839 
+</div><div class="ng-binding">
+  $ 28.29 k 
+</div><div class="ng-binding">
+  $ 3.47 M 
+</div><div class="ng-binding">
+  $ 3.36 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 48.13 M 
+</div><div class="ng-binding">
+  D 
+</div><div class="ng-binding">
+ 76
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.005974 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 3.26 M 
+</div><div class="ng-binding">
+  $ 3.26 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 3.88 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 77
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.03622 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 3.18 M 
+</div><div class="ng-binding">
+  $ 3.17 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 7.43 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 78
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.016 
+</div><div class="ng-binding">
+  $ 2.70 M 
+</div><div class="ng-binding">
+  $ 7.68 M 
+</div><div class="ng-binding">
+  $ 3.15 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 101.60 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 79
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2682 
+</div><div class="ng-binding">
+  $ 890.01 k 
+</div><div class="ng-binding">
+  $ 3.11 M 
+</div><div class="ng-binding">
+  $ 3.11 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 107.28 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 80
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.03970 
+</div><div class="ng-binding">
+  $ 867.47 
+</div><div class="ng-binding">
+  $ 4.78 M 
+</div><div class="ng-binding">
+  $ 3.02 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 39.70 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 81
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.0002268 
+</div><div class="ng-binding">
+  $ 301.14 
+</div><div class="ng-binding">
+  $ 3.40 M 
+</div><div class="ng-binding">
+  $ 2.95 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 224.57 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 82
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01164 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.90 M 
+</div><div class="ng-binding">
+  $ 2.90 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 11.64 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 83
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01905 
+</div><div class="ng-binding">
+  $ 1,870.80 
+</div><div class="ng-binding">
+  $ 3.94 M 
+</div><div class="ng-binding">
+  $ 2.79 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 129.67 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 84
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.03100 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 2.79 M 
+</div><div class="ng-binding">
+  $ 2.76 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 43.25 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 85
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2965 
+</div><div class="ng-binding">
+  $ 7.16 
+</div><div class="ng-binding">
+  $ 2.80 M 
+</div><div class="ng-binding">
+  $ 2.72 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 20.75 M 
+</div><div class="ng-binding">
+  D- 
+</div><div class="ng-binding">
+ 86
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.003435 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.71 M 
+</div><div class="ng-binding">
+  $ 2.71 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 1.03 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 87
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.1509 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.66 M 
+</div><div class="ng-binding">
+  $ 2.66 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 273.56 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 88
+</div><div class="current-price-value ng-binding highlight-up value-up" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.6591 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.63 M 
+</div><div class="ng-binding">
+  $ 2.63 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  - 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 89
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.0006805 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 2.60 M 
+</div><div class="ng-binding">
+  $ 2.60 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 3.40 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 90
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.01270 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 2.55 M 
+</div><div class="ng-binding">
+  $ 2.55 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 474.07 k 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 91
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.5305 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 2.65 M 
+</div><div class="ng-binding">
+  $ 2.53 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 97.37 M 
+</div><div class="ng-binding">
+  E+ 
+</div><div class="ng-binding">
+ 92
+</div><div class="current-price-value ng-binding highlight-up value-up" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.08764 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.57 M 
+</div><div class="ng-binding">
+  $ 2.38 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 8.76 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 93
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.03879 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 3.60 M 
+</div><div class="ng-binding">
+  $ 2.35 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 349.11 M 
+</div><div class="ng-binding">
+  C 
+</div><div class="ng-binding">
+ 94
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.3037 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 48.28 M 
+</div><div class="ng-binding">
+  $ 2.32 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 18.32 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 95
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2367 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.20 M 
+</div><div class="ng-binding">
+  $ 2.20 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 236.67 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 96
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2975 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 2.70 M 
+</div><div class="ng-binding">
+  $ 2.19 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 19.81 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 97
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 1.059 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 7.73 M 
+</div><div class="ng-binding">
+  $ 2.16 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 47.20 M 
+</div><div class="ng-binding">
+  D 
+</div><div class="ng-binding">
+ 98
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.004764 
+</div><div class="ng-binding">
+  - 
+</div><div class="ng-binding">
+  $ 2.15 M 
+</div><div class="ng-binding">
+  $ 2.15 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 9.53 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 99
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.08862 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 4.98 M 
+</div><div class="ng-binding">
+  $ 2.06 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 88.62 M 
+</div><div class="ng-binding"> 
+</div><div class="ng-binding">
+ 100
+</div><div class="current-price-value ng-binding" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+  $ 0.2432 
+</div><div class="ng-binding">
+  $ 0 
+</div><div class="ng-binding">
+  $ 1.99 M 
+</div><div class="ng-binding">
+  $ 1.99 M 
+</div><div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}" class="ng-binding">
+  $ 12.95 M 
+</div><div class="ng-binding"> 
+</div>

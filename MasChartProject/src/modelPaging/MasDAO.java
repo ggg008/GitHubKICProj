@@ -41,10 +41,10 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
 			
-			String sql = "SELECT count(*) FROM chartCandlestick";
+			String sql = "SELECT count(*) FROM chart_candlesticks";
 			pstmt = conn.prepareStatement(sql);
 			if(chartListTO != null) {
-				sql = "SELECT count(*) FROM chartCandlestick WHERE candleKey LIKE ?";
+				sql = "SELECT count(*) FROM chart_candlesticks WHERE candleKey LIKE ?";
 				pstmt = conn.prepareStatement(sql);
 				String range = chartListTO.getFromSymbol() + chartListTO.getToSymbol() + timeOption[0] + "%";				
 				pstmt.setString(1,  range);				
@@ -88,7 +88,7 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
 
-			String sql = "SELECT * FROM chartCandlestick WHERE candleKey LIKE ?";
+			String sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
 			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
 																											// 옵션
 			pstmt.setString(1, cTo.getCandleKey() + "%");
@@ -133,7 +133,7 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
 
-			String sql = "SELECT * FROM chartCandlestick WHERE candleKey LIKE ?";
+			String sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
 			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
 																											// 옵션
 			pstmt.setString(1, cliTo.getFromSymbol() + cliTo.getToSymbol() + timeOption[0] + "%");
@@ -185,7 +185,7 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();
 
-			String sql = "INSERT INTO chartCandlestick VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
+			String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cTo.getCandleKey());
 			pstmt.setString(2, cTo.getCandleJSON());
@@ -225,7 +225,7 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();
 
-			String sql = "INSERT INTO chartCandlestick VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
+			String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
 			pstmt = conn.prepareStatement(sql);
 			for (CandlestickTO cTo : cToList) {
 				pstmt.setString(1, cTo.getCandleKey());

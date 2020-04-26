@@ -1,0 +1,100 @@
+1 Bitcoin BTC BTC $ 7,561.47 $ 204.74 M $ 3.26 B $ 1.88 B $ 138.72 B B+ -0.03% -0.03%
+2 Ethereum ETH ETH $ 194.06 $ 68.81 M $ 1.58 B $ 843.17 M $ 21.48 B B+ -0.41% -0.41%
+3 EOS EOS EOS $ 2.708 $ 3.69 M $ 405.28 M $ 228.32 M $ 2.76 B C+ -0.99% -0.99%
+4 Bitcoin Cash BCH BCH $ 239.44 $ 9.00 M $ 360.01 M $ 199.88 M $ 4.40 B C -0.65% -0.65%
+5 Litecoin LTC LTC $ 44.48 $ 10.38 M $ 301.39 M $ 184.82 M $ 2.89 B B- -1.37% -1.37%
+6 Bitcoin SV BSV BSV $ 195.16 $ 1.40 M $ 220.22 M $ 155.40 M $ 3.59 B D+ -0.35% -0.35%
+7 Ethereum Classic ETC ETC $ 5.863 $ 1.80 M $ 254.07 M $ 155.15 M $ 671.61 M C 2.99% 2.99%
+8 Chainlink LINK LINK $ 3.724 $ 13.43 M $ 108.37 M $ 102.85 M $ 3.72 B -2.54% -2.54%
+9 XRP XRP XRP $ 0.1944 $ 14.87 M $ 151.43 M $ 99.59 M $ 19.44 B B- -0.61% -0.61%
+10 Dash DASH DASH $ 86.39 $ 1.83 M $ 132.15 M $ 97.14 M $ 817.12 M C+ 4.40% 4.40%
+11 Tezos XTZ XTZ $ 2.790 $ 16.73 M $ 91.10 M $ 88.80 M $ 2.26 B C+ 2.27% 2.27%
+12 TRON TRX TRX $ 0.01397 $ 157.46 k $ 99.72 M $ 73.86 M $ 932.42 M C -1.00% -1.00%
+13 Okex OKB OKB $ 4.879 $ 5,795.87 $ 73.62 M $ 72.77 M $ 1.46 B -0.71% -0.71%
+14 Binance Coin BNB BNB $ 16.20 $ 35.23 M $ 163.78 M $ 68.67 M $ 2.52 B C+ 0.37% 0.37%
+15 Cosmos ATOM ATOM $ 2.827 $ 2.09 M $ 71.24 M $ 54.79 M $ 539.08 M C 1.29% 1.29%
+16 Kyber Network KNC KNC $ 0.6105 $ 7.68 M $ 46.40 M $ 46.24 M $ 128.78 M 12.83% 12.83%
+17 ZCash ZEC ZEC $ 44.58 $ 542.99 k $ 68.44 M $ 35.28 M $ 402.21 M B- -0.11% -0.11%
+18 True Chain TRUE TRUE $ 0.2659 - $ 32.00 M $ 31.86 M $ 26.59 M -1.44% -1.44%
+19 Crypto.com MCO MCO $ 5.066 $ 0 $ 30.94 M $ 30.77 M $ 160.03 M -1.03% -1.03%
+20 NEO NEO NEO $ 8.382 $ 476.70 k $ 81.07 M $ 30.79 M $ 838.20 M C+ 1.65% 1.65%
+21 Ontology ONT ONT $ 0.4648 $ 0 $ 32.63 M $ 28.44 M $ 296.22 M C -0.46% -0.46%
+22 QTUM QTUM QTUM $ 1.484 $ 49.80 k $ 99.30 M $ 26.53 M $ 148.38 M C- 2.69% 2.69%
+23 Algorand ALGO ALGO $ 0.2134 $ 1.71 M $ 29.61 M $ 24.22 M $ 136.88 M 0.09% 0.09%
+24 Tether USDT USDT $ 1.001 $ 7.96 M $ 38.27 M $ 23.85 M $ 4.65 B 0.00% 0.00%
+25 Cardano ADA ADA $ 0.04218 $ 348.14 k $ 26.28 M $ 23.77 M $ 1.09 B B- -2.09% -2.09%
+26 Bytom BTM BTM $ 0.05996 - $ 23.76 M $ 23.18 M $ 84.37 M D 0.25% 0.25%
+27 Enjin Coin ENJ ENJ $ 0.1516 $ 302.62 k $ 28.53 M $ 22.78 M $ 151.60 M 8.60% 8.60%
+28 Basic Attention Token BAT BAT $ 0.1830 $ 110.44 k $ 23.05 M $ 21.96 M $ 274.48 M 0.25% 0.25%
+29 Stellar XLM XLM $ 0.06138 $ 3.41 M $ 150.02 M $ 21.21 M $ 1.24 B C+ -2.31% -2.31%
+30 Monero XMR XMR $ 60.88 $ 192.06 k $ 20.93 M $ 20.35 M $ 1.07 B C+ -0.54% -0.54%
+31 Creditcoin CRE CRE $ 0.3653 - $ 19.51 M $ 19.51 M $ 219.18 M -1.00% -1.00%
+32 OmiseGo OMG OMG $ 0.6366 $ 93.28 k $ 35.76 M $ 18.87 M $ 89.28 M C- 1.83% 1.83%
+33 SwftCoin SWFTC SWFTC $ 0.001500 - $ 17.36 M $ 17.36 M $ 15.00 M 2.52% 2.52%
+34 Orbs ORBS ORBS $ 0.009906 - $ 13.97 M $ 13.97 M $ 99.06 M 5.65% 5.65%
+35 DigiByte DGB DGB $ 0.01563 $ 585.84 k $ 14.52 M $ 13.58 M $ 204.33 M C- 21.16% 21.16%
+36 Huobi Token HT HT $ 3.965 $ 0 $ 39.31 M $ 13.58 M $ 1.98 B -0.68% -0.68%
+37 Ravencoin RVN RVN $ 0.01996 $ 3,212.64 $ 13.28 M $ 13.28 M $ 15.28 M C- 10.92% 10.92%
+38 IOS token IOST IOST $ 0.003554 $ 0 $ 13.87 M $ 13.21 M $ 74.63 M D 0.00% 0.00%
+39 ICON Project ICX ICX $ 0.2819 $ 33.24 k $ 15.50 M $ 12.28 M $ 112.82 M C- 1.75% 1.75%
+40 Paxos Standard PAX PAX $ 1.000 $ 27.20 k $ 113.75 M $ 11.43 M $ 259.96 M 0.08% 0.08%
+41 Band Protocol BAND BAND $ 0.8295 - $ 11.22 M $ 11.22 M $ 82.95 M 5.38% 5.38%
+42 YOU Chain YOU YOU $ 0.02507 - $ 10.88 M $ 10.87 M $ 71.61 M -6.44% -6.44%
+43 IOTA MIOTA MIOTA $ 0.1719 $ 231.41 k $ 10.21 M $ 10.21 M $ 477.80 M B 0.94% 0.94%
+44 Matic Network MATIC MATIC $ 0.01512 - $ 9.68 M $ 9.52 M $ 151.23 M -0.50% -0.50%
+45 USD Coin USDC USDC $ 1.000 $ 273.61 k $ 10.31 M $ 9.10 M $ 755.39 M 0.00% 0.00%
+46 VeChain VET VET $ 0.004159 $ 109.38 $ 9.53 M $ 8.53 M $ 230.63 M C 0.00% 0.00%
+47 GIFTO GTO GTO $ 0.008663 - $ 8.30 M $ 8.29 M $ 8.66 M -0.89% -0.89%
+48 Kcash KCASH KCASH $ 0.01316 - $ 8.38 M $ 8.29 M $ 13.16 M -4.40% -4.40%
+49 Kava KAVA KAVA $ 0.5909 - $ 8.08 M $ 8.08 M - 5.71% 5.71%
+50 Cartesi CTSI CTSI $ 0.05293 - $ 7.48 M $ 7.48 M - -0.14% -0.14%
+51 Fetch.AI FET FET $ 0.02072 - $ 7.38 M $ 7.36 M - 13.69% 13.69%
+52 Molecular Future MOF MOF $ 0.2036 - $ 6.84 M $ 6.84 M $ 20.36 M -11.24% -11.24%
+53 Gas GAS GAS $ 1.242 $ 0 $ 8.58 M $ 6.74 M $ 12.58 M 3.56% 3.56%
+54 WazirX WRX WRX $ 0.1406 - $ 6.53 M $ 6.53 M - 2.88% 2.88%
+55 Cortex CTXC CTXC $ 0.08948 $ 0 $ 6.37 M $ 6.15 M $ 26.83 M -1.05% -1.05%
+56 Theta THETA THETA $ 0.1136 - $ 6.44 M $ 5.51 M $ 113.57 M 11.51% 11.51%
+57 ArcBlock ABT ABT $ 0.09157 - $ 5.34 M $ 5.19 M $ 17.03 M -2.89% -2.89%
+58 ARK ARK ARK $ 0.1855 $ 0 $ 4.78 M $ 4.78 M $ 20.07 M D- 5.69% 5.69%
+59 Hedera Hashgraph HBAR HBAR $ 0.03342 $ 49.81 k $ 4.80 M $ 4.79 M $ 112.88 M 0.45% 0.45%
+60 Decentraland MANA MANA $ 0.02888 $ 747.37 $ 4.66 M $ 4.65 M $ 63.49 M -1.55% -1.55%
+61 True USD TUSD TUSD $ 0.9996 $ 47.71 k $ 178.72 M $ 4.56 M $ 131.77 M 0.08% 0.08%
+62 Nuls NULS NULS $ 0.2071 - $ 5.69 M $ 4.53 M $ 8.28 M D- -2.42% -2.42%
+63 Ontology Gas ONGAS ONGAS $ 0.08907 - $ 4.35 M $ 4.35 M - 2.08% 2.08%
+64 aelf ELF ELF $ 0.06450 $ 0 $ 4.26 M $ 4.21 M $ 56.76 M -1.73% -1.73%
+65 Hyperion HYN HYN $ 0.1624 - $ 4.10 M $ 4.10 M $ 1.62 B -1.01% -1.01%
+66 Bitcoin Gold BTG BTG $ 9.346 $ 33.94 k $ 4.75 M $ 4.10 M $ 160.77 M C- -0.24% -0.24%
+67 Steem STEEM STEEM $ 0.1621 - $ 3.99 M $ 3.99 M $ 16.16 M C+ -0.97% -0.97%
+68 Dogecoin DOGE DOGE $ 0.002193 $ 6,265.30 $ 55.09 M $ 3.97 M $ 272.57 M C+ 7.41% 7.41%
+69 Civic CVC CVC $ 0.02064 $ 0 $ 3.97 M $ 3.97 M $ 20.64 M 1.11% 1.11%
+70 Nebulas NAS NAS $ 0.2722 - $ 4.16 M $ 3.89 M $ 27.22 M D 0.45% 0.45%
+71 0x ZRX ZRX $ 0.1863 $ 699.55 k $ 4.48 M $ 3.75 M $ 186.30 M 0.22% 0.22%
+72 Measurable Data Token MSDT MSDT $ 0.005520 - $ 6.56 M $ 3.71 M $ 5.52 M -1.35% -1.35%
+73 Aion AION AION $ 0.08325 $ 36.93 $ 3.71 M $ 3.69 M $ 2.76 B C- -7.48% -7.48%
+74 Zynecoin ZYN ZYN $ 3.097 - $ 3.64 M $ 3.64 M $ 157.99 M 5.11% 5.11%
+75 Zilliqa ZIL ZIL $ 0.004839 $ 28.29 k $ 3.47 M $ 3.36 M $ 48.13 M D 1.59% 1.59%
+76 Genaro Network GNX GNX $ 0.005974 - $ 3.26 M $ 3.26 M $ 3.88 M -5.95% -5.95%
+77 TenX PAY PAY $ 0.03622 $ 0 $ 3.18 M $ 3.17 M $ 7.43 M -4.01% -4.01%
+78 Waves WAVES WAVES $ 1.016 $ 2.70 M $ 7.68 M $ 3.15 M $ 101.60 M C -0.49% -0.49%
+79 Sologenic SOLO SOLO $ 0.2682 $ 890.01 k $ 3.11 M $ 3.11 M $ 107.28 M -1.65% -1.65%
+80 Golem Network Token GNT GNT $ 0.03970 $ 867.47 $ 4.78 M $ 3.02 M $ 39.70 M -1.87% -1.87%
+81 BitTorrent BTT BTT $ 0.0002268 $ 301.14 $ 3.40 M $ 2.95 M $ 224.57 M 0.00% 0.00%
+82 VITE VITE VITE $ 0.01164 - $ 2.90 M $ 2.90 M $ 11.64 M 2.67% 2.67%
+83 Status Network Token SNT SNT $ 0.01905 $ 1,870.80 $ 3.94 M $ 2.79 M $ 129.67 M -1.95% -1.95%
+84 Loopring LRC LRC $ 0.03100 $ 0 $ 2.79 M $ 2.76 M $ 43.25 M -0.24% -0.24%
+85 Waltonchain WTC WTC $ 0.2965 $ 7.16 $ 2.80 M $ 2.72 M $ 20.75 M D- -1.48% -1.48%
+86 OriginSport OGSP OGSP $ 0.003435 - $ 2.71 M $ 2.71 M $ 1.03 M 2.91% 2.91%
+87 apM Coin APM APM $ 0.1509 - $ 2.66 M $ 2.66 M $ 273.56 M -0.94% -0.94%
+88 Solana SOLAN SOLAN $ 0.6591 - $ 2.63 M $ 2.63 M - 0.46% 0.46%
+89 Tripio TRIO TRIO $ 0.0006805 $ 0 $ 2.60 M $ 2.60 M $ 3.40 M 12.50% 12.50%
+90 Internet Node Token INT INT $ 0.01270 $ 0 $ 2.55 M $ 2.55 M $ 474.07 k 1.82% 1.82%
+91 Bitcoin Diamond BCD BCD $ 0.5305 $ 0 $ 2.65 M $ 2.53 M $ 97.37 M E+ -0.57% -0.57%
+92 IoT Chain ITC ITC $ 0.08764 - $ 2.57 M $ 2.38 M $ 8.76 M 1.67% 1.67%
+93 NEM XEM XEM $ 0.03879 $ 0 $ 3.60 M $ 2.35 M $ 349.11 M C -0.39% -0.39%
+94 Beam BEAM BEAM $ 0.3037 - $ 48.28 M $ 2.32 M $ 18.32 M 5.17% 5.17%
+95 Origin Protocol OGN OGN $ 0.2367 - $ 2.20 M $ 2.20 M $ 236.67 M 5.03% 5.03%
+96 Metal MTL MTL $ 0.2975 $ 0 $ 2.70 M $ 2.19 M $ 19.81 M -2.98% -2.98%
+97 HyperCash HC HC $ 1.059 - $ 7.73 M $ 2.16 M $ 47.20 M D 0.43% 0.43%
+98 FLETA FLETA FLETA $ 0.004764 - $ 2.15 M $ 2.15 M $ 9.53 M -1.56% -1.56%
+99 Seele SEELE SEELE $ 0.08862 $ 0 $ 4.98 M $ 2.06 M $ 88.62 M 7.23% 7.23%
+100 Populous PPT PPT $ 0.2432 $ 0 $ 1.99 M $ 1.99 M $ 12.95 M -2.66% -2.66%
