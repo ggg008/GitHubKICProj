@@ -520,9 +520,9 @@ public class ChartDataCollector
 				
 				document = Jsoup.parse(driver.getPageSource());
 				
-				if(!System.getProperty("os.name").contains("Win")) {
-					testerMain.writeLog(this.getClass().getName(), driver.getPageSource(), "html");					
-				}
+//				if(!System.getProperty("os.name").contains("Win")) {
+//					testerMain.writeLog(this.getClass().getName(), driver.getPageSource(), "html");					
+//				}
 				
 				Elements titles = document.select(selectorCC);
 				

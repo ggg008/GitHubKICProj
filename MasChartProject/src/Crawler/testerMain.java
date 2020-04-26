@@ -13,6 +13,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -35,7 +36,10 @@ public class testerMain
 		
 		testerMain tMain = new testerMain();
 		
-		tMain.testHtmlParse();
+//		tMain.testHtmlParse();
+		
+		Thread thread = new Thread(tMain.new TestCrawling());
+		thread.start();
 		
 		
 		String fsymPrice = "5,795.87";		
@@ -206,33 +210,46 @@ public class testerMain
 		@Override
 		public void run()
 		{
+			String url1 = "https://intoli.com/blog/making-chrome-headless-undetectable/chrome-headless-test.html";
+			String url2 = "http://luka7.net/";
+			String url3 = "https://www.cryptocompare.com/coins/list/USD/1";
+			
 			// TODO Auto-generated method stub
-			String parseUrl = "https://www.coingecko.com/";
+			String parseUrl = url1;
 			String selectorCMC = ".cmc-table-row";
 			String selectorGecko = "div.sort, .table, .mb-0 tbody tr";
 			Document document = null;
 			try {
-				document = Jsoup.connect(parseUrl).get();
+				document = Jsoup.connect(parseUrl).timeout(10000)
+						.userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36")
+//                        .header("Origin", "http://tistory.com/")
+//                        .header("Referer", "https://www.tistory.com/auth/login")
+//                        .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+//                        .header("Content-Type", "application/x-www-form-urlencoded")
+//                        .header("Accept-Encoding", "gzip, deflate, br")
+//                        .header("Accept-Language", "ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4")
+                        //.method(Connection.Method.GET)
+                        .get();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 //								System.out.println(document);
-//								writeLog(document.toString());
+			writeLog(null, document.toString(), "html");
 
 			Elements titles = document.select(selectorGecko);
 
 			// lock
-			for (int i = titles.size(); i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
-				Element element = titles.get(i);
-				if (i == 0)
-					continue;
-
-//					System.out.println(element.text()); // -- 4. 원하는 요소가 출력된다.
-//					String[] strElt = element.text().split(" ");
-//					System.out.printf("%s-%s-%s-%s-%s\n", strElt[0], strElt[1], strElt[2], strElt[3], strElt[4]);
-
-			}
+//			for (int i = titles.size(); i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
+//				Element element = titles.get(i);
+//				if (i == 0)
+//					continue;
+//
+////					System.out.println(element.text()); // -- 4. 원하는 요소가 출력된다.
+////					String[] strElt = element.text().split(" ");
+////					System.out.printf("%s-%s-%s-%s-%s\n", strElt[0], strElt[1], strElt[2], strElt[3], strElt[4]);
+//
+//			}
 
 		}
 	}
