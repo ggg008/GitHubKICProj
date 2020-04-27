@@ -45,13 +45,14 @@ public class MasController extends HttpServlet
 		InetAddress ip;
 		try {
 			ip = InetAddress.getLocalHost();
-			System.out.println("Host Name = [" + ip.getHostName() + "]");
-			System.out.println("Host Address = [" + ip.getHostAddress() + "]"); 
+			System.out.println("-Host Name = [" + ip.getHostName() + "]");
+			System.out.println("-Host Address = [" + ip.getHostAddress() + "]"); 
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		System.out.println("-os.name : " + System.getProperty("os.name"));
 		//윈도에서 실행 크라울링 안하기
 		if(!System.getProperty("os.name").contains("Win"))
 			chartDataCollector = new ChartDataCollector();

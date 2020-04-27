@@ -115,13 +115,7 @@
 	        trackBorderColor: '#C0C0C8'
 	    },
 	
-	    exporting: {
-	        buttons: {
-	            contextButton: {
-	                text: 'Export'
-	            }
-	        }
-	    },
+	    
 	    loading: {
 	        hideDuration: 100,
 	        showDuration: 100
@@ -171,7 +165,9 @@
 	}
 	
 	
-	var subtitleDeco = 'Countdown To Bar Close ▶ ';
+	var subtitleDecoLg = 'Countdown To Bar Close ▶ ';
+	var subtitleDecoSm = 'Bar Close ▶  ';
+	var subtitleDecoTiny = '▶  ';
 	var timeDeco = '--:--';
 	
 	var draw3 = function (paramHistoryTime, paramFromSymbol, paramToSymbol) {
@@ -256,22 +252,26 @@
     			
     			chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
     		});
+
+	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
 	
 	    }).done(function () {
 	    	
 	        chart = Highcharts.stockChart('container', {
 	
 	            title: {
-	                text: 'BTC/USD' + historyTime.replace('histo', ' ')
+	                text: 375 < screen.width ? fromSymbol + toSymbol + historyTime.replace('histo', ' ') : ''
 	            },
 	
 	            rangeSelector: {
 	                buttons: customBtns,
 	                selected: selBtn,
-	                inputEnabled: false
+	                inputEnabled: false,
+	                //y : 375 < screen.width ? 0 : -35
+	                
 	            },
 	            series: [{
-	                name: 'BTC/USD',
+	                name: fromSymbol + toSymbol,
 	                type: 'candlestick',
 	                data: chartdata,
 	                tooltip: {
@@ -280,11 +280,11 @@
 	            }],
 	
 	            subtitle: {
-	                text: subtitleDeco + timeDeco,
+	                text: (screen.width < 450 ? subtitleDecoSm : subtitleDecoLg) + timeDeco,
 	                align: 'right',
 	                floating: true,
 	                x: 0,
-	                y: +49
+	                y: 375 < screen.width ? 52 : 42 
 	            },
 	
 	            xAxis: {
@@ -294,6 +294,13 @@
 	                    }
 	                },
 	            },
+	            exporting: {
+	    	        buttons: {
+	    	            contextButton: {
+	    	                text: 375 < screen.width ? 'Export' : ''
+	    	            }
+	    	        }
+	    	    },
 	
 	
 	        });
@@ -319,6 +326,8 @@
 	        //			chart.rangeSelector.buttons.splice(1, 2);		
 	        //			chart.reflow();
 	        //			console.log(chart.rangeSelector.buttonOptions);
+	        
+	        console.log(chart);
 	    });
 	
 	}
@@ -401,8 +410,12 @@
 	        
 	        var log = '\n log : ';
 	        log += limit;
-	        $('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr);
+	        
+	        
+	        
+	        $('.highcharts-subtitle').eq(0).html((screen.width < 450 ? subtitleDecoSm : subtitleDecoLg) + remainTimeStr);
 //	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
+	        console.log(chart);
 	    }
 	
 	    if (updateTime <= standardTime + sec) {
@@ -415,5 +428,12 @@
 	    }
 	
 	}, 1000);
+	
+	$(window).resize(function() {
+		//창크기 변화 감지
+		draw3();
+	});
+
+
 	
 	
