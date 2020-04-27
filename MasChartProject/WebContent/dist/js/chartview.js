@@ -174,7 +174,7 @@
 	var subtitleDeco = 'Countdown To Bar Close ▶ ';
 	var timeDeco = '--:--';
 	
-	var draw3 = function (paramHistoryTime, paramSymbolA, paramSymbolB) {
+	var draw3 = function (paramHistoryTime, paramFromSymbol, paramToSymbol) {
 	
 	    console.log('call draw3');
 		
@@ -183,8 +183,8 @@
         }
 	
 	    historyTime = paramHistoryTime != undefined && paramHistoryTime !== '' ? paramHistoryTime : historyTime;
-	    fromSymbol = paramSymbolA != undefined && paramSymbolA !== '' ? paramSymbolA : fromSymbol;
-	    toSymbol = paramSymbolB != undefined && paramSymbolB !== '' ? paramSymbolB : toSymbol;
+	    fromSymbol = paramFromSymbol != undefined && paramFromSymbol !== '' ? paramFromSymbol : fromSymbol;
+	    toSymbol = paramToSymbol != undefined && paramToSymbol !== '' ? paramToSymbol : toSymbol;
 	
 	    //input cookie
 	    var date = new Date();
