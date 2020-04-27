@@ -624,6 +624,7 @@ public class ChartDataCollector
 			
 			if(this.crawlingThread != null ) {
 				driver.close();
+				driver = null;
 				driverInit();
 				this.crawlingThread.interrupt();
 				System.out.println("Thread state : " +  this.crawlingThread.getState() );
