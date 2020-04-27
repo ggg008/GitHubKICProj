@@ -155,6 +155,7 @@
 	var standardTime = 0;
 	var updateTime = 0;
 	var timeUnit = 0;
+	var preSize = screen.width;
 	
 	var timeSetter = function () {	
 	    //갱신 시간 계산 알고리즘
@@ -260,7 +261,7 @@
 	        chart = Highcharts.stockChart('container', {
 	
 	            title: {
-	                text: 375 < screen.width ? fromSymbol + toSymbol + historyTime.replace('histo', ' ') : ''
+	                text: 375 < screen.width ? fromSymbol + '/' + toSymbol + historyTime.replace('histo', ' ') : ''
 	            },
 	
 	            rangeSelector: {
@@ -431,7 +432,11 @@
 	
 	$(window).resize(function() {
 		//창크기 변화 감지
-		draw3();
+		if( (375 < preSize && screen.width <= 375) || ( preSize <= 375 && 375 < screen.width )){
+			preSize = screen.width;
+			draw3();
+		}
+		
 	});
 
 
