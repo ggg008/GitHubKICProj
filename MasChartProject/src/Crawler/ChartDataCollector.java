@@ -63,7 +63,7 @@ public class ChartDataCollector
 	ArrayList<RunnableCrawlingSelenium> crawlingList = new ArrayList<>();
 	
 	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
-	int houwManyDriver = 3;
+	int houwManyDriver = 1;
 	int count = 0;
 	
 	public ChartDataCollector()

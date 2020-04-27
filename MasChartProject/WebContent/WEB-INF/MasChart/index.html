@@ -1147,14 +1147,20 @@
 						
 				    	$('#welcomehtml').text(' Welcome ' + json.sessID + '!');
 
-						
+						/*
 						if(json.sessID === 'pepe' ){
 							$('#userPic').attr("src", 'assets/images/users/punch.gif');
 							
 						} else {
 							$('#userPic').attr("src", 'assets/images/users/1.jpg');
 						}						
+						*/
 						
+						if(json.userImg % 2 == 0) {
+							$('#userPic').attr("src", 'assets/images/users/6.jpg');
+						} else {
+							$('#userPic').attr("src", 'assets/images/users/2.jpg');
+						}
 						
 					} else {
 						//alert('로그아웃');

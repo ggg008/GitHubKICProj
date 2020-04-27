@@ -4,6 +4,8 @@
 <% 
     JSONObject result = new JSONObject();
 	result.put("sessID", session.getAttribute("sess_id"));	
+	result.put("userImg", session.getAttribute("tempImg"));	
+	
 	
 	out.println(result);
 	
