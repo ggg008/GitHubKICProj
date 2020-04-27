@@ -38,7 +38,7 @@ public class ChartDataCollector
 	ArrayList<ChartListInfoTOTemp> restAPIs = new ArrayList<>();
 	
 	//시간관련
-	long myTimeWeight = 4; //갱신 시간이 늦어서 추가
+	long myTimeWeight = 2; //갱신 시간이 늦어서 추가
 	long utcWeight = -2 + myTimeWeight;//utc 시간보정	
 	String[] timeKeys = {"minute", "hour", "day"};	
 	HashMap<String, Long> timeUnits = new HashMap<String, Long>();	
@@ -61,8 +61,9 @@ public class ChartDataCollector
 	
 //	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
 //	int houwManyDriver = 1;
-
 	int count = 0;
+	
+	String systemOs = System.getProperty("os.name");
 	
 	public ChartDataCollector()
 	{
@@ -119,8 +120,8 @@ public class ChartDataCollector
 		Path diverPath = null;
 		String chromeDriver = "v81";
 		try {
-			System.out.println("-실행환경 : " + System.getProperty("os.name"));
-			if(System.getProperty("os.name").contains("Win")) {
+			System.out.println("-실행환경 : " + systemOs);
+			if(systemOs.contains("Win")) {
 				Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");	
 				
 				String tomcatPath = System.getProperty("catalina.base");
@@ -222,10 +223,13 @@ public class ChartDataCollector
 							}
 						}
 					}
-					RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
 					
-					Thread thread = new Thread(target);
-					thread.start();
+					if(!systemOs.contains("Win")) {
+						RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
+						
+						Thread thread = new Thread(target);
+						thread.start();
+					}
 					
 //					if(driverMasters.size() <= count ) {
 //						count = 0;
@@ -556,7 +560,7 @@ public class ChartDataCollector
 				System.out.println("-셀레니움 쓰레드 파싱 진입 : " + this);
 				document = Jsoup.parse(driver.getPageSource());
 				
-//				if(!System.getProperty("os.name").contains("Win")) {
+//				if(!systemOs.contains("Win")) {
 //					testerMain.writeLog(this.getClass().getName(), driver.getPageSource(), "html");					
 //				}
 				
