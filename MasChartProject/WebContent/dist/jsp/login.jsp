@@ -10,11 +10,11 @@
     
     out.println("<script type='text/javascript'>");
     if(flag == 1) {
+    	
           session.setAttribute("sess_id", id);
-          
           session.setAttribute("tempImg", Math.floor((Math.random() * 10) + 1));
           
-          out.println("alert('로그인 되었습니다.');");
+          //out.println("alert('로그인 되었습니다.');");
           out.println("location.href='index.do';");
     } else if(flag == 0){
           out.println("alert('아이디 혹은 비밀번호를 입력해주세요.');");
