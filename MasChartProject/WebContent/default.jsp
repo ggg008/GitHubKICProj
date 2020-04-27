@@ -2,4 +2,6 @@
     pageEncoding="UTF-8"%>
 <%
 	response.sendRedirect("./index.do");
+	//response.sendRedirect("./error.do");
+	//response.sendRedirect("./chartList.do?historyTime=hour&fsym=BTC&tsym=USD");
 %>

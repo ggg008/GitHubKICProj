@@ -2,6 +2,9 @@ package servlet;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 import subController.LoginAction;
 import subController.LoginOkAction;
 import subController.LogoutOkAction;
+
+import Crawler.ChartDataCollector;
+import Crawler.SeleniumTest;
+import modelPaging.CandlestickTO;
+import modelPaging.MasDAO;
+import subController.ChartAction;
+
 import subController.MasAction;
 import subController.SignupAction;
 import subController.SignupOkAction;
@@ -24,7 +34,26 @@ import subController.SignupOkAction;
 public class MasController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
+	ChartDataCollector chartDataCollector;
 
+	public MasController()
+	{
+		// TODO Auto-generated constructor stub
+		super();
+		System.out.println("안녕하세요! Mas컨트롤러 입니다! 초기화합니다!");
+		InetAddress ip;
+		try {
+			ip = InetAddress.getLocalHost();
+			System.out.println("Host Name = [" + ip.getHostName() + "]");
+			System.out.println("Host Address = [" + ip.getHostAddress() + "]"); 
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		chartDataCollector = new ChartDataCollector();
+//		SeleniumTest sTest = new SeleniumTest();
+	}
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -59,6 +88,13 @@ public class MasController extends HttpServlet
 			if (path.equals("/*.do") || path.equals("/index.do")) {
 				
 				url = "/index.html";
+			} else if (path.equals("/chartList.do")) {
+
+				masAction = new ChartAction();
+				masAction.execute(request, response);
+
+				urlPath = "";
+				url = "/dist/jsp/chartList.jsp";
 				
 			} else if (path.equals("/proxyLastPrice.do")) {
 				

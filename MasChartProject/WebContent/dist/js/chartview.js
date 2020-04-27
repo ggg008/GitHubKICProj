@@ -170,6 +170,7 @@
 	    //		console.log('time setter ' + standardTime + ' + ' + updateTime);
 	}
 	
+	
 	var subtitleDeco = 'Countdown To Bar Close ▶ ';
 	var timeDeco = '--:--';
 	
@@ -240,21 +241,24 @@
 	    }
 	
 	    var chartdata = [];
+	    
+	    
+	    var API = './chartList.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
+	    
+	    
 	    //https://min-api.cryptocompare.com/data/v2/histominute?fsym=BTC&tsym=USD&limit=2000
-	    /*
-    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ fromSymbol +'&tsym=' + toSymbol, function (data) {
-    		if(data.Response !== "Success") {
-				console.log('Fail!!');
-				console.log(data);    			
-			}
-	        $.each(data.Data.Data, function (i, item) {
-	            //console.log(item);
-	
-	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
-	        });
-	        console.log(chartdata);
+    	$.getJSON(API, function (data) {
+    		//console.log(data);    		
+	        
+	        //console.log(chartdata);
+    		$.each(data.Data, function (i, item) {
+    			//console.log(item);
+    			
+    			chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
+    		});
 	
 	    }).done(function () {
+	    	
 	        chart = Highcharts.stockChart('container', {
 	
 	            title: {
@@ -316,64 +320,35 @@
 	        //			chart.reflow();
 	        //			console.log(chart.rangeSelector.buttonOptions);
 	    });
-	     */
 	
 	}
 	draw3();
-	
-	var draw3DataUpdate = function () {
-	    console.log('call draw3DataUpdate');
-	
-	    if (chart != null) {
-	        chart.showCustomLoading('Loading data from server...');
-	    }
-	
-	    var chartdata = [];
-	    /*
-    	$.getJSON('./proxyChart.do?historyTime='+ historyTime +'&fsym='+ fromSymbol +'&tsym=' + toSymbol, function (data) {
-    		if(data.Response !== "Success") {
-    			console.log('Fail!!');
-    			console.log(data);    			
-    		}
-    		
-	        $.each(data.Data.Data, function (i, item) {
-	            //console.log(item);
-	
-	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
-	        });
-	
-//	        console.log(chart.series);
-	        if(chart.series != null) {
-	        	chart.series[0].setData(chartdata);	        	
-	        }
-	
-	        chart.hideCustomLoading();
-	
-	    })	
-	    */
-	    timeSetter();
-	}
 	
 	
 	var realtimePrice = function () {
 //	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + fromSymbol + '&tsyms=' + toSymbol, function (data) {
 		/*
-	    $.getJSON('./proxyLastPrice.do?fsym='+ fromSymbol +'&tsyms=' + toSymbol, function (data) {
-	        $('#chart-price').text(data.USD);
+		 */
+
+	    var chartdata = [];
+		
+		var API = './chartList.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
+	    $.getJSON(API, function (data) {
+	    	
+	    	//console.log(data.Data[Data.length - 1]);
+	    	
+	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
+	        
+	        $.each(data.Data, function (i, item) {
+	            //console.log(item);
+	
+	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
+	        });
+	        
+	        chart.series[0].setData(chartdata);
+	        
 //	        console.log(data);
-	    });	
-	    */
-//	    if(chart.series != null){
-	    	
-//	    	var dataEmt = [];
-//	    	var dataArr = chart.series[0].data;
-//	    	dataArr[2000].high = 9999.11;
-//	    	console.log(dataArr);
-	    	
-//	    	chart.series[0].setData(dataEmt);
-//	    	chart.series[0].setData(dataArr);
-//	    	console.log(chart.series[0].data[2000]);
-//	    }
+	    });
 	    
 	};
 	
@@ -391,19 +366,21 @@
 	});
 	
 	
-	var limitConst = 30;
-	var limit = (standardTime + utcWeight) % limitConst;
+	var limitConst = 5;
+	var limit =  limitConst;
+	
+	//console.log('리미트 시작값 : ' + standardTime + ':' + (standardTime + utcWeight) % limitConst);
 	setInterval(function () {
 	
-		--limit;
-		
-		if(limit <= 0) {
-			limit = limitConst;
+	    var sec = Math.floor(new Date() / 1000) + utcWeight - standardTime;
+	    --limit;
+	
+	    if(limit <= 0) {
+			
+			limit = sec < limitConst ? sec : limitConst - (sec % limitConst);
 			realtimePrice();
 		}
-	
-	    var sec = Math.floor(new Date() / 1000) + utcWeight - standardTime;
-	
+	    
 	    if (chart != null) {
 	        var remainTime = timeUnit - sec;
 	        var remainTimeHour = parseInt(remainTime / (60 * 60));
@@ -423,17 +400,18 @@
 	        	? timeDeco : remainTimeStr;
 	        
 	        var log = '\n log : ';
-	        log +=  limit;
+	        log += limit;
 	        $('.highcharts-subtitle').eq(0).html(subtitleDeco + remainTimeStr);
-	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
+//	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
 	    }
 	
 	    if (updateTime <= standardTime + sec) {
-	        standardTime = updateTime;
-	        updateTime = updateTime + timeUnit;
+	    	
+	    	timeSetter();
+	    	
 	        console.log('새로운 기준 ' + standardTime + ' : ' + updateTime);
 	
-	        draw3DataUpdate();
+	        //draw3DataUpdate();
 	    }
 	
 	}, 1000);

@@ -25,7 +25,7 @@ public class BoardDAO
 			this.dataSource = (DataSource) envCtx.lookup("jdbc/mariadb");
 		} catch (NamingException e) {
 			System.out.println(
-					e.getClass().getName() + " : " + e.getMessage() + " Lie= " + e.getStackTrace()[0].getLineNumber());
+					e.getClass().getName() + " : " + e.getMessage() + " Line= " + e.getStackTrace()[0].getLineNumber());
 		}
 	}
 

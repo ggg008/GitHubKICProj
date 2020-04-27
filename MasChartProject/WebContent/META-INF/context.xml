@@ -5,7 +5,15 @@
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/maschartdb"
+		url="jdbc:mysql://52.79.117.33:3306/maschartdb"
+		username="root"
+		password="123456"/>
+	<Resource 
+		name="jdbc/mariadb-sumin"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="org.mariadb.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/maschart"
 		username="root"
 		password="123456"/>
 </Context>
