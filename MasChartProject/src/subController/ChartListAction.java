@@ -9,7 +9,7 @@ import modelPaging.CandlestickTO;
 import modelPaging.ChartListInfoTOTemp;
 import modelPaging.MasDAO;
 
-public class ChartAction implements MasAction
+public class ChartListAction implements MasAction
 {
 
 	@Override
@@ -19,13 +19,10 @@ public class ChartAction implements MasAction
 //		System.out.println("→ call " + this.getClass().getName() + " execute");
 		
 		MasDAO masDAO = new MasDAO();
-		ChartListInfoTOTemp chartListInfoTOTemp = new ChartListInfoTOTemp();
-		chartListInfoTOTemp.setFromSymbol(request.getParameter("fsym"));
-		chartListInfoTOTemp.setToSymbol(request.getParameter("tsym"));
 		
-		ArrayList<CandlestickTO> list = masDAO.getCandlestickList(chartListInfoTOTemp, request.getParameter("historyTime"));		
+		ArrayList<ChartListInfoTOTemp> chartlist = masDAO.getChartList();		
 
-		request.setAttribute("CandlestickList", list);
+		request.setAttribute("ChartList", chartlist);
 	}
 
 }

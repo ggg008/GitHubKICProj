@@ -9,7 +9,7 @@
 <%@page import="org.json.simple.JSONObject"%>
 
 <%
-	ArrayList<CandlestickTO> candlestickList = (ArrayList)request.getAttribute("CandlestickLsit");
+	ArrayList<CandlestickTO> candlestickList = (ArrayList)request.getAttribute("CandlestickList");
 	
 	JSONObject result = new JSONObject();
 	//result.put("isSuccess", "true");

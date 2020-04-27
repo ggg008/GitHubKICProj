@@ -16,6 +16,10 @@ public class MasDAO
 {
 
 	private DataSource dataSource = null;
+	
+	//조회 목록
+	ArrayList<ChartListInfoTOTemp> chartList = null;
+
 
 	public MasDAO()
 	{
@@ -29,7 +33,18 @@ public class MasDAO
 			// TODO Auto-generated catch block
 			System.out.println("에러:" + e.getMessage());
 		}
+		
+		chartList = new ArrayList<>();
+		//fixed
+		ChartListInfoTOTemp crTo = new ChartListInfoTOTemp();
+		crTo.setFromSymbol("BTC");
+		crTo.setToSymbol("USD");
+		chartList.add(crTo);
+	}
 
+	public ArrayList<ChartListInfoTOTemp> getChartList()
+	{
+		return chartList;
 	}
 	
 	public int countCandelstick(ChartListInfoTOTemp chartListTO, String ... timeOption)

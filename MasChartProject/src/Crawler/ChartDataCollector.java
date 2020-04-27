@@ -33,10 +33,7 @@ import modelPaging.ChartListInfoTOTemp;
 import modelPaging.MasDAO;
 
 public class ChartDataCollector
-{	
-	//조회 목록
-	ArrayList<ChartListInfoTOTemp> restAPIs = new ArrayList<>();
-	
+{		
 	//시간관련
 	long myTimeWeight = 2; //갱신 시간이 늦어서 추가
 	long utcWeight = -2 + myTimeWeight;//utc 시간보정	
@@ -66,15 +63,7 @@ public class ChartDataCollector
 	String systemOs = System.getProperty("os.name");
 	
 	public ChartDataCollector()
-	{
-		ChartListInfoTOTemp crTo = new ChartListInfoTOTemp();
-		crTo.setFromSymbol("BTC");
-		crTo.setToSymbol("USD");
-		
-		restAPIs.add(crTo);
-		
-		
-		
+	{		
 		//시간 초기화
 		timeUnits.put("minute", Integer.toUnsignedLong(60));
 		timeUnits.put("hour", Integer.toUnsignedLong(60 * 60));
@@ -96,7 +85,7 @@ public class ChartDataCollector
 		masDAO = new MasDAO();
 		System.out.println("-전체 데이터 카운트 : " + masDAO.countCandelstick(null));
 		// 차트 데이터 없을 경우..
-		for(ChartListInfoTOTemp cliTo : restAPIs ) {
+		for(ChartListInfoTOTemp cliTo : masDAO.getChartList() ) {
 //			System.out.print("ChartRange : " + cliTo.getFromSymbol() + cliTo.getToSymbol() + "-");
 //			System.out.println(masDAO.countCandelstick(cliTo));
 			
@@ -190,7 +179,7 @@ public class ChartDataCollector
 							case "hour":
 								if(!standardTimes.get(tk).equals(updateTimes.get("day"))) {
 																		
-									for(ChartListInfoTOTemp cliTo : restAPIs) {
+									for(ChartListInfoTOTemp cliTo : masDAO.getChartList()) {
 										if(lastPrices.containsKey(cliTo.getFromSymbol() + cliTo.getToSymbol())) {
 											double lastPrice = lastPrices.get(cliTo.getFromSymbol() + cliTo.getToSymbol());
 											String newCandleKey = cliTo.getFromSymbol() + cliTo.getToSymbol() + tk + standardTimes.get(tk); 
@@ -211,7 +200,7 @@ public class ChartDataCollector
 								break;
 							case "day":
 								//차트 데이터 동기화 - 하루에 한번씩
-								for(ChartListInfoTOTemp chartRangeTO : restAPIs) {
+								for(ChartListInfoTOTemp chartRangeTO : masDAO.getChartList()) {
 									for(String histoKey  : timeKeys) {										
 										setBasicChartJSON(chartRangeTO, histoKey);
 									}
@@ -224,12 +213,10 @@ public class ChartDataCollector
 						}
 					}
 					
-					if(!systemOs.contains("Win")) {
-						RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
-						
-						Thread thread = new Thread(target);
-						thread.start();
-					}
+					RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
+					
+					Thread thread = new Thread(target);
+					thread.start();
 					
 //					if(driverMasters.size() <= count ) {
 //						count = 0;
@@ -351,7 +338,7 @@ public class ChartDataCollector
 	
 	private void setterCrawlingLastPrice(String fsym, String fsymPrice, HashMap<String, Long> crawlerStandardTimes, double ... priceWeight)
 	{		
-		for(ChartListInfoTOTemp cliTo : restAPIs) {
+		for(ChartListInfoTOTemp cliTo : masDAO.getChartList()) {
 			if(cliTo.getFromSymbol().equals(fsym)) {
 				
 				double lastPrice = Double.valueOf(fsymPrice.replaceAll("^\\D", "").replaceAll(",", "").trim());

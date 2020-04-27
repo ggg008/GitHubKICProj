@@ -20,6 +20,7 @@ import subController.LogoutOkAction;
 import Crawler.ChartDataCollector;
 import Crawler.SeleniumTest;
 import modelPaging.CandlestickTO;
+import modelPaging.ChartListInfoTOTemp;
 import modelPaging.MasDAO;
 import subController.ChartAction;
 
@@ -50,7 +51,11 @@ public class MasController extends HttpServlet
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		chartDataCollector = new ChartDataCollector();
+		
+		//윈도에서 실행 크라울링 안하기
+		if(!System.getProperty("os.name").contains("Win"))
+			chartDataCollector = new ChartDataCollector();
+		
 //		SeleniumTest sTest = new SeleniumTest();
 	}
 	
@@ -88,13 +93,13 @@ public class MasController extends HttpServlet
 			if (path.equals("/*.do") || path.equals("/index.do")) {
 				
 				url = "/index.html";
-			} else if (path.equals("/chartList.do")) {
+			} else if (path.equals("/chartView.do")) {
 
 				masAction = new ChartAction();
 				masAction.execute(request, response);
 
 				urlPath = "";
-				url = "/dist/jsp/chartList.jsp";
+				url = "/dist/jsp/chartView.jsp";
 				
 			} else if (path.equals("/proxyLastPrice.do")) {
 				
