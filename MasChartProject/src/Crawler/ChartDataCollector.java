@@ -4,10 +4,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.Thread.State;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -51,15 +53,17 @@ public class ChartDataCollector
 	HashMap<String, Double> lastPrices = new HashMap<>();
 
 	// Properties
+	
+	static String chromeDriver = "v81";
 	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-	public static final Path WEB_DRIVER_PATH = Paths.get(System.getProperty("user.dir"), "WEB-INF"+ File.separator +"chromedriver.exe");
+	public static final Path WEB_DRIVER_PATH = Paths.get(System.getProperty("user.dir"), "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
 
 	Path diverPath = null;
 	
 	ArrayList<RunnableCrawlingSelenium> crawlingList = new ArrayList<>();
 	
 	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
-	int houwManyDriver = 1;
+	int houwManyDriver = 3;
 	int count = 0;
 	
 	public ChartDataCollector()
@@ -123,7 +127,7 @@ public class ChartDataCollector
 				if(tomcatPath != null) {
 					String webapps = tomcatPath.contains("org.eclipse.wst.server.core") ? "wtpwebapps" : "webapps";
 					
-					diverPath = Paths.get(tomcatPath, webapps, "MasChartProject", "WEB-INF", "chromedriver.exe");
+					diverPath = Paths.get(tomcatPath, webapps, "MasChartProject", "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
 				}
 			}
 			else {
@@ -511,9 +515,11 @@ public class ChartDataCollector
 			// TODO Auto-generated method stub
 			try {
 				
-				System.out.println(this.getClass()+ "쓰레드 진입");
+				System.out.println("-셀레니움 쓰레드 진입");
 				
 				driver.get(parseUrl);
+				
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				
 				WebDriverWait wait = new WebDriverWait(driver, 10);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[ng-href='/coins/btc/overview/USD']")));
@@ -526,7 +532,7 @@ public class ChartDataCollector
 				
 				Elements titles = document.select(selectorCC);
 				
-				System.out.println(this.getClass()+ "쓰레드 파싱");
+				System.out.println("-셀레니움 쓰레드 파싱");
 				
 				for (int i = 0; i < titles.size(); ++i) {
 
@@ -558,9 +564,9 @@ public class ChartDataCollector
 				}
 				Thread.sleep(1000);
 			} catch ( TimeoutException e ) {
-	            System.out.println("-목록을 찾을 수 없습니다.");
+	            System.out.println("-제한 시간 초과! 목록을 찾을 수 없습니다.");
 			} catch ( InterruptedException e) {
-				e.printStackTrace();
+				System.out.println("-쓰레드 인터럽트");
 			} catch (Exception e) {
 
 				e.printStackTrace();
@@ -583,6 +589,11 @@ public class ChartDataCollector
 		RunnableCrawlingSelenium runnableSelenum;
 		
 		public DriverMaster()
+		{
+			driverInit();
+		}
+
+		private void driverInit()
 		{
 			ChromeOptions options = new ChromeOptions();
 	        options.addArguments("--start-maximized");          // 최대크기로
@@ -611,7 +622,10 @@ public class ChartDataCollector
 		{	
 			runnableSelenum = new RunnableCrawlingSelenium(standardTimes, this.driver);
 			
-			if(this.crawlingThread != null) {
+			if(this.crawlingThread != null ) {
+				driver.close();
+				driver = null;
+				driverInit();
 				this.crawlingThread.interrupt();
 				System.out.println("Thread state : " +  this.crawlingThread.getState() );
 				this.crawlingThread = null;				
@@ -619,6 +633,7 @@ public class ChartDataCollector
 			this.crawlingThread = new Thread(runnableSelenum);
 			this.crawlingThread.start();
 		}
+		
 		
 		@Override
 		protected void finalize() throws Throwable
