@@ -44,9 +44,7 @@ public class SeleniumTest
 
 	// Properties
 	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-	public static final Path WEB_DRIVER_PATH = Paths.get(System.getProperty("user.dir"), "WebContent", "WEB-INF", "chromedriver.exe");
 
-	Path diverPath = null;
 	
 	// 크롤링 할 URL
 	private String base_url;
@@ -69,17 +67,19 @@ public class SeleniumTest
 		}
 
 				
+		Path diverPath = null;
+		String chromeDriver = "v81";
 		try {
 			System.out.println("-실행환경 : " + System.getProperty("os.name"));
 			if(System.getProperty("os.name").contains("Win")) {
 				Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");	
 				
 				String tomcatPath = System.getProperty("catalina.base");
-				diverPath = WEB_DRIVER_PATH;
+				diverPath = Paths.get(System.getProperty("user.dir"), "WebContent", "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
 				if(tomcatPath != null) {
 					String webapps = tomcatPath.contains("org.eclipse.wst.server.core") ? "wtpwebapps" : "webapps";
 					
-					diverPath = Paths.get(tomcatPath, webapps, "MasChartProject", "WEB-INF", "chromedriver.exe");
+					diverPath = Paths.get(tomcatPath, webapps, "MasChartProject", "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
 				}
 			}
 			else {
@@ -121,10 +121,10 @@ public class SeleniumTest
 //				"	}");
 		
 				
-		crawl();
+//		crawl();
 		
-//		Thread thread = new Thread(new RunnableCrawlingSelenium(standardTimes));
-//		thread.start();
+		Thread thread = new Thread(new RunnableCrawlingSelenium(standardTimes));
+		thread.start();
 		
 	}
 
@@ -133,8 +133,9 @@ public class SeleniumTest
 		String url1 = "https://intoli.com/blog/making-chrome-headless-undetectable/chrome-headless-test.html";
 		String url2 = "http://luka7.net/";
 		String url3 = "https://www.cryptocompare.com/coins/list/USD/1";
+		String url4 = "https://www.investing.com/crypto/bitcoin/btc-usd";
 		
-		String parseUrl = url1;
+		String parseUrl = url3;
 		
 		
 		try {
@@ -201,12 +202,12 @@ public class SeleniumTest
 			// TODO Auto-generated method stub
 			try {
 				
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				
 				driver.get(parseUrl);
 				
-				WebDriverWait wait = new WebDriverWait(driver, 30);
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[ng-href='/coins/btc/overview/USD']")));
+//				WebDriverWait wait = new WebDriverWait(driver, 30);
+//				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[ng-href='/coins/btc/overview/USD']")));
 				
 				
 				testerMain.writeLog(this.getClass().getName(), driver.getPageSource(), "html");
@@ -215,29 +216,29 @@ public class SeleniumTest
 				
 				testerMain.writeLog(this.getClass().getName() + "2", document.toString(), "html");
 				
-				Elements titles = document.select(selectorCC);
-				for (int i = 0; i < titles.size(); ++i) {
-
-					String fsym = "";
-					String fsymPrice = "";
-					
-					Elements split = titles.get(i).select("td");
-					for(int j = 0; j < split.size(); ++j) {
-						
-						if(j == 2) {
-							String[] strSym = split.get(j).text().split(" ");
-							fsym = strSym[strSym.length - 1];
-						} else if (j == 3) {						
-							fsymPrice = split.get(j).text();
-						}
-						
-//						System.out.println("☆" + split.get(j).text());
-						
-					}					
-					System.out.println(fsym + " : " + fsymPrice);
-					
-				}
-				System.out.println("-셀레니움 성공 : titlesize " + titles.size());
+//				Elements titles = document.select(selectorCC);
+//				for (int i = 0; i < titles.size(); ++i) {
+//
+//					String fsym = "";
+//					String fsymPrice = "";
+//					
+//					Elements split = titles.get(i).select("td");
+//					for(int j = 0; j < split.size(); ++j) {
+//						
+//						if(j == 2) {
+//							String[] strSym = split.get(j).text().split(" ");
+//							fsym = strSym[strSym.length - 1];
+//						} else if (j == 3) {						
+//							fsymPrice = split.get(j).text();
+//						}
+//						
+////						System.out.println("☆" + split.get(j).text());
+//						
+//					}					
+//					System.out.println(fsym + " : " + fsymPrice);
+//					
+//				}
+//				System.out.println("-셀레니움 성공 : titlesize " + titles.size());
 			} catch ( TimeoutException e ) {
 	            System.out.println("-목록을 찾을 수 없습니다.");
 			} catch (Exception e) {

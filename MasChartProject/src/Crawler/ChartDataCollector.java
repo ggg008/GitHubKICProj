@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.jsoup.Jsoup;
+import org.jsoup.Connection.Response;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -54,16 +55,12 @@ public class ChartDataCollector
 
 	// Properties
 	
-	static String chromeDriver = "v81";
 	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-	public static final Path WEB_DRIVER_PATH = Paths.get(System.getProperty("user.dir"), "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
-
-	Path diverPath = null;
 	
 	ArrayList<RunnableCrawlingSelenium> crawlingList = new ArrayList<>();
 	
-	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
-	int houwManyDriver = 3;
+//	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
+//	int houwManyDriver = 1;
 	int count = 0;
 	
 	public ChartDataCollector()
@@ -116,14 +113,17 @@ public class ChartDataCollector
 		}
 		/*
 		  */
-		
+
+
+		Path diverPath = null;
+		String chromeDriver = "v81";
 		try {
 			System.out.println("-실행환경 : " + System.getProperty("os.name"));
 			if(System.getProperty("os.name").contains("Win")) {
 				Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");	
 				
 				String tomcatPath = System.getProperty("catalina.base");
-				diverPath = WEB_DRIVER_PATH;
+				diverPath = Paths.get(System.getProperty("user.dir"), "WEB-INF", "ChromeDrivers", chromeDriver, "chromedriver.exe");
 				if(tomcatPath != null) {
 					String webapps = tomcatPath.contains("org.eclipse.wst.server.core") ? "wtpwebapps" : "webapps";
 					
@@ -146,15 +146,15 @@ public class ChartDataCollector
 		System.out.println("-크롬 드라이버 경로 : " + diverPath);
 		// System Property SetUp
 		System.setProperty(WEB_DRIVER_ID, diverPath.toString());
-		for(int i = 0; i < houwManyDriver; ++i) {
-			driverMasters.add(new DriverMaster());
-		}
+//		for(int i = 0; i < houwManyDriver; ++i) {
+//			driverMasters.add(new DriverMaster());
+//		}
 		
 		
 	
 		
 		// 인터벌 쓰레드
-		final long timeInterval = 10000;
+		final long timeInterval = 5000;
 		Runnable runnableInterval = new Runnable() {
 			public void run()
 			{
@@ -221,17 +221,17 @@ public class ChartDataCollector
 							}
 						}
 					}
-//					RunnableCrawlingSelenium target = new RunnableCrawlingSelenium(standardTimes);
+					RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
+					
+					Thread thread = new Thread(target);
+					thread.start();
+					
+//					if(driverMasters.size() <= count ) {
+//						count = 0;
+//						System.out.println("-카운트 다시 0");
+//					}
 //					
-//					Thread thread = new Thread(target);
-//					thread.start();
-					
-					if(driverMasters.size() <= count ) {
-						count = 0;
-						System.out.println("-카운트 다시 0");
-					}
-					
-					driverMasters.get(count).workDriver(standardTimes);
+//					driverMasters.get(count).workDriver(standardTimes);
 					
 //					crawlingList.add(target);
 //					
@@ -344,13 +344,17 @@ public class ChartDataCollector
 		}
 	}
 	
-	private void setterCrawlingLastPrice(String fsym, String fsymPrice, HashMap<String, Long> crawlerStandardTimes)
+	private void setterCrawlingLastPrice(String fsym, String fsymPrice, HashMap<String, Long> crawlerStandardTimes, double ... priceWeight)
 	{		
 		for(ChartListInfoTOTemp cliTo : restAPIs) {
 			if(cliTo.getFromSymbol().equals(fsym)) {
 				
 				double lastPrice = Double.valueOf(fsymPrice.replaceAll("^\\D", "").replaceAll(",", "").trim());
 //								System.out.println(chartListTO.getFromSymbol() + " : " + price);
+				
+				if(0 < priceWeight.length) {
+					lastPrice = lastPrice + lastPrice * priceWeight[0];					
+				}
 				
 				lastPrices.put(cliTo.getFromSymbol() + cliTo.getToSymbol(), lastPrice);
 				
@@ -432,36 +436,58 @@ public class ChartDataCollector
 		@Override
 		public void run()
 		{
+			String url1 = "https://intoli.com/blog/making-chrome-headless-undetectable/chrome-headless-test.html";
+			String url2 = "http://luka7.net/";
+			String url3 = "https://www.cryptocompare.com/coins/list/USD/1";
+			String url4 = "https://www.investing.com/crypto/currencies";
+			
 			// TODO Auto-generated method stub
-			String parseUrl = "https://www.coingecko.com/";
+			String parseUrl = url4;
 			String selectorCMC = ".cmc-table-row";
 			String selectorGecko = "div.sort, .table, .mb-0 tbody tr";
+			String selectorInvesting = "#fullColumn table.genTbl tbody tr";
 			Document document = null;
 			try {
-				document = Jsoup.connect(parseUrl).get();
+				Response response = Jsoup.connect(parseUrl)
+                        .userAgent("Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36")
+                        .execute();
+				
+				document = Jsoup.connect(parseUrl).timeout(10000)
+						.userAgent("Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36")
+                        .header("Accept-Language", "en-US")
+                        .header("Accept-Encoding", "gzip,deflate,sdch")
+                        .cookies(response.cookies())
+//                        .header("Origin", "http://tistory.com/")
+//                        .header("Referer", "https://www.tistory.com/auth/login")
+//                        .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+//                        .header("Content-Type", "application/x-www-form-urlencoded")
+//                        .header("Accept-Encoding", "gzip, deflate, br")
+//                        .header("Accept-Language", "ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4")
+                        //.method(Connection.Method.GET)
+                        .get();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//							System.out.println(document);
-//							writeLog(document.toString());
-			
-			Elements titles = document.select(selectorGecko);
-			
-			
-			for (int i = 0; i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
-				Element element = titles.get(i);
-				if (i == 0)
-					continue;
+//								System.out.println(document);
+//			writeLog(null, document.toString(), "html");
 
-//								System.out.println(element.text()); // -- 4. 원하는 요소가 출력된다.
-				String[] strElt = element.text().split(" ");
-//								System.out.printf("%s-%s-%s-%s-%s\n", strElt[0], strElt[1], strElt[2], strElt[3], strElt[4]);
+			Elements titles = document.select(selectorInvesting);
+
+			System.out.println(titles.size());
+			// lock
+			for (int i = 0; i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
 				
-				String fsym = strElt[2];
-				String fsymPrice = strElt[4];
+				Elements split = titles.get(i).select("td");
+
+				String fsym = split.get(3).text();
+				String fsymPrice = split.get(4).text();
 				
-				setterCrawlingLastPrice(fsym, fsymPrice, crawlerStandardTimes);
+//				System.out.println(fsym + " : " + fsymPrice);
+				
+				
+				setterCrawlingLastPrice(fsym, fsymPrice, crawlerStandardTimes, 0.0015);
+				
 			}
 			
 		}
@@ -515,15 +541,18 @@ public class ChartDataCollector
 			// TODO Auto-generated method stub
 			try {
 				
-				System.out.println("-셀레니움 쓰레드 진입");
+				System.out.println("-셀레니움 쓰레드 진입 : " + this);
 				
 				driver.get(parseUrl);
 				
+				System.out.println("-셀레니움 쓰레드 timeouts 진입 : " + this);
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				
+
+				System.out.println("-셀레니움 쓰레드 WebDriverWait 진입 : " + this);
 				WebDriverWait wait = new WebDriverWait(driver, 10);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[ng-href='/coins/btc/overview/USD']")));
 				
+				System.out.println("-셀레니움 쓰레드 파싱 진입 : " + this);
 				document = Jsoup.parse(driver.getPageSource());
 				
 //				if(!System.getProperty("os.name").contains("Win")) {
@@ -532,7 +561,6 @@ public class ChartDataCollector
 				
 				Elements titles = document.select(selectorCC);
 				
-				System.out.println("-셀레니움 쓰레드 파싱");
 				
 				for (int i = 0; i < titles.size(); ++i) {
 
@@ -602,7 +630,7 @@ public class ChartDataCollector
 	        options.addArguments("--no-sandbox");               // Sandbox 프로세스를 사용하지 않음, Linux에서 headless를 사용하는 경우 필요함.
 	        options.addArguments("--log-level=3");
 	        options.addArguments("--disable-logging");
-//	        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+	        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 	        options.addArguments("disable-infobars"); // disabling infobars
 	        options.addArguments("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
 	        options.addArguments("lang=en_US");
@@ -610,7 +638,6 @@ public class ChartDataCollector
 //	        ChromeDriverService chromeDriverService = ChromeDriverService.createDefaultService();
 //	        chromeDriverService.
 	        
-//	        Chrom 
 //	        chromeDriverService = ChromeDriverService.CreateDefaultService();
 //	        chromeDriverService.HideCommandPromptWindow = true;
 			
@@ -620,16 +647,16 @@ public class ChartDataCollector
 
 		public void workDriver(HashMap<String, Long> standardTimes)
 		{	
-			runnableSelenum = new RunnableCrawlingSelenium(standardTimes, this.driver);
-			
 			if(this.crawlingThread != null ) {
-				driver.close();
-				driver = null;
-				driverInit();
+//				driver.close();
+//				driver = null;
 				this.crawlingThread.interrupt();
+//				driverInit();
 				System.out.println("Thread state : " +  this.crawlingThread.getState() );
 				this.crawlingThread = null;				
 			}
+			runnableSelenum = new RunnableCrawlingSelenium(standardTimes, this.driver);
+			
 			this.crawlingThread = new Thread(runnableSelenum);
 			this.crawlingThread.start();
 		}
@@ -640,7 +667,7 @@ public class ChartDataCollector
 		{
 			// TODO Auto-generated method stub
 			super.finalize();
-			driver.quit();
+//			driver.quit();
 		}
 		
 	}

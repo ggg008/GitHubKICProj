@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.jsoup.Connection;
+import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -213,15 +214,24 @@ public class testerMain
 			String url1 = "https://intoli.com/blog/making-chrome-headless-undetectable/chrome-headless-test.html";
 			String url2 = "http://luka7.net/";
 			String url3 = "https://www.cryptocompare.com/coins/list/USD/1";
+			String url4 = "https://www.investing.com/crypto/currencies";
 			
 			// TODO Auto-generated method stub
-			String parseUrl = url1;
+			String parseUrl = url4;
 			String selectorCMC = ".cmc-table-row";
 			String selectorGecko = "div.sort, .table, .mb-0 tbody tr";
+			String selectorInvesting = "#fullColumn table.genTbl tbody tr";
 			Document document = null;
 			try {
+				Response response = Jsoup.connect(parseUrl)
+                        .userAgent("Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36")
+                        .execute();
+				
 				document = Jsoup.connect(parseUrl).timeout(10000)
-						.userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36")
+						.userAgent("Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36")
+                        .header("Accept-Language", "en-US")
+                        .header("Accept-Encoding", "gzip,deflate,sdch")
+                        .cookies(response.cookies())
 //                        .header("Origin", "http://tistory.com/")
 //                        .header("Referer", "https://www.tistory.com/auth/login")
 //                        .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
@@ -235,21 +245,55 @@ public class testerMain
 				e.printStackTrace();
 			}
 //								System.out.println(document);
-			writeLog(null, document.toString(), "html");
+//			writeLog(null, document.toString(), "html");
 
-			Elements titles = document.select(selectorGecko);
+			Elements titles = document.select(selectorInvesting);
 
+			System.out.println(titles.size());
 			// lock
-//			for (int i = titles.size(); i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
-//				Element element = titles.get(i);
+			for (int i = 0; i < titles.size(); ++i) { // -- 3. Elemntes 길이만큼 반복한다.
+//				Elements elts = titles.get(i).;
+				
+				Elements split = titles.get(i).select("td");
+
+				String fsym = split.get(3).text();
+				String fsymPrice = split.get(4).text();
+				
+				
+				
+				for(int j = 0; j < split.size(); ++j) {
+					
+//					if(j == 3) {
+//						String[] strSym = split.get(j).text().split(" ");
+//						fsym = strSym[strSym.length - 1];
+//					} else if (j == 4) {						
+//						fsymPrice = split.get(j).text();
+//					}
+					
+//					System.out.println("☆" + split.get(j).text());					
+				}					
+//				System.out.println("==============");
+				
+				double lastPrice = Double.valueOf(fsymPrice.replaceAll("^\\D", "").replaceAll(",", "").trim());
+				
+				
+//				System.out.print("lastPrice : ");
+//				System.out.println(lastPrice * 0.0015);
+				lastPrice = lastPrice + lastPrice * 0.0015;
+				System.out.println(fsym + " : " + lastPrice);
+				
+//				System.out.print("test : ");
+//				System.out.println(titles.get(i).text());
+				
 //				if (i == 0)
 //					continue;
-//
-////					System.out.println(element.text()); // -- 4. 원하는 요소가 출력된다.
-////					String[] strElt = element.text().split(" ");
-////					System.out.printf("%s-%s-%s-%s-%s\n", strElt[0], strElt[1], strElt[2], strElt[3], strElt[4]);
-//
-//			}
+
+//					System.out.println(element.text()); // -- 4. 원하는 요소가 출력된다.
+//					String[] strElt = element.text().split(" ");
+//					System.out.printf("%s-%s-%s-%s-%s\n", strElt[0], strElt[1], strElt[2], strElt[3], strElt[4]);
+
+			}
+			System.out.println("종료");
 
 		}
 	}

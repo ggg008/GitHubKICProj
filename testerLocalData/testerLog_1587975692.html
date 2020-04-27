@@ -1,0 +1,1362 @@
+<!doctype html>
+<html ng-app="ccc-app" class="" ng-class-for-lights> 
+ <head ng-controller="HeaderSEOCtrl"> 
+  <title>Coin Market Capitalization lists of Crypto Currencies and prices , Lives streaming Bitcoin &amp; Ethereum Market Cap and all other crypto currencies. | CryptoCompare.com</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+  <meta name="description" content="Live streaming prices and the market capitalization of all cryptocurrencies such as bitcoin and Ethereum. View and analyze over 1600 cryptocurrencies from over 80 exchanges! Streaming price, forum, historical charts, technical analysis, social data market analysis of BTC and ETH prices."> 
+  <link rel="icon" href="/media/20562/favicon.png?v=2" type="image/png"> 
+  <link rel="apple-touch-icon" href="/media/20562/favicon.png?v=3"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:site" content="@cryptocompare"> 
+  <meta name="twitter:title" content="Coin Market Capitalization lists of Crypto Currencies and prices , Lives streaming Bitcoin &amp; Ethereum Market Cap and all other crypto currencies."> 
+  <meta name="twitter:description" content="Live streaming prices and the market capitalization of all cryptocurrencies such as bitcoin and Ethereum. View and analyze over 1600 cryptocurrencies from over 80 exchanges! Streaming price, forum, historical charts, technical analysis, social data market analysis of BTC and ETH prices."> 
+  <meta property="og:title" content="Coin Market Capitalization lists of Crypto Currencies and prices , Lives streaming Bitcoin &amp; Ethereum Market Cap and all other crypto currencies."> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="CryptoCompare"> 
+  <meta property="og:description" content="Live streaming prices and the market capitalization of all cryptocurrencies such as bitcoin and Ethereum. View and analyze over 1600 cryptocurrencies from over 80 exchanges! Streaming price, forum, historical charts, technical analysis, social data market analysis of BTC and ETH prices."> 
+  <base href="/coins/list/"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="1200"> 
+  <meta property="og:image" content="https://www.cryptocompare.com/media/1251/bitcoin_pool_ball_l.jpg"> 
+  <meta property="og:image:secure_url" content="https://www.cryptocompare.com/media/1251/bitcoin_pool_ball_l.jpg"> 
+  <meta name="twitter:image" content="https://www.cryptocompare.com/media/1251/bitcoin_pool_ball_l.jpg"> 
+  <link href="https://plus.google.com/115435853043353159139" rel="publisher"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet"> 
+  <link href="/DependencyHandler.axd?s=L2Nzcy9hbmd1bGFyLW1hdGVyaWFsLjEuMS4wLm1pbi5jc3M7L2Nzcy9ib290c3RyYXAtbWluLmNzczsvY3NzL1JURS5jc3M7L2Nzcy9jY2Nub25sZXNzLmNzczsvY3NzL2ZvbnQtYXdlc29tZS5jc3M7L2Nzcy9zd2lwZXIuY3NzOy9jc3Mvc3R5bGVzLmNzczsvY3NzL25hdi5jc3M7L2Nzcy9jb2luc05ldy5jc3M7L2Nzcy9mb3J1bS5jc3M7L2Nzcy9kYXJrLmNzczs&amp;t=Css&amp;cdv=1532" type="text/css" rel="stylesheet"> 
+  <style>[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak,ng-hide:not(.ng-hide-animate) {display: none !important;}</style> <!--[if lte IE 8]><style>#ieError{display:block;}</style><![endif]--> 
+  <script src="/DependencyHandler.axd?s=L3NjcmlwdHMvVmVuZG9yL2pxdWVyeS0xLjExLjMubWluLmpzOy9zY3JpcHRzL1ZlbmRvci9hbmd1bGFyLjEuNS41Lm1pbi5qczsvc2NyaXB0cy9WZW5kb3IvZXh0cmEtYW5ndWxhci1tb2R1bGVzLmpzOy9zY3JpcHRzL2luaXRhbmd1bGFyYXBwLmpzOy9zY3JpcHRzL1ZlbmRvci9zb2NrZXQuaW8tMi4wLjMuanM7L3NjcmlwdHMvVmVuZG9yL2hvdmVyLWRyb3Bkb3duLmpzOy9zY3JpcHRzL3N0cmVhbWluZy11dGlsaXRpZXMuanM7L3NjcmlwdHMvc2VydmljZXMvZ2xvYmFsLmpzOy9zY3JpcHRzL2NvbnRyb2xsZXJzL2dsb2JhbC5qczsvc2NyaXB0cy9kaXJlY3RpdmVzL2dsb2JhbC5qczsvc2NyaXB0cy9nbG9iYWwuanM7L3NjcmlwdHMvc2VydmljZXMvc3RyZWFtaW5nLmpzOy9zY3JpcHRzL2xpc3RzL2NvaW5zLXYyLmpzOw&amp;t=Javascript&amp;cdv=1532" type="text/javascript"></script> 
+  <script>
+		var CCC = CCC || {};
+		CCC.authApiUrl = 'https://auth-api.cryptocompare.com/';
+		CCC.minApiUrl = 'https://min-api.cryptocompare.com/';
+		CCC.streamerUrl = 'wss://streamer.cryptocompare.com/v2?format=streamer';
+		CCC.pathForWebsite = 'https://www.cryptocompare.com';
+		CCC.authKeyName = 'auth_key';
+		CCC.stripePublishableKey ='pk_live_CUMD3HX8RVJZOAGXsN4il39r';
+		CCC.taxamoPublishableKey ='public_Wi8s4N_4-ZvxPyvb2E98HmBcdUED6SPgTQPQ_4wdP9Y';
+	</script> 
+  <script>
+		angular.module('ccc-app').run(function(userManager,pageInfo,toastNotifications){
+			pageInfo.setUserCountryCode("KR");
+					userManager.setLoggedIn(false);
+					userManager.setAvatarUrl('/media/19582/icon-user-default.png');
+					userManager.setUsername('Anonymous');
+					userManager.setEmailAddress('Anonymous');
+		});
+	</script> 
+  <style>
+	.big-info-section-wrapper-not-html {
+	       margin: 0px auto;
+	       margin-top: 5px;
+	}
+	.Webpageexchangeh .big-info-section-wrapper-not-html,
+	.Webpagecoinp .big-info-section-wrapper-not-html,
+	.Webpagearticleguidep .big-info-section-wrapper-not-html,
+	.webPageStaticExternalWidget .big-info-section-wrapper-not-html {
+	       margin-bottom: 5px;
+	}
+	
+	.webPageCoinListH .big-info-section-wrapper-not-html,
+	.Webpagearticleguideh .big-info-section-wrapper-not-html,
+	.webPageNewsListH .big-info-section-wrapper-not-html,
+	.webPageCoinICOH .big-info-section-wrapper-not-html,
+	.Webpageminingh .big-info-section-wrapper-not-html,
+	.Webpagewalleth .big-info-section-wrapper-not-html,
+	.Webpageminingcalculatorh .big-info-section-wrapper-not-html {
+	       margin-bottom: -20px;
+	}
+	
+	.Webpagehome .big-info-section-wrapper-not-html, 
+	.webPageNewsListH .big-info-section-wrapper-not-html,
+	.webPageCoinICOH .big-info-section-wrapper-not-html,
+	.Webpageminingh .big-info-section-wrapper-not-html,
+	.Webpagewalleth .big-info-section-wrapper-not-html,
+	.Webpageminingcalculatorh .big-info-section-wrapper-not-html {
+	       margin-bottom: -20px;
+	}
+	
+	.Webpagehome .big-info-section-wrapper-not-html {
+	       margin-bottom: -10px;
+	}
+
+	.big-info-section-wrapper-not-html.main-sizes,
+	.big-info-section-wrapper-not-html.main-sizes.three-size {
+	       width: 320px;
+	       height: 50px;
+		   overflow:hidden;
+	}
+	.big-info-section-wrapper-not-html.main-sizes .main-image-sizes  {
+		text-align: center;
+	}
+
+	.mobile-visibility {
+		display: block;
+	}
+	.desktop-visibility {
+		display: none;
+	}
+	.responsive-bw {
+		width: 320px; 
+		height: 50px; 
+	}
+	@media(min-width: 500px) { 
+		.big-info-section-wrapper-not-html.main-sizes.three-sizes {
+			width: 468px;
+			height: 60px;
+		}
+		.responsive-bw { 
+			width: 468px; 
+			height: 60px; 
+		} 
+	}
+	@media only screen and (min-width: 800px) {
+	    .big-info-section-wrapper-not-html.main-sizes,
+		.big-info-section-wrapper-not-html.main-sizes.three-sizes {
+			width: 728px;
+	        height: 90px;
+	    }
+		.responsive-bw { 
+			width: 728px; 
+			height: 90px; 
+		}
+		.mobile-visibility {
+			display: none;
+		}
+		.desktop-visibility {
+			display: block;
+		}		
+	}
+</style> 
+  <script src="/scripts/prebid.js"></script> 
+  <script>
+			angular.module('ccc-app').run(function(pageInfo){
+						pageInfo.addIdForInfo('23', '', 'top_info_backup', {"id":932265,"externalId":"23","countriesList":"","sectionType":"InfoExternal","mobileUrl":"https://min-api.cryptocompare.com/pricing?utm_source=homepage&utm_medium=banner&utm_campaign=home_banner_icon","desktopUrl":"https://min-api.cryptocompare.com/pricing?utm_source=homepage&utm_medium=banner&utm_campaign=home_banner_icon","mobileImage":"/media/35651617/api-mobile.png","desktopImage":"/media/35651618/api-desktop.png"});
+						pageInfo.addIdForInfo('106', 'AU', 'top_info', {"id":934155,"externalId":"106","countriesList":"AU","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/timex-4d0fd","desktopUrl":"https://rebrand.ly/timex-905ab","mobileImage":"/media/36798707/timex_mobllb.png","desktopImage":"/media/36798708/timex_dsktlb.png","externalInfoImageURLDesktop":"","externalInfoImageURLMobile":""});
+						pageInfo.addIdForInfo('113', 'AU', 'top_info', {"id":934209,"externalId":"113","countriesList":"AU","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/timex-d41c8","desktopUrl":"https://rebrand.ly/timex-1063e","mobileImage":"/media/36798744/timex_mobll_blue.png","desktopImage":"/media/36798745/timex_dsktlb_blue.png","externalInfoImageURLDesktop":"","externalInfoImageURLMobile":""});
+						pageInfo.addIdForInfo('128', 'AT,CH,BR,MX,CO,VE,AR,PE,HN', 'top_info', {"id":934358,"externalId":"128","countriesList":"AT,CH,BR,MX,CO,VE,AR,PE,HN","sectionType":"InfoImages","mobileUrl":"http://bit.ly/337KWqg","desktopUrl":"https://rebrand.ly/fairspincasinoa6d96","mobileImage":"/media/36934913/etoro_mobl.gif","desktopImage":"/media/36934914/fairspinen.gif","externalInfoImageURLDesktop":"","externalInfoImageURLMobile":""});
+						pageInfo.addIdForInfo('129', 'RU', 'top_info', {"id":934359,"externalId":"129","countriesList":"RU","sectionType":"InfoImages","mobileUrl":"http://bit.ly/337KWqg","desktopUrl":"https://rebrand.ly/fairplay-136a7","mobileImage":"/media/36934915/etoro_mobl.gif","desktopImage":"/media/36934916/fairspinru.gif","externalInfoImageURLDesktop":"","externalInfoImageURLMobile":""});
+						pageInfo.addIdForInfo('125', '!AF,KH,MM,KP,PK,BY,BW,BA,BI,CF,CD,EG,ER,GH,GW,IR,IQ,LY,LB,ML,MD,SY,SO,SD,SS,TN,ZW,YE,US,PR,AS,GU,MP,VI,CA-QC,BS,CU,HT,PA,TT,VE,AU,RU,AT,CH,BR,MX,CO,VE,AR,PE,HN', 'top_info', {"id":934459,"externalId":"125","countriesList":"!AF,KH,MM,KP,PK,BY,BW,BA,BI,CF,CD,EG,ER,GH,GW,IR,IQ,LY,LB,ML,MD,SY,SO,SD,SS,TN,ZW,YE,US,PR,AS,GU,MP,VI,CA-QC,BS,CU,HT,PA,TT,VE,AU,RU,AT,CH,BR,MX,CO,VE,AR,PE,HN","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/c4f7d","desktopUrl":"https://rebrand.ly/96365","mobileImage":"/media/36934964/aax_mbllb2.gif","desktopImage":"/media/36934965/aax_dsktplb2.gif","externalInfoImageURLDesktop":"","externalInfoImageURLMobile":""});
+						pageInfo.addIdForInfo('139', '!JP,FR,PT,DE,KR,CN,US,GB,ES,NL,PK,BD', 'top_info', {"id":934546,"externalId":"139","countriesList":"!JP,FR,PT,DE,KR,CN,US,GB,ES,NL,PK,BD","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-52516","desktopUrl":"https://rebrand.ly/free-spins-ea822","mobileImage":"/media/36935011/bitcoin_english.gif","desktopImage":"/media/36935012/bitcoin_english_dsktp.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701497;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701521;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('140', 'FR', 'top_info', {"id":934594,"externalId":"140","countriesList":"FR","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-60f7c","desktopUrl":"https://rebrand.ly/free-spins-f3540","mobileImage":"/media/36935052/bitcoin_french.gif","desktopImage":"/media/36935053/bitcoin_french_dsktop.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701494;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701518;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('141', 'DE', 'top_info', {"id":934595,"externalId":"141","countriesList":"DE","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-b307b","desktopUrl":"https://rebrand.ly/free-spins-6802d","mobileImage":"/media/36935054/bitcoin_german.gif","desktopImage":"/media/36935055/bitcoin_german_dsktop.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701496;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701520;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('142', 'CN', 'top_info', {"id":934596,"externalId":"142","countriesList":"CN","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-e8202","desktopUrl":"https://rebrand.ly/free-spins-bd58f","mobileImage":"/media/36935056/bitcoin_chinese.gif","desktopImage":"/media/36935057/bitcoin_chinese_dsktp.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701493;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701517;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('143', 'JP', 'top_info', {"id":934597,"externalId":"143","countriesList":"JP","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-31dd7","desktopUrl":"https://rebrand.ly/free-spins-a02f3","mobileImage":"/media/36935058/bitcoin_japanese.gif","desktopImage":"/media/36935059/bitcoin_japanese_dsktp.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701499;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701523;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('144', 'KR', 'top_info', {"id":934598,"externalId":"144","countriesList":"KR","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-c7383","desktopUrl":"https://rebrand.ly/free-spins-f17c2","mobileImage":"/media/36935060/bitcoin_korean.gif","desktopImage":"/media/36935061/bitcoin_korean_dsktp.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701498;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701522;1x1inv=1;srctype=3;ord=[timestamp]"});
+						pageInfo.addIdForInfo('145', 'PT', 'top_info', {"id":934599,"externalId":"145","countriesList":"PT","sectionType":"InfoImages","mobileUrl":"https://rebrand.ly/free-spins-1d094","desktopUrl":"https://rebrand.ly/free-spins-a3626","mobileImage":"/media/36935062/bitcoin_portuguese.gif","desktopImage":"/media/36935063/bitcoin_portuguese_dsktop.gif","externalInfoImageURLDesktop":"https://a1.adform.net/adfserve/?bn=36701495;1x1inv=1;srctype=3;ord=[timestamp]","externalInfoImageURLMobile":"https://a1.adform.net/adfserve/?bn=36701519;1x1inv=1;srctype=3;ord=[timestamp]"});
+			});
+		</script> 
+  <script type="text/ng-template" id="general/big-info-section.html">
+			<div id="big-info-section-top"
+				ng-class="{'three-sizes':!isInfoBySoftware, 'big-info-section-wrapper': chosenInfo.sectionType === 'InfoHtml','big-info-section-wrapper-not-html main-sizes': chosenInfo.sectionType !== 'InfoHtml'}" 
+				ng-if="isHidden === false && chosenInfo.isActive === true">
+					<div class="main-image-sizes" ng-if="chosenInfo.sectionType === 'InfoImages'">
+						<div ng-if="isMobile">
+							<a ng-href="{{chosenInfo.mobileUrl}}" target="_blank">
+								<img ng-src="{{chosenInfo.mobileImage}}" />
+								<img ng-if= "chosenInfo.externalInfoImageURLMobile!==''" ng-src="{{chosenInfo.externalInfoImageURLMobile}}" border="0" width="1" height="1"/>
+							</a>
+						</div>
+						<div ng-if="!isMobile">
+							<a ng-href="{{chosenInfo.desktopUrl}}" target="_blank">
+								<img ng-src="{{chosenInfo.desktopImage}}" />
+								<img ng-if= "chosenInfo.externalInfoImageURLDesktop !== ''" ng-src="{{chosenInfo.externalInfoImageURLDesktop}}" border="0" width="1" height="1"/>
+							</a>
+						</div>
+					</div>
+					<div ng-if="chosenInfo.sectionType === 'InfoExternal'">
+						<ins class="adsbygoogle responsive-bw"
+							 style="display:inline-block;"
+							 data-ad-client="ca-pub-7588548779094594"
+							 data-ad-slot="1807015857"
+							 ng-if="!isInfoBySoftware">
+						</ins>
+						<div ng-if="isInfoBySoftware" class="main-image-sizes">
+							<div class="mobile-visibility">
+								<a ng-href="{{chosenInfo.mobileUrl}}"><img ng-src="{{chosenInfo.mobileImage}}" /></a>
+							</div>
+							<div class="desktop-visibility">
+								<a ng-href="{{chosenInfo.desktopUrl}}"><img ng-src="{{chosenInfo.desktopImage}}" /></a>
+							</div>
+						</div>
+					</div>
+					<div ng-if="chosenInfo.sectionType === 'InfoHtml'">
+						<style>
+							{{chosenInfo.extraCssData}}
+						</style>
+						<div ng-bind-html="chosenInfo.htmlData" ></div>
+					</div>
+			</div>
+		</script> 
+  <script src="https://www.google.com/recaptcha/api.js?render=6Le3TrMUAAAAAJf-cqN5ZCubOFW-jHhC_cc2ybni"></script> 
+  <script>
+		angular.module('ccc-app').run(function(pageInfo){
+			pageInfo.setPageId(718981);
+			pageInfo.setBaseUrl("/coins/list/");
+			pageInfo.setDocumentType("webPageCoinListH");
+			pageInfo.setToplistSlots([{"link":"https://rebrand.ly/bitmax-685e0","text":"Buy tokens with credit /debit card, lowest trading fee (-0.025% lowest). Innovative MARGIN，FUTURES and VOLATILITY products.","imageUrl":"/media/36798778/bitmax.png","id":934267,"externalId":"126","countriesList":"","typePosition":"toplist_info","externalInfoImageURL":""},{"link":"https://rebrand.ly/4b07b","text":"AAB flash sale - Win FREE crypto worth $1000! Click to learn more","imageUrl":"/media/36798780/aax.png","id":934272,"externalId":"127","countriesList":"!AF,KH,MM,KP,PK,BY,BW,BA,BI,CF,CD,EG,ER,GH,GW,IR,IQ,LY,LB,ML,MD,SY,SO,SD,SS,TN,ZW,YE,US,PR,AS,GU,MP,VI,CA-QC,BS,CU,HT,PA,TT,VE","typePosition":"toplist_info","externalInfoImageURL":""}]);
+		});
+	</script> 
+ </head> 
+ <body class="webPageCoinListH " ng-class-for-lights> 
+  <noscript> <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NPCM6K" height="0" width="0" style="display:none;visibility:hidden"></iframe> 
+   <div class="container-js-not-enabled"> 
+    <div class="js-not-enabled-error"> 
+     <div class="browser-js-not-enabled"> 
+      <p><b>CryptoCompare</b> needs javascript enabled in order to work.</p> 
+     </div> 
+     <p>Follow these instructions to activate and enable JavaScript in <b>Chrome</b>.</p> 
+     <p>PC</p> 
+     <ol> 
+      <li>To the right of the address bar, click the icon with <strong>3 stacked horizontal lines</strong>.</li> 
+      <li>From the drop-down menu, select <strong>Settings</strong>.</li> 
+      <li>At the bottom of the page, click the <strong>Show advanced settings…</strong> link.</li> 
+      <li>Under the <strong>Privacy</strong> section, click the <strong>Content settings…</strong> button.</li> 
+      <li>Under the <strong>JavaScript</strong> heading, select the <strong>Allow all sites to run JavaScript</strong> radio button.</li> 
+      <li>Finally, <strong>refresh</strong> your browser.</li> 
+     </ol> 
+     <p>MAC</p> 
+     <ol> 
+      <li>Select <strong>Chrome</strong> from the Apple/System bar at the top of the screen.</li> 
+      <li>Select <strong>Preferences...</strong> from the drop-down menu.</li> 
+      <li>In the left-hand column, select <strong>Settings</strong> from the list.</li> 
+      <li>At the bottom of the page, click the <strong>Show advanced settings…</strong> link.</li> 
+      <li>Under the <strong>Privacy</strong> section, click the <strong>Content settings…</strong> button.</li> 
+      <li>Under the <strong>JavaScript</strong> heading, select the <strong>Allow all sites to run JavaScript</strong> radio button.</li> 
+      <li>Finally, <strong>refresh</strong> your browser.</li> 
+     </ol> 
+    </div> 
+   </div> 
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NPCM6K');</script> 
+  <div class="normal-browser" ng-cloak> 
+   <script type="text/ng-template" id="general/auto-suggest-result.html">
+	<div class="typeahead-group-header" ng-if="match.model.firstInGroup === '1'">{{match.model.group}}</div>
+	<a class="typeahead-result-option" href="{{match.model.fullPath}}">
+		<span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+	</a>
+</script> 
+   <script type="text/ng-template" id="general/notification-user-action.html">
+<li>
+	<a href="#" class="media">
+		<span class="label pull-right" ng-class="{'label-success':notification.Type=='Comment'||notification.Type=='Agree'||notification.Type=='Favorit','label-warning':notification.Type=='Disagree','label-danger':notification.Type=='Report'}"ng-show='notification.isNew'>New</span>
+		<div class="media-left">
+			<img ng-src="{{notification.From.AvatarUrl}}" class="img-user" />
+		</div>
+		<div class="media-body">
+			<div class="text-nowrap"><b>{{notification.From.Username}}</b> {{getActionText()}} <b>{{notification.To.Description}}</b></div>
+			<small class="text-muted">{{DateParsing.formatFromNow(notification.Time*1000)}}</small>
+		</div>
+	</a>
+</li>					
+</script> 
+   <script type="text/ng-template" id="general/popover-rating.html">
+	<div class="wrapper-star">
+		<span class="stars-label">5 star </span>
+		<span class="stars-progress-bar">
+			<uib-progressbar value="item.Rating['Five']" max="item.Rating['TotalUsers']||1" animate="false"></uib-progressbar>
+		</span>
+		<span class="total-users">
+			{{item.Rating['Five']}}
+		</span>
+	</div>
+	<div class="wrapper-star">
+		<span class="stars-label">4 star </span>
+		<span class="stars-progress-bar">
+			<uib-progressbar value="item.Rating['Four']" max="item.Rating['TotalUsers']||1" animate="false"></uib-progressbar>
+		</span>
+		<span class="total-users">
+			{{item.Rating['Four']}}
+		</span>
+	</div>
+	<div class="wrapper-star">
+		<span class="stars-label">3 star </span>
+		<span class="stars-progress-bar">
+			<uib-progressbar value="item.Rating['Three']" max="item.Rating['TotalUsers']||1" animate="false"></uib-progressbar>
+		</span>
+		<span class="total-users">
+			{{item.Rating['Three']}}
+		</span>
+	</div>
+	<div class="wrapper-star">
+		<span class="stars-label">2 star </span>
+		<span class="stars-progress-bar">
+			<uib-progressbar value="item.Rating['Two']" max="item.Rating['TotalUsers']||1" animate="false"></uib-progressbar>
+		</span>
+		<span class="total-users">
+			{{item.Rating['Two']}}
+		</span>
+	</div>
+	<div class="wrapper-star">
+		<span class="stars-label">1 star </span>
+		<span class="stars-progress-bar">
+			<uib-progressbar value="item.Rating['One']" max="item.Rating['TotalUsers']||1" animate="false"></uib-progressbar>
+		</span>
+		<span class="total-users">
+			{{item.Rating['One']}}
+		</span>
+	</div>
+</script> 
+   <script>
+	angular.module('ccc-app').run(function(notificationsManager){
+		notificationsManager.setNotifications([]);
+	});
+</script> 
+   <div class="navbar navbar-inverse navbar-fixed-top visible-xs-block"> 
+    <div class="wrapper-mobile"> 
+     <ul class="nav navbar-nav pull-left nav-menu-mobile" ng-controller="DropdownMenuUserSectionCtrl" ng-class="{'not-loggedin':!userManager.isLoggedIn()}"> 
+      <li class="dropdown" uib-dropdown> <a class="dropdown-toggle" uib-dropdown-toggle><span class="fa fa-bars"></span> <span class="caret"></span></a> 
+       <ul class="uib-dropdown-menu" role="menu"> 
+        <li class="dropdown mobile-tab-section selected"> <a href="/">Markets</a> </li> 
+        <li class="dropdown mobile-tab-section"> <a href="https://data.cryptocompare.com">Data</a> </li> 
+        <li class="dropdown mobile-tab-section"> <a href="https://min-api.cryptocompare.com/">{API}</a> </li> 
+        <li class="dropdown"> <a href="/" class="link-home">
+          <div class="icon-mobile">
+           <span class="fa fa-home fa-2x"></span>
+          </div>Home</a> </li> 
+        <li class="dropdown"> <a href="/coins/list/">
+          <div class="icon-mobile">
+           <span class="fa fa-bitcoin fa-2x"></span>
+          </div>Top Lists</a> </li> 
+        <li class="dropdown"> <a href="/ico/">
+          <div class="icon-mobile">
+           <span class="fa fa-money fa-2x"></span>
+          </div>ICOs</a> </li> 
+        <li class="dropdown"> <a href="/exchanges/">
+          <div class="icon-mobile">
+           <span class="fa fa-institution fa-2x"></span>
+          </div>Exchanges</a> </li> 
+        <li class="dropdown"> <a href="/mining/">
+          <div class="icon-mobile">
+           <span class="fa fa-gears fa-2x"></span>
+          </div>Mining</a> </li> 
+        <li class="dropdown"> <a href="/mining/calculator/btc">
+          <div class="icon-mobile">
+           <span class="fa fa-calculator fa-2x"></span>
+          </div>Mining Calc</a> </li> 
+        <li class="dropdown"> <a href="/wallets/">
+          <div class="icon-mobile">
+           <span class="fa fa-book fa-2x"></span>
+          </div>Wallets</a> </li> 
+        <li class="dropdown"> <a href="/news/list/latest/">
+          <div class="icon-mobile">
+           <span class="fa fa-comments fa-2x"></span>
+          </div>News</a> </li> 
+        <li class="dropdown"> <a href="/portfolio/">
+          <div class="icon-mobile">
+           <span class="fa fa-bar-chart fa-2x"></span>
+          </div>Portfolio</a> </li> 
+        <li class="dropdown"> <a href="" ng-click="switchLights()">
+          <div class="icon-mobile">
+           <span class="fa fa-lightbulb-o fa-2x"></span>
+          </div>Turn {{LightsStatus}}</a> </li> 
+        <li class="dropdown"> <a href="https://min-api.cryptocompare.com">
+          <div class="icon-mobile">
+           <span class="fa fa-code fa-2x"></span>
+          </div>API</a> </li> 
+        <li class="dropdown" ng-show="!userManager.isLoggedIn()"> <a href="" ng-click="showLogin()"> 
+          <div class="mobile-avatar">
+           <i class="fa fa-key"></i>
+          </div> Login / Register </a> </li> 
+        <li class="dropdown ng-hide" uib-dropdown ng-show="userManager.isLoggedIn()"> <a href="/cryptopian/" class="uib-dropdown-toggle nav-profile"> 
+          <div class="mobile-avatar">
+           <img ng-src="{{userManager.getAvatarUrl()}}" class="navbar-profile-avatar" alt="">
+          </div> <span class="navbar-profile-label" ng-bind="userManager.getUsername()"></span> </a> </li> 
+       </ul> </li> 
+     </ul> 
+     <div class="container-search"> 
+      <form id="search-mobile" class="search-mobile" ng-controller="AutosuggestCtrl"> 
+       <input class="form-control" type="text" ng-model="asyncDataResult" typeahead-template-url="general/auto-suggest-result.html" placeholder="Search" typeahead-wait-ms="200" uib-typeahead="result as result.nodeName for result in getAutosuggest($viewValue)" typeahead-loading="loadingData" typeahead-on-select="onSelect($item, $model, $label)"> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="navigation-tabs" class="navbar navbar-main navbar-top visible-md-block visible-lg-block visible-sm-block" role="navigation"> 
+    <div class="container"> 
+     <div class="navbar-wrapper"> 
+      <div class="navbar-header"> <a class="navbar-brand" href="/"></a> 
+      </div> 
+      <ul class="tabrow"> 
+       <li class="selected"><a href="/">Markets</a></li> 
+       <li><a href="https://data.cryptocompare.com">Data</a></li> 
+       <li><a href="https://min-api.cryptocompare.com/">{API}</a></li> 
+       <li><a href="https://summit.cryptocompare.com" target="_blank">Summit</a></li> 
+      </ul> 
+      <ul class="nav navbar-nav navbar-right navbar-login-main" ng-controller="DropdownMenuUserSectionCtrl"> 
+       <li class=""> <a href="https://www.cryptocompare.com/portfolio/"> Portfolio </a> </li> 
+       <li class="login-button" ng-show="!userManager.isLoggedIn()"> <a href="" ng-click="showLogin()"> Log In / Sign Up </a> </li> 
+       <li class="dropdown ng-hide" uib-dropdown on-toggle="toggled(open,'notifications')" ng-show="userManager.isLoggedIn()&amp;&amp;!userManager.isLoggedIn()"> <a href class="dropdown-toggle nav-notifications notices" uib-dropdown-toggle> <span class="fa fa-bell"></span> <span class="badge badge-on" ng-show="notificationsManager.getNewNotificaticationsCount()>0" ng-bind="notificationsManager.getNewNotificaticationsCount()"></span> </a> 
+        <div class="uib-dropdown-menu with-arrow dropdown-menu-md" role="menu"> 
+         <div class="nano"> 
+          <div class="nano-content"> 
+           <ul class="head-list"> <notification-action ng-repeat="(key,notification) in notificationsManager.getNotifications()" notification="notification"></notification-action> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> </li> 
+       <li class="dropdown navbar-profile ng-hide" uib-dropdown on-toggle="toggled(open,'profile')" ng-show="userManager.isLoggedIn()"> <a href class="dropdown-toggle nav-profile" uib-dropdown-toggle> <img ng-src="{{userManager.getAvatarUrl()}}" class="navbar-profile-avatar" alt=""> <span class="navbar-profile-label" ng-bind="userManager.getUsername()"></span> <i class="fa fa-caret-down"></i> </a> 
+        <ul class="uib-dropdown-menu" role="menu"> 
+         <li> <a href="/quiz/"> <i class="fa fa-question"></i> Quiz </a> </li> 
+         <li> <a ng-href="/profile/{{userManager.getUsername()}}/"> <i class="fa fa-user"></i> View My Profile </a> </li> 
+         <li> <a href="/cryptopian/general"> <i class="fa fa-cogs"></i> Account </a> </li> 
+         <li> <a href="/cryptopian/api-keys"> <i class="fa fa-code"></i> API Keys </a> </li> 
+         <li> <a href="/cryptopian/billing"> <i class="fa fa-credit-card"></i> Billing </a> </li> 
+         <li class="dropdown"> <a href="" ng-click="switchLights()"> <i class="fa fa-lightbulb-o"></i>Turn {{LightsStatus}} </a> </li> 
+         <li class="divider"></li> 
+         <li> <a href ng-click="userManager.logout()"> <i class="fa fa-sign-out"></i> Logout </a> </li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div ng-controller="HeaderCtrl" id="navigation-markets" class="navbar navbar-main navbar-secondary visible-md-block visible-lg-block visible-sm-block" role="navigation"> 
+    <div class="navbar-top collapse navbar-collapse"> 
+     <div class="container"> 
+      <div class="navbar-secondary-wrapper"> 
+       <div class="navbar-header"> <a class="navbar-brand" href="/"></a> 
+       </div> 
+       <ul class="nav navbar-nav navbar-megamenu" ng-controller="DropdownCtrl"> 
+        <li class="dropdown " uib-dropdown on-toggle="toggled(open)"> <a href="/coins/list/USD/1" class="uib-dropdown-toggle nav-link" data-toggle="dropdown" data-hover="dropdown" data-delay="200" ng-mouseover="menuForum=true" ng-mouseleave="menuForum=false">Coin List</a> </li> 
+        <li class="dropdown" uib-dropdown on-toggle="toggled(open); isopen=!isopen"> <a uib-dropdown-toggle href="/coins/list/" class="uib-dropdown-toggle nav-link">Top Lists <i ng-class="{'fa fa-angle-down':isopen,'fa fa-angle-up':!isopen}"></i></a> 
+         <ul class="uib-dropdown-menu megamenu row"> 
+          <li> 
+           <div class="col-xs-3"> 
+            <div class="menu-column border-left"> 
+             <h4>Trading / Mining<i class="fas fa-chart-bar"></i></h4> 
+             <div> 
+              <ul> 
+               <li><a href="/coins/list/USD/1">Coins<i class="fa fa-chart-bar"></i></a></li> 
+               <li><a href="/exchanges/">Exchanges</a></li> 
+               <li><a href="/ico/#/ongoing">ICOs</a></li> 
+               <li><a href="/mining/">Mining</a></li> 
+               <li><a href="/mining/calculator/">Mining Calculator</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-xs-3"> 
+            <div class="menu-column border-left"> 
+             <h4>Other</h4> 
+             <div> 
+              <ul> 
+               <li><a href="/wallets/#/popular">Wallets</a></li> 
+               <li><a href="/wallets/#/cards">Cards</a></li> 
+               <li><a href="/forum/#/latest-posts">Latest posts</a></li> 
+               <li><a href="/portfolio-public/#/overview">Public Portfolios</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-xs-6"> 
+            <div class="menu-column coins-featured"> 
+             <h4>Popular Coins</h4> 
+             <ul class="popular-items"> 
+              <li class=""> <a href="/coins/btc/overview" class="popular-item " title="Bitcoin"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/19633/btc.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="BTC"> 
+                </div> 
+                <div class="coins-name">
+                  Bitcoin 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/eth/overview" class="popular-item " title="Ethereum"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/20646/eth_logo.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="ETH"> 
+                </div> 
+                <div class="coins-name">
+                  Ethereum 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/ltc/overview" class="popular-item " title="Litecoin"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/35309662/ltc.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="LTC"> 
+                </div> 
+                <div class="coins-name">
+                  Litecoin 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/dash/overview" class="popular-item " title="Dash"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/33842920/dash.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="DASH"> 
+                </div> 
+                <div class="coins-name">
+                  Dash 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/xmr/overview" class="popular-item " title="Monero"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/19969/xmr.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="XMR"> 
+                </div> 
+                <div class="coins-name">
+                  Monero 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/zec/overview" class="popular-item " title="ZCash"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/351360/zec.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="ZEC"> 
+                </div> 
+                <div class="coins-name">
+                  ZCash 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/xrp/overview" class="popular-item " title="XRP"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/34477776/xrp.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="XRP"> 
+                </div> 
+                <div class="coins-name">
+                  XRP 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/eos/overview" class="popular-item " title="EOS"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/1383652/eos_1.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="EOS"> 
+                </div> 
+                <div class="coins-name">
+                  EOS 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/bnb/overview" class="popular-item " title="BNB"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/1383947/bnb.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="BNB"> 
+                </div> 
+                <div class="coins-name">
+                  BNB 
+                </div> </a> </li> 
+              <li class=""> <a href="/coins/xlm/overview" class="popular-item " title="Stellar"> 
+                <div class="thumb-coin"> 
+                 <img src="/media/35521289/xlm.png?anchor=center&amp;mode=crop&amp;width=32&amp;height=32" title="XLM"> 
+                </div> 
+                <div class="coins-name">
+                  Stellar 
+                </div> </a> </li> 
+             </ul> 
+            </div> 
+           </div> </li> 
+         </ul> </li> 
+        <li class="dropdown" uib-dropdown on-toggle="toggled(open); researchopen=!researchopen"> <a uib-dropdown-toggle href="#" class="uib-dropdown-toggle nav-link">Research <i ng-class="{'fa fa-angle-down':researchopen,'fa fa-angle-up':!researchopen}"></i></a> 
+         <ul class="uib-dropdown-menu megamenu row guides-menu"> 
+          <li> 
+           <div class="col-xs-3"> 
+            <div class="menu-column border-left"> 
+             <h4>Reports</h4> 
+             <div> 
+              <ul> 
+               <li><a href="/external/research/exchange-review/">Exchange Review</a></li> 
+               <li><a href="/external/research/exchange-ranking/">Exchange Benchmark</a></li> 
+               <li><a href="https://data.cryptocompare.com/research">Other Research</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-xs-3"> 
+            <div class="menu-column border-left"> 
+             <h4>Guides</h4> 
+             <div> 
+              <ul> 
+               <li><a href="/coins/guides/#/overview">Coins</a></li> 
+               <li><a href="/exchanges/guides/#/overview">Exchanges</a></li> 
+               <li><a href="/mining/guides/#/overview">Mining</a></li> 
+               <li><a href="/wallets/guides/#/overview">Wallets</a></li> 
+               <li><a href="/spend/guides/#/overview">Gambling</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="col-xs-6"> 
+            <div class="menu-column border-no guide-featured"> 
+             <h4>Latest Guides</h4> 
+             <div> 
+              <ul> 
+               <li class="item-special item-special-guide-coin-menu"><a href="/spend/guides/arbismart-review-benefiting-from-arbitrage-with-ease/" class="item-special-guide-coin-menu">ArbiSmart Review: Benefiting from Arbitrage with Ease</a></li> 
+               <li class=""><a href="/exchanges/guides/how-to-copy-trade-cryptocurrencies-etoro-guide/" class="">How to Copy Trade Cryptocurrencies - eToro Guide</a></li> 
+               <li class=""><a href="/exchanges/guides/what-are-bitcoin-perpetual-swaps-and-how-to-trade-them/" class="">What are Bitcoin Perpetual Swaps and How to Trade Them</a></li> 
+               <li class=""><a href="/coins/guides/how-to-use-our-api/" class="">How to use our API</a></li> 
+               <li class=""><a href="/portfolio/guides/how-to-build-a-cryptocurrency-portfolio/" class="">How to Build a Cryptocurrency Portfolio</a></li> 
+              </ul> 
+             </div> 
+            </div> 
+           </div> </li> 
+         </ul> </li> 
+        <li class="dropdown " uib-dropdown on-toggle="toggled(open)"> <a href="/news/list/latest/" class="uib-dropdown-toggle nav-link" data-toggle="dropdown" data-hover="dropdown" data-delay="200" ng-mouseover="menuForum=true" ng-mouseleave="menuForum=false">News</a> </li> 
+       </ul> 
+       <div class="search-top pull-left hidden-xs" ng-controller="AutosuggestCtrl"> 
+        <form class="navbar-form navbar-form-secondary"> 
+         <div class="form-group"> <i class="glyphicon glyphicon-search"></i> 
+          <input class="form-control" type="text" ng-model="asyncDataResult" typeahead-template-url="general/auto-suggest-result.html" placeholder="Search" typeahead-wait-ms="200" uib-typeahead="result as result.nodeName for result in getAutosuggest($viewValue)" typeahead-loading="loadingData" typeahead-on-select="onSelect($item, $model, $label)" autofocus> <i ng-show="loadingData" class="glyphicon glyphicon-refresh glyphicon-spin ng-hide"></i> 
+         </div> 
+        </form> 
+       </div> 
+       <ul class="nav navbar-nav navbar-right navbar-login-main" ng-controller="DropdownMenuUserSectionCtrl"> 
+        <li class=""> <a href="https://www.cryptocompare.com/portfolio/"> Portfolio </a> </li> 
+        <li class="login-button" ng-show="!userManager.isLoggedIn()"> <a href="" ng-click="showLogin()"> Log In / Sign Up </a> </li> 
+        <li class="dropdown ng-hide" uib-dropdown on-toggle="toggled(open,'notifications')" ng-show="userManager.isLoggedIn()&amp;&amp;!userManager.isLoggedIn()"> <a href class="dropdown-toggle nav-notifications notices" uib-dropdown-toggle> <span class="fa fa-bell"></span> <span class="badge badge-on" ng-show="notificationsManager.getNewNotificaticationsCount()>0" ng-bind="notificationsManager.getNewNotificaticationsCount()"></span> </a> 
+         <div class="uib-dropdown-menu with-arrow dropdown-menu-md" role="menu"> 
+          <div class="nano"> 
+           <div class="nano-content"> 
+            <ul class="head-list"> <notification-action ng-repeat="(key,notification) in notificationsManager.getNotifications()" notification="notification"></notification-action> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li class="dropdown navbar-profile ng-hide" uib-dropdown on-toggle="toggled(open,'profile')" ng-show="userManager.isLoggedIn()"> <a href class="dropdown-toggle nav-profile" uib-dropdown-toggle> <img ng-src="{{userManager.getAvatarUrl()}}" class="navbar-profile-avatar" alt=""> <span class="navbar-profile-label" ng-bind="userManager.getUsername()"></span> <i class="fa fa-caret-down"></i> </a> 
+         <ul class="uib-dropdown-menu" role="menu"> 
+          <li> <a href="/quiz/"> <i class="fa fa-question"></i> Quiz </a> </li> 
+          <li> <a ng-href="/profile/{{userManager.getUsername()}}/"> <i class="fa fa-user"></i> View My Profile </a> </li> 
+          <li> <a href="/cryptopian/general"> <i class="fa fa-cogs"></i> Account </a> </li> 
+          <li> <a href="/cryptopian/api-keys"> <i class="fa fa-code"></i> API Keys </a> </li> 
+          <li> <a href="/cryptopian/billing"> <i class="fa fa-credit-card"></i> Billing </a> </li> 
+          <li class="dropdown"> <a href="" ng-click="switchLights()"> <i class="fa fa-lightbulb-o"></i>Turn {{LightsStatus}} </a> </li> 
+          <li class="divider"></li> 
+          <li> <a href ng-click="userManager.logout()"> <i class="fa fa-sign-out"></i> Logout </a> </li> 
+         </ul> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <big-info-section page="webPageCoinListH"></big-info-section> 
+   <div class="main-wrapper"> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="content-tab"> 
+       <script type="text/ng-template" id="lists/coins-list-v2.html">
+	<header class="header header-page header-coinss">
+		<h1 class="page-title">Coins List</h1>
+		<div class="resp-menu">
+			<div class="btn-group" uib-dropdown is-open="status.isopen">
+			  <button
+				id="single-button"
+				type="button"
+				class="btn btn-default btn-lg btn-block btn-resp-menu"
+				uib-dropdown-toggle
+				ng-disabled="disabled"
+			  >
+			  	{{currentTab}} <span class="caret"></span>
+			  </button>
+			  <ul
+				class="dropdown-menu"
+				uib-dropdown-menu
+				role="menu"
+				aria-labelledby="single-button"
+			   >
+				 <li
+				 	role="menuitem"
+				  	ng-repeat="(tabId,navTab) in acceptedTabs"
+				  	ng-class="{'active':acceptedTabs[tabId].Key===currentTab}"
+					ng-if="acceptedTabs[tabId].Key !== currentTab"
+				 >
+			 		<a
+						ng-click="changeNavTab(navTab.Key)"
+						ng-href="/coins/list/{{navTab.Key}}/1"
+				  	>
+					  {{navTab.Name}}
+					</a>
+				 </li>
+			  </ul>
+			</div>
+		</div>
+		<ul class="nav nav-tabs nav-coinss">
+			<li role="presentation" ng-repeat="(tabId,navTab) in acceptedTabs" ng-class="{'active':acceptedTabs[tabId].Key===currentTab}">
+				<a ng-click="changeNavTab(navTab.Key)" ng-href="/coins/list/{{navTab.Key}}/1">{{navTab.Name}}</a>
+			</li>
+		</ul>							
+	</header>
+	<div class="">
+		<div class="coins-list">
+			<div class="coin-pagination">
+				<div class="pull-left">
+					<div ng-if="toplistInfo.isActive" class="info-section-learn-more-stuff clearfix">
+						<a
+							ng-href="{{toplistInfo.link}}"
+							class="info-section-learn-more-stuff-text"
+							target="_blank"
+						>
+							<img ng-src="{{toplistInfo.imageUrl}}"/>{{toplistInfo.text}}
+							<img ng-if= "toplistInfo.externalInfoImageURL !== ''" ng-src="{{toplistInfo.externalInfoImageURL}}" style="height:1px; width:1px; border:0px;" border="0" width="1" height="1"/>
+						</a>
+					</div>
+				</div>
+				<div class="pull-right pagination-controls">
+					<a ng-href="/coins/list/{{currentTab}}/{{pageNumber-1}}" ng-if="pageNumber!=1" class="btn btn-xs btn-switch"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous Page</a>
+					<a ng-href="/coins/list/{{currentTab}}/{{pageNumber+1}}" ng-if="pageNumber!=maxPageNumber" class="btn btn-xs btn-switch">Next Page <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
+			<table class="table table-hover table-coins">
+				<thead>
+					<tr>
+						<th class="place text-center">#</th>
+						<th ng-repeat="(tableHeaderKey,tableHeaderItem) in tableColumns" colspan="{{tableHeaderItem.colspan}}" 
+							ng-class="tableHeaderItem.class" ng-click="colToSort(tableHeaderKey)">
+								{{ tableHeaderItem.name }} 
+								<span
+									class="list-info-icon"
+									ng-if="tableHeaderItem.tooltip !== ''"
+								>
+									<i class="fa fa-info-circle" tooltip-placement="bottom" uib-tooltip="{{tableHeaderItem.tooltip}}"></i>
+								</span>
+								<i class="fa" ng-show="tableHeaderItem.sortApplied" ng-class="{'fa-caret-down':sortedColDirection==sortingDirections[0],'fa-caret-up':sortedColDirection==sortingDirections[1]}"></i>
+						</th>
+					</tr>
+				</thead>			
+	
+				<tbody>
+					<div class="chart-is-loading" ng-if="connection.loadingData || connection.data.length===0">
+						<div class="loader-ccc-info">
+							<span class="loader-ccc-loading-message">
+								{{currentLoadingMessage}}
+							</span>
+						</div>
+						<div class="loader-ccc">
+	<div class="loader-ccc-logo"></div>
+	<div class="loader-ccc-sides"></div>
+</div>
+						<tr ng-if="connection.loadingData||connection.data.length===0" ng-repeat="(initKey, initItem) in initCoinTable() track by $index">
+							<td class="place">-</td>
+							<td class="thumb"><img ng-src=""/></td>
+							<td class="name"><h3><span class="desktop-name">-<br></span><span class="mobile-name"></span></h3></td>
+							<td class="price"><div class="current-price-value highlight-unchanged">-</div></td>
+							<td class="volume"></td>
+							<td class="full-volume"></td>
+							<td class="full-volume"></td>
+							<td class="weiss"></td>
+							<td class="market-cap"></td>
+							<td class="spark-chart"></td>
+							<td class="change"></td>
+						</tr>		
+					</div>
+					<tr ng-repeat="(keyCoinData,coinData) in getSponsoredCoinArray()" class="item-special">
+						<td class="place " data-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}">
+							<div>*</div>
+						</td>
+						<td class="thumb" ng-class="{'col-selected':tableColumns[0].sortApplied}">
+							<a ng-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}" title="See full markets and forum for {{coinData.CommonData.CoinName}}">
+								<img ng-src="{{coinData.CommonData.ImageUrl}}?width=25">
+							</a>
+						</td>		
+						<td class="name" ng-class="{'col-selected':tableColumns[0].sortApplied,'is-up':coinData.VISUAL.PRICEUP, 'is-down':coinData.VISUAL.PRICEDOWN}">
+							<a ng-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}" title="See full markets and forum for {{coinData.CommonData.CoinName}}">
+								<h3>
+									<span class="desktop-name">
+										{{coinData.CommonData.FullName}}<br/>
+										<i style="font-style: normal; font-size: 14px;">{{coinData.CommonData.Name}}</i>
+									</span>
+									<span class="mobile-name">{{coinData.CommonData.Name}}</span>
+									<span class="special-text">
+										Sponsored
+									</span>
+								</h3>
+							</a>
+						</td>
+						<td class="price" ng-class="{'col-selected':tableColumns[1].sortApplied,'is-up':coinData.VISUAL.PRICEUP, 'is-down':coinData.VISUAL.PRICEDOWN}">
+							<div class="current-price-value" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+								{{coinData.DISPLAY.PRICE}}
+							</div>
+						</td>
+						<td class="volume" ng-class="{'col-selected':tableColumns[2].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.VOLUME24HOURTO}}
+							</div>
+						</td>
+						<td class="full-volume" ng-class="{'col-selected':tableColumns[3].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.FULLVOLUMETO}}
+							</div>
+						</td>
+						<td class="full-volume" ng-class="{'col-selected':tableColumns[4].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.TOPTIERFULLVOLUMETO}}
+							</div>
+						</td>
+						<td class="weiss" ng-class="{'col-selected':tableColumns[6].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.WEISS}}
+							</div>
+						</td>
+						<td class="market-cap" ng-class="{'col-selected':tableColumns[5].sortApplied}">
+							<div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}">
+								{{coinData.DISPLAY.MKTCAP}}
+							</div>
+						</td>
+						<td class="spark-chart">
+							<img class="spark-img" ng-src="https://images.cryptocompare.com/sparkchart/{{coinData.CommonData.Internal}}/USD/latest.png?ts={{cacheBuster}}"/>
+						</td>
+						<td class="change" ng-class="{'col-selected':tableColumns[7].sortApplied}">
+							<div class="change-normal">
+								<span class="current-change-currency" ng-class="{ 'up-text':coinData.DATA.CHANGEPCT24HOUR>0, 'down-text':coinData.DATA.CHANGEPCT24HOUR<0, 'unchanged-text':coinData.DATA.CHANGEPCT24HOUR==0 }">
+									{{coinData.DISPLAY.CHANGEPCT24HOUR}}%
+									<i class="change-indicator-xs">
+										<span class="glyphicon glyphicon-chevron-up ng-hide" ng-show="coinData.DISPLAY.CHANGE24HOURUP" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-chevron-down" ng-show="coinData.DISPLAY.CHANGE24HOURDOWN" aria-hidden="true"></span>
+									</i>										
+								</span>
+							</div>
+							<div class="change-mobile">										
+								<span class="current-change-currency" ng-class="{ 'up-text':coinData.DATA.CHANGEPCT24HOUR>0, 'down-text':coinData.DATA.CHANGEPCT24HOUR<0, 'unchanged-text':coinData.DATA.CHANGEPCT24HOUR==0}">
+									{{coinData.DISPLAY.CHANGEPCT24HOUR}}%										
+								</span>
+							</div>								
+						</td>
+					</tr>	
+					<tr ng-repeat="(keyCoinData,coinData) in getCoinArray()">
+						<td class="place " data-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}">
+							<div>{{ keyCoinData + 1 + ((pageNumber-1)*tableSize) }}</div>
+						</td>
+						<td class="thumb" ng-class="{'col-selected':tableColumns[0].sortApplied}">
+							<a ng-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}" title="See full markets and forum for {{coinData.CommonData.CoinName}}">
+								<img ng-src="{{coinData.CommonData.ImageUrl}}?width=25">
+							</a>
+						</td>		
+						<td class="name" ng-class="{'col-selected':tableColumns[0].sortApplied,'is-up':coinData.VISUAL.PRICEUP, 'is-down':coinData.VISUAL.PRICEDOWN}">
+							<a ng-href="{{coinData.CommonData.Url+'/'+currentTab.toUpperCase()}}" title="See full markets and forum for {{coinData.CommonData.CoinName}}">
+								<h3>
+									<span class="desktop-name">
+										{{coinData.CommonData.FullName}}<br/>
+										<i style="font-style: normal; font-size: 14px; float: left;">{{coinData.CommonData.Name}}</i>
+									</span>
+									<span class="mobile-name">{{coinData.CommonData.Name}}</span>
+								</h3>
+							</a>
+						</td>
+						<td class="price" ng-class="{'col-selected':tableColumns[1].sortApplied,'is-up':coinData.VISUAL.PRICEUP, 'is-down':coinData.VISUAL.PRICEDOWN}">
+							<div class="current-price-value" ng-class="{'highlight-up value-up':coinData.VISUAL.PRICEUP, 'highlight-down value-down':coinData.VISUAL.PRICEDOWN,'value-up':coinData.DISPLAY.CHANGE24HOURUP, 'value-down':coinData.DISPLAY.CHANGE24HOURDOWN, 'value-unchanged':coinData.DISPLAY.CHANGE24HOURUNCHANGED}">
+								{{coinData.DISPLAY.PRICE}}
+							</div>
+						</td>
+						<td class="volume" ng-class="{'col-selected':tableColumns[2].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.VOLUME24HOURTO}}
+							</div>
+						</td>
+						<td class="full-volume" ng-class="{'col-selected':tableColumns[3].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.FULLVOLUMETO}}
+							</div>
+						</td>
+						<td class="full-volume" ng-class="{'col-selected':tableColumns[4].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.TOPTIERFULLVOLUMETO}}
+							</div>
+						</td>
+						<td class="market-cap" ng-class="{'col-selected':tableColumns[5].sortApplied}">
+							<div ng-class="{'highlight-up':coinData.VISUAL.MKTCAPUP, 'highlight-down':coinData.VISUAL.MKTCAPDOWN}">
+								{{coinData.DISPLAY.MKTCAP}}
+							</div>
+						</td>
+						<td class="weiss" ng-class="{'col-selected':tableColumns[6].sortApplied}">
+							<div>
+								{{coinData.DISPLAY.WEISS}}
+							</div>
+						</td>
+						<td class="spark-chart">
+							<img class="spark-img" ng-src="https://images.cryptocompare.com/sparkchart/{{coinData.CommonData.Internal}}/USD/latest.png?ts={{cacheBuster}}"/>
+						</td>
+						<td class="change" ng-class="{'col-selected':tableColumns[7].sortApplied}">
+							<div class="change-normal">
+								<span class="current-change-currency" ng-class="{ 'up-text':coinData.DATA.CHANGEPCT24HOUR>0, 'down-text':coinData.DATA.CHANGEPCT24HOUR<0, 'unchanged-text':coinData.DATA.CHANGEPCT24HOUR==0 }">
+									{{coinData.DISPLAY.CHANGEPCT24HOUR}}%
+									<i class="change-indicator-xs">
+										<span class="glyphicon glyphicon-chevron-up ng-hide" ng-show="coinData.DISPLAY.CHANGE24HOURUP" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-chevron-down" ng-show="coinData.DISPLAY.CHANGE24HOURDOWN" aria-hidden="true"></span>
+									</i>										
+								</span>
+							</div>
+							<div class="change-mobile">										
+								<span class="current-change-currency" ng-class="{ 'up-text':coinData.DATA.CHANGEPCT24HOUR>0, 'down-text':coinData.DATA.CHANGEPCT24HOUR<0, 'unchanged-text':coinData.DATA.CHANGEPCT24HOUR==0}">
+									{{coinData.DISPLAY.CHANGEPCT24HOUR}}%										
+								</span>
+							</div>								
+						</td>
+					</tr>											
+				</tbody>
+			</table>
+			<div class="coin-pagination">
+				<div class="pull-right">
+					<a ng-href="/coins/list/{{currentTab}}/{{pageNumber-1}}" ng-if="pageNumber!=1" class="btn btn-xs btn-switch"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous Page</a>
+					<a ng-href="/coins/list/{{currentTab}}/{{pageNumber+1}}" ng-if="pageNumber!=maxPageNumber" class="btn btn-xs btn-switch">Next Page <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</script> <coins-list-v2></coins-list-v2> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer" ng-controller="ContactUsFooterCtrl"> 
+    <div class="container"> 
+     <div class="row"> 
+      <div class="col-md-2 col-sm-3 col-xs-6 col-footer"> 
+       <div style="display:none;" id="stripe-container"> 
+       </div> 
+       <div class="nav-panel"> 
+        <div class="nav-header">
+         <h4>Our company</h4>
+        </div> 
+        <ul class="nav nav-pills"> 
+         <li role="presentation" class=""><a href="/about-us/">About us</a></li> 
+         <li role="presentation" class=""><a href="/press-release/">Press Releases</a></li> 
+         <li role="presentation" class=""><a href="https://blog.cryptocompare.com/" target="_blank">Research</a></li> 
+         <li role="presentation" class=""><a href="/about-us/timeline/">Our Timeline</a></li> 
+         <li role="presentation"><a href="/privacy-policy/">Privacy policy</a></li> 
+         <li role="presentation"><a href="/terms-conditions/">Terms &amp; Conditions</a></li> 
+         <li role="presentation"><a href="/website-disclaimer/">Website disclaimer</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-md-2 col-sm-3 col-xs-6 col-footer panel-min-height"> 
+       <div class="nav-panel"> 
+        <div class="nav-header">
+         <h4>Marketing</h4>
+        </div> 
+        <ul class="nav nav-pills"> 
+         <li role="presentation"><a href="https://www.cryptocompare.com/media/35280519/cc-public-guidelines.pdf">Branding guidelines</a></li> 
+         <li role="presentation"><a href="/advertise/">Advertise with us</a></li> 
+         <li role="presentation" class=""><a href="/email-updates/daily/2020/apr/27/">Latest Newsletter</a></li> 
+         <li role="presentation" class=""><a href="/api/external/newsletter/">Newsletter RSS</a></li> 
+         <li role="presentation" class=""><a href="https://drive.google.com/open?id=0B3isfML9O09eMHQ2dGFPOHBSYlU" target="_blank">Submit Content</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-md-2 col-sm-3 col-xs-6 col-footer"> 
+       <div class="nav-panel"> 
+        <div class="nav-header">
+         <h4>Developers</h4>
+        </div> 
+        <ul class="nav nav-pills"> 
+         <li role="presentation"><a href="/dev/widget/wizard/"><i class="fa fa-space-shuttle"></i> Widgets</a></li> 
+         <li role="presentation"><a href="https://min-api.cryptocompare.com"><i class="fa fa-code"></i> API</a></li> 
+         <li role="presentation"><a href="" ng-click="switchLights()"><i class="fa fa-lightbulb-o"></i> Turn Lights {{LightsStatus}}</a></li> 
+         <li role="presentation"><a target="_blank" href="https://www.cryptocompare.com/full-screen/conference?fsyms=BTC,ETH,BCH&amp;tsym=USD&amp;eventLogo=https://www.cryptocompare.com/media/30001628/your-logo.png"><i class="fa fa-desktop"></i> Conference Screen</a></li> 
+         <li role="presentation"><a target="_blank" href="https://www.cryptocompare.com/media/25792605/topcoinsticker-v3.html"><i class="fa fa-ticket"></i> Conference Ticker</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-md-2 col-sm-3 col-xs-6 col-footer"> 
+       <div class="nav-panel"> 
+        <div class="nav-header">
+         <h4>Get in touch</h4>
+        </div> 
+        <ul class="nav nav-pills ng-scope"> 
+         <li role="presentation" class=""><a href="/careers/">Careers</a></li> 
+         <li role="presentation"><a href="https://cryptocompare.zendesk.com/hc/en-gb/requests/new" target="_blank">Contact Us</a></li> 
+         <li role="presentation"><a href="https://cryptocompare.zendesk.com/hc/en-gb" target="_blank">FAQs</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-md-4 col-sm-12 col-xs-12" style="margin-top: 0px;"> 
+       <div class="nav-panel"> 
+        <div class="nav-header text-center">
+         <h4>Get the CryptoCompare App</h4>
+        </div> 
+        <div class="row row-app" style="margin-top: 15px; margin-bottom: 30px;"> 
+         <div class="col-md-6 text-right"> <a href="https://play.google.com/store/apps/details?id=com.cryptocompare.mainapp" target="_blank"> <img src="https://www.cryptocompare.com/media/34835915/playstore.png" style="width: 140px;"> </a> 
+         </div> 
+         <div class="col-md-6"> <a href="https://itunes.apple.com/us/app/cryptocompare/id1248404900?ls=1&amp;mt=8" target="_blank"> <img src="https://www.cryptocompare.com/media/34835914/appstore.png" style="height: 50px;"> </a> 
+         </div> 
+        </div> 
+       </div> 
+       <ul class="soc"> 
+        <li><a class="fa fa-twitter" href="https://twitter.com/CryptoCompare" target="_blank"></a></li> 
+        <li><a class="fa fa-facebook" href="https://www.facebook.com/cryptocompare" target="_blank"></a></li> 
+        <li><a class="fa fa-medium" href="https://blog.cryptocompare.com/" target="_blank"></a></li> 
+       </ul> 
+       <div class="nav-panel clearfix"> 
+        <ul class="nav nav-pills nav-centered nav-made"> 
+         <li role="presentation"> <a href="https://www.cryptocompare.com/media/35280519/cc-public-guidelines.pdf"> © 2019 Crypto Coin Comparison Ltd </a> </li> 
+         <li role="presentation"><a href="/about-us/">Made with <i class="fa fa-heart love"></i> in London</a></li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <script type="text/ng-template" id="gModalService/showMessage.html">
+	<div class="modal-header">
+		<h3 class="modal-title">
+			{{message.Title}}
+			<button type="button" class="close" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+		</h3>
+	</div>
+	<div class="modal-body" ng-class="{'with-icon': message.Type }">
+		<div class="modal-icon-{{message.Type}} modal-icon-big" ng-show="message.Type"><span class="fa fa-warning"></span></div>
+		<p class="modal-info-text" ng-bind-html="message.Body | parseUrlFilter:'_blank'"></p>
+	</div>
+    <div class="modal-footer">
+		<button class="btn btn-default" ng-click="cancel()">Close</button>
+		<button ng-show="message.ShowOk" class="btn btn-success" ng-click="doOkAction()">Ok</button>
+	</div>
+</script> 
+   <script type="text/ng-template" id="gModalService/showTipMessage.html">
+	<div class="modal-header">
+		<h3 class="modal-title">
+			If you are enjoying our free service
+			<button type="button" class="close" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+		</h3>
+	</div>
+	<div class="modal-body with-icon">
+		<div class="modal-icon-big modal-smile-icon-big"><span class="fa fa-smile-o"></span></div>
+		<div class="modal-info-text">
+			<div class="modal-subheading">Put a smile on our faces and support us by donating :)</div>
+			<div class="donate-coin">
+				<div class="donate-coin-label"> Bitcoin (BTC)</div>
+				<div class="donate-wallet-address">
+					1DNigUiVNaMrzANuwC7KomBJHX8sdvnvkM
+					<a href="" ng-click="message.show('btcQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="!message.btcQr">Show QR Code</a>
+					<a href="" ng-click="message.hide('btcQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="message.btcQr">Hide QR Code</a>
+				</div>
+				<div class="text-center qr-code-coin" ng-show="message.btcQr">
+					<img src="/media/30002130/1dniguivnamrzanuwc7kombjhx8sdvnvkm.png"/>
+				</div>
+			</div>
+			<div class="donate-coin">
+				<div class="donate-coin-label"> Litecoin (LTC)</div>
+				<div class="donate-wallet-address">
+					LN4TnhNotx3SGoES7FLJL3Psh3Uo6qdgKR
+					<a href="" ng-click="message.show('ltcQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="!message.ltcQr">Show QR Code</a>
+					<a href="" ng-click="message.hide('ltcQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="message.ltcQr">Hide QR Code</a>
+				</div>
+				<div class="text-center qr-code-coin" ng-show="message.ltcQr">
+					<img src="/media/20586/ln4tnhnotx3sgoes7-small.png"/>
+				</div>
+			</div>
+			<div class="donate-coin">
+				<div class="donate-coin-label"> Ethereum (ETH)</div>
+				<div class="donate-wallet-address">
+					0x154230ed91d1e711e56b9c0f88b5ba5fd2b0503f
+					<a href="" ng-click="message.show('ethTransaction')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="!message.ethTransaction">Show Transaction Code</a>
+					<a href="" ng-click="message.hide('ethTransaction')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="message.ethTransaction">Hide Transaction Code</a>
+				</div>
+				<div class="donate-wallet-address qr-code-coin" ng-show="message.ethTransaction">
+					eth.sendTransaction({from: eth.coinbase, to: "0x154230ed91d1e711e56b9c0f88b5ba5fd2b0503f", value: web3.toWei(1, "ether"),data: web3.toHex('Love the website, good luck!')})
+				</div>
+			</div>
+			<div class="donate-coin">
+				<div class="donate-coin-label"> DigitalCash (DASH)</div>
+				<div class="donate-wallet-address">
+					XmUswXDP4rrCkoi84iPAZ5F2i49grTQGP5
+					<a href="" ng-click="message.show('dashQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="!message.dashQr">Show QR Code</a>
+					<a href="" ng-click="message.hide('dashQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="message.dashQr">Hide QR Code</a>
+				</div>
+				<div class="text-center qr-code-coin" ng-show="message.dashQr">
+					<img src="/media/350769/xmuswxdp4rrckoi84ipaz5f2i49grtqgp5-small.jpg"/>
+				</div>
+			</div>
+			<div class="donate-coin">
+				<div class="donate-coin-label"> ZCash (ZEC)</div>
+				<div class="donate-wallet-address">
+					t1SB3Pr4Gi6Y7ctzd23kCT5qfLxvfAo8E4A
+					<a href="" ng-click="message.show('zecQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="!message.zecQr">Show QR Code</a>
+					<a href="" ng-click="message.hide('zecQr')" class="pull-right btn btn-xs btn-default hidden-xs" ng-show="message.zecQr">Hide QR Code</a>
+				</div>
+				<div class="text-center qr-code-coin" ng-show="message.zecQr">
+					<img src="https://www.cryptocompare.com/media/1382055/t1sb3pr4gi6y7ctzd23kct5qflxvfao8e4a-small.jpg"/>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="modal-footer">
+		<button class="btn btn-default" ng-click="cancel()">Close</button>
+	</div>
+</script> 
+   <script type="text/ng-template" id="general/cookie-notification-popup.html">
+	<div class="cookies-notification" ng-hide="cookiePopupSeen">
+		<div class="cookies-wrapper">
+			<div class="cookies-actions">
+				<a href="/privacy-policy/" target="_blank" class="btn btn-blue btn-xs btn-speech-right cookies-learn">Learn more</a>
+				<div class="cookie-notification-icon"></div>
+				<a href="" ng-click="hideCookieNotification()" class="btn btn-green btn-xs btn-speech-left cookies-gotit">Got it!</a>
+			</div>
+			We use cookies, just to track visits to our website, we store no personal details.
+		</div>
+	</div>
+</script> <cookie-notification-popup></cookie-notification-popup> 
+   <script type="text/ng-template" id="general/toast-notifications.html">
+	<div class="toast-notifications">
+		<div class="toast-notification-wrapper animate-slide-left toast-{{notification.Type}}" 
+		ng-repeat="(index,notification) in toastNotifications.getNotifications()">
+			<div class="toast-notification-actions">
+				<a href="" ng-click="toastNotifications.deleteNotification(notification.Timestamp)" class="toast-close"><span class="fa fa-times"></span></a>
+			</div>
+			<div class="toast-title" ng-bind-html="notification.Title"></div>	
+			<div class="toast-body" ng-bind-html="notification.Message"></div>
+		</div>
+	</div>
+</script> <toast-notifications></toast-notifications> 
+   <script type="text/ng-template" id="general/username-options.html">
+	<div class="dropdown widget-user" uib-dropdown is-open="status.isopen" ng-click="toggleDropdown($event)" aria-haspopup="true" aria-expanded="false">
+		<div class="avatar-container">
+			<div class="avatar" ng-show="avatar">
+				<img ng-src="{{cryptopian.Avatar}}" class="user-avatar">
+			</div>
+			<span itemprop="name" class="username"><i class="fa fa-user" ng-show="icon"></i>{{cryptopian.Name}}</span>
+			<span class="fa fa-caret-down" ng-show="caret"></span>
+		</div>
+		
+		<ul class="uib-dropdown-menu with-arrow dropdown-right dropdown-small dropdown-widget-user">
+			<li>
+				<a itemprop="url" ng-href="{{profileUrl}}" ng-click="goToProfile()">
+					<i class="fa fa-user-secret"></i> View <span ng-show="itIsMe">My </span>Profile
+				</a>	
+			</li>
+			<li ng-if="userManager.isLoggedIn() && userManager.canBan()">
+				<a href="" class="btn btn-ban" ng-click="banOrUnbanCryptopian()" >
+					<span ng-if="!alreadyBanned"><i class="fa fa-lock"></i> Ban</span>
+					<span ng-if="alreadyBanned" ><i class="fa fa-unlock"></i> Un-Ban</span>
+				</a>
+			</li>
+			<li ng-if="userManager.isLoggedIn() && userManager.canDeleteAllForumActivity()">
+				<a href="" class="btn btn-ban" ng-click="deleteAllForumActivityCryptopian()" >
+					<span><i class="fa fa-trash-o"></i>Delete all Posts & Comments</span>
+				</a>
+			</li>			
+			<li class="inmenu-follow-action" ng-show="!itIsMe">
+				<a href="" class="btn" ng-click="changeFollowingStatus()" 
+					ng-class="{'user-follow':!alreadyFollowing||(!followingHover&&alreadyFollowing),'user-unfollow':followingHover&&alreadyFollowing}"
+					ng-mouseover="followingHover=true" 
+					ng-mouseleave="followingHover=false">
+						<span ng-show="!alreadyFollowing"><i class="fa fa-plus"></i> Follow</span>
+						<span ng-show="alreadyFollowing" >
+							<span ng-show="!followingHover"><i class="fa fa-check"></i> Following</span>
+							<span ng-show="followingHover"><i class="fa fa-minus"></i> Unfollow</span>
+						</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</script> 
+   <style>
+	.header-time-downcounter {
+		display: inline-block;
+		margin-left: -15px;
+		margin-top: 20px;
+	}
+	.header-time-downcounter .timer-counter-value {
+		font-size: 45px;
+		font-weight: bold;
+		line-height: 50px;
+	}
+	.header-time-downcounter .timer-counter-separator {
+		color: #999;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.header-time-downcounter .counter-item {
+		float: left;
+		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.lights-off .timer-counter-value {
+		color: #FFF;
+	}
+	.select-currencies-fixed .header-time-downcounter {
+		margin-top: 10px;
+	}
+	.select-currencies-fixed .header-time-downcounter .counter-item {
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	.select-currencies-fixed .header-time-downcounter .timer-counter-separator {
+		font-size: 8px;
+	}
+	.select-currencies-fixed .header-time-downcounter .timer-counter-value {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	@media only screen and (max-width:992px) {
+		.header-time-downcounter {
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+	@media only screen and (max-width:350px) {
+		.header-time-downcounter .timer-counter-value {
+			font-size: 35px;
+		}
+		.header-time-downcounter .timer-counter-separator {
+			font-size: 11px;
+		}		
+	}
+</style> 
+   <script type="text/ng-template" id="general/countdown-timer.html">
+	<div class="header-time-downcounter">
+		<div class="counter-item icocounter-text" ng-if="textBeforeCounter !== undefined">
+			<div class="timer-counter-value ">{{textBeforeCounter}}</div>
+			<div class="timer-counter-separator"></div>
+		</div>
+		<div class="counter-item icocounter-days" ng-if="daysRemaining>0">
+			<div class="timer-counter-value ">{{daysRemaining}}</div>
+			<div class="timer-counter-separator">{{daysRemainingText}}</div>
+		</div>
+		<div class="counter-item icocounter-hours" ng-if="daysRemaining>0 || (hoursRemaining>0 && daysRemaining==0)">
+			<div class="timer-counter-value ">{{hoursRemaining}}</div>
+			<div class="timer-counter-separator">{{hoursRemainingText}}</div>
+		</div>
+		<div class="counter-item icocounter-minutes" ng-if="daysRemaining>0 || hoursRemaining>0 || (minutesRemaining>0 && hoursRemaining==0 && daysRemaining==0)">
+			<div class="timer-counter-value ">{{minutesRemaining}}</div>
+			<div class="timer-counter-separator">{{minutesRemainingText}}</div>
+		</div>
+		<div class="counter-item icocounter-seconds" ng-if="daysRemaining>0 || hoursRemaining>0 || minutesRemaining>0 || (secondsRemaining>0 && minutesRemaining==0 && hoursRemaining==0 && daysRemaining==0)">
+			<div class="timer-counter-value ">{{secondsRemaining}}</div>
+			<div class="timer-counter-separator">{{secondsRemainingText}}</div>
+		</div>
+	</div>		
+</script> 
+   <script>		
+	angular.module('ccc-app').directive('countdownTimer', [
+		function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'general/countdown-timer.html',
+				controller: ['$scope','$timeout',function($scope,$timeout){
+					$scope.currentDate =  new Date();
+					$scope.day = 24 * 60 * 60 * 1000;
+					$scope.hour = 60 * 60 * 1000;
+					$scope.minute = 60 * 1000;
+					$scope.second = 1000;
+					$scope.daysRemainingTextSingular = 'day';
+					$scope.hoursRemainingSingular = 'hour';
+					$scope.minutesRemainingSingular = 'minute';
+					$scope.secondsRemainingSingular = 'second';
+					$scope.startCountdownUpdate = function(){
+						$scope.currentDate =  new Date();
+						$scope.currentTime = $scope.currentDate.getTime();
+						if($scope.timerEndJsTs>0){
+							if($scope.currentTime<$scope.timerEndJsTs-1000){
+								var milliscondsRemaining = $scope.timerEndJsTs - $scope.currentTime;
+								$scope.daysRemaining = Math.floor(milliscondsRemaining / $scope.day);
+								if($scope.daysRemaining==1){
+									$scope.daysRemainingText=$scope.daysRemainingTextSingular;
+								}else{
+									$scope.daysRemainingText=$scope.daysRemainingTextSingular+'s';
+								}
+
+								$scope.hoursRemaining = Math.floor(milliscondsRemaining % $scope.day / $scope.hour);
+								if($scope.hoursRemaining==1){
+									$scope.hoursRemainingText=$scope.hoursRemainingSingular;
+								}else{
+									$scope.hoursRemainingText=$scope.hoursRemainingSingular+'s';
+								}
+
+								$scope.minutesRemaining = Math.floor(milliscondsRemaining % $scope.day % $scope.hour / $scope.minute);
+								if($scope.minutesRemaining==1){
+									$scope.minutesRemainingText=$scope.minutesRemainingSingular;
+								}else{
+									$scope.minutesRemainingText=$scope.minutesRemainingSingular+'s';
+								}
+
+								$scope.secondsRemaining = Math.floor(milliscondsRemaining % $scope.day % $scope.hour % $scope.minute / $scope.second);
+								if($scope.secondsRemaining==1){
+									$scope.secondsRemainingText=$scope.secondsRemainingSingular;
+								}else{
+									$scope.secondsRemainingText=$scope.secondsRemainingSingular+'s';
+								}
+								$timeout($scope.startCountdownUpdate, 1000, false);
+							}else {
+								if ($scope.objPassedToFunction) {
+									$scope.functionToCall($scope.objPassedToFunction);
+								} else {
+									$scope.functionToCall();
+								}
+							}
+						}
+					}
+					$scope.startCountdownUpdate();
+				}],
+				scope:{
+					timerEndJsTs : "=",
+					functionToCall : "=",
+					objPassedToFunction : "=",
+					textBeforeCounter : "@"
+				},
+				link:function(scope,element,attrs){
+				}
+			};
+		}
+	]);
+</script> 
+  </div> 
+  <style>
+
+	.container-ie {
+		margin: 0 auto;
+		width: 820px;
+	}
+	.ie-error {
+		overflow: hidden;
+		background: #FFF;
+		padding: 30px;
+		margin-top: 30px;
+		border: 1px solid #DDD;
+	}
+	.wrong-browser {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.list-browsers {
+		list-style: none;
+		list-position: outside;
+		margin: 0;
+		padding: 0;
+	}
+	.list-browsers li {
+		background: #EEE;
+		display: inline-block;
+		float: left;
+		margin-right: 15px;
+		height: 145px;
+		width: 120px;
+		padding: 10px;
+		text-align: center;
+	}
+	.list-browsers li a {
+		font-weight: bold;
+	}
+	.list-browsers li img {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	
+</style> 
+  <div class="container-ie"> 
+   <div id="ieError" class="ie-error"> 
+    <div class="wrong-browser"> <b>CryptoCompare</b> needs a newer browser in order to work.
+     <br> Please use one of the browsers below: 
+    </div> 
+    <div class="browser-selection"> 
+     <ul class="list-browsers"> 
+      <li> <a href="http://www.firefox.com"> <img src="/media/20512/firefox.png"><br>Firefox</a> </li> 
+      <li> <a href="https://www.google.com/chrome/browser"> <img src="/media/20510/google_chrome_icon.png"> Chrome </a> </li> 
+      <li> <a href="http://www.opera.com"> <img src="/media/20511/opera.png"> Opera </a> </li> 
+      <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/ie-9-worldwide-languages"> <img src="/media/20514/ieicon.png"> Internet Explorer </a> </li> 
+      <li> <a href="http://filehippo.com/download_safari"> <img src="/media/20513/safari-logo.png"> Safari </a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="fb-root"></div> 
+  <script> 
+		window.fbAsyncInit = function() {
+			 FB.init({
+				appId      : '850963688259013',
+				cookie     : true, 
+				xfbml      : true,
+				version    : 'v2.8' 
+			  });
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		  }(document, 'script', 'facebook-jssdk'));
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://plus.google.com/js/client:platform.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		})(document, 'script', 'googleplus-jssdk');
+	</script>  
+ </body>
+</html>
