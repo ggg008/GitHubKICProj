@@ -61,6 +61,7 @@ public class ChartDataCollector
 	
 //	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
 //	int houwManyDriver = 1;
+
 	int count = 0;
 	
 	public ChartDataCollector()

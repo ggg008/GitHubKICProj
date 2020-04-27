@@ -13,11 +13,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import subController.LoginAction;
+import subController.LoginOkAction;
+import subController.LogoutOkAction;
+
 import Crawler.ChartDataCollector;
 import Crawler.SeleniumTest;
 import modelPaging.CandlestickTO;
 import modelPaging.MasDAO;
 import subController.ChartAction;
+
 import subController.MasAction;
 import subController.SignupAction;
 import subController.SignupOkAction;
@@ -111,10 +116,21 @@ public class MasController extends HttpServlet
 				
 			} else if (path.equals("/authentication-login.do")) {
 				
+				masAction = new LoginAction();
+				masAction.execute(request, response);
 				url = "/authentication-login.html";
+				
+			} else if (path.equals("/login.do")) {
+				
+				masAction = new LoginOkAction();
+				masAction.execute(request, response);
+				urlPath = "";
+				url = "/dist/jsp/login.jsp";
 				
 			} else if (path.equals("/logout.do")) {
 				
+				masAction = new LogoutOkAction();
+				masAction.execute(request, response);
 				urlPath = "";
 				url = "/dist/jsp/logout.jsp";
 			
@@ -122,7 +138,6 @@ public class MasController extends HttpServlet
 				
 				masAction = new SignupAction();
 				masAction.execute(request, response);
-				
 				url = "/authentication-register.html";
 				
 			} else if (path.equals("/signup.do")) {
