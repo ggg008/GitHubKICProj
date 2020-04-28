@@ -155,7 +155,8 @@
 	var standardTime = 0;
 	var updateTime = 0;
 	var timeUnit = 0;
-	var preSize = screen.width;
+	var preWidth = screen.width;
+	var preHeigth = screen.height;
 	
 	var timeSetter = function () {	
 	    //갱신 시간 계산 알고리즘
@@ -196,7 +197,7 @@
 	    var customBtns = [];
 	    var selBtn = null;
 	
-	    $('#chart-title').text('BTC/USD Chart');
+	    $('#chart-title').text( fromSymbol + '/' + toSymbol +'Chart');
 	
 	    switch (historyTime) {
 	        case 'histominute':
@@ -254,11 +255,21 @@
     			chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
     		});
     		
+//    		$('#chartlist-container').empty();
     		$.each(data.LastPriceData, function (i, item) {
+    			
+//    			var elt = '<div class="d-flex flex-row m-t-5" id="item'+ item.propName +'">' +
+//                        	'<button type="button" class="btn btn-success btn-sm w-100">' + item.propName + item.close +'</button>' +
+//                        '</div>';
+//    			
+//    			//console.log(item.propName);
+//    			$('#chartlist-container').append(elt);
+
+    			$('#item'+ item.propName).find("#sym").text(item.propName);
+    			$('#item'+ item.propName).find("#price").text(item.close);
     			
     		});
     		
-    		$('#chartlit-container');
 
 	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
 	
@@ -334,7 +345,7 @@
 	        //			chart.reflow();
 	        //			console.log(chart.rangeSelector.buttonOptions);
 	        
-	        console.log(chart);
+	        //console.log(chart);
 	    });
 	
 	}
@@ -363,12 +374,17 @@
 	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
 	        });
 	        
+	        $.each(data.LastPriceData, function (i, item) {
+    			$('#item'+ item.propName).find("#sym").text(item.propName);
+    			$('#item'+ item.propName).find("#price").text(item.close);
+    		});
+	        
 	        chart.series[0].setData(chartdata);
 	        
 	        --testCount;
 	        if(testCount <= 0) {
 	        	testCount = testCountFixed;
-	        	console.log(data);	        	
+//	        	console.log(data);	        	
 	        }
 	        
 	        
@@ -387,6 +403,9 @@
 	
 	$('#dayBtn').on("click", function () {
 	    draw3('histoday');
+	});
+	$('#itemETHUSD').on("click", function () {
+	    draw3( undefined, 'ETH', 'USD' );
 	});
 	
 	
@@ -446,8 +465,8 @@
 	
 	$(window).resize(function() {
 		//창크기 변화 감지
-		if( (375 < preSize && screen.width <= 375) || ( preSize <= 375 && 375 < screen.width )){
-			preSize = screen.width;
+		if( (375 < preWidth && screen.width <= 375) || ( preWidth <= 375 && 375 < screen.width )){
+			preWidth = screen.width;
 			draw3();
 		}
 		
