@@ -12,6 +12,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
 	<style type="text/css">
     	  body {font-size: 70%;}
+    	  .filewrite {
+    	  	text-align: right;
+    	    color: #2196F3;
+    	  }
 	</style>
     <title>MAS Charts Views</title>
     <!-- Custom CSS -->
@@ -373,7 +377,7 @@
                           
                             <div class="card-body">
                             	
-                                <h4 class="card-title">Chat Option</h4>
+                                <h4 class="card-title">Community</h4>
                                 <div class="chat-box scrollable">
                                     <!--chat Row -->
                                     <ul class="chat-list">
@@ -465,11 +469,25 @@
                                 </div>
                                 </div>
                             </div>
+                            
+                          <form id="commentform" action="./dist/jsp/comment.jsp" method="post">
                             <div class="card-body border-top">
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="input-field m-t-0 m-b-0">
                                             <textarea id="textarea1" placeholder="Type and enter" class="form-control border-0"></textarea>
+                                        	
+                                        	<!--
+                                        	<span class="">
+                                        		<i class="mdi mdi-emoticon"></i>
+                                        	</span>
+                                        	 -->
+                                        	
+                                        	<p class="filewrite">
+                                        		<a class="button" href="javascript:void(0)"><i class="mdi mdi-emoticon"></i></a>
+                                        		<a class="button" href="javascript:void(0)"><i class="mdi mdi-image-filter"></i></a>
+                                        	</p>
+                                        	
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -477,11 +495,9 @@
                                     </div>
                                 </div>
                             </div>
-                                      
+                          </form>
                     </div> 
-                    
-
-                     
+                
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
