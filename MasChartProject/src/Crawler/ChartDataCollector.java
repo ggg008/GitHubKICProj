@@ -85,6 +85,11 @@ public class ChartDataCollector
 		masDAO = new MasDAO();
 		System.out.println("-전체 데이터 카운트 : " + masDAO.countCandelstick(null));
 		// 차트 데이터 없을 경우..
+		boolean isFocerdCallData = masDAO.getFocerdCallData();
+		
+		if(isFocerdCallData)
+			System.out.println("-!강제갱신수행");
+		
 		for(ChartListInfoTOTemp cliTo : masDAO.getChartList() ) {
 //			System.out.print("ChartRange : " + cliTo.getFromSymbol() + cliTo.getToSymbol() + "-");
 //			System.out.println(masDAO.countCandelstick(cliTo));
@@ -93,15 +98,19 @@ public class ChartDataCollector
 			lastDayCTo.setCandleKey(cliTo.getFromSymbol() + cliTo.getToSymbol() + "day" + standardTimes.get("day"));
 			
 			lastDayCTo = masDAO.getCandlestick(lastDayCTo);//데이터가 없거나 차이가 하루이상 날경우
-			if(lastDayCTo.getCandleJSON() == null) {
+			if(isFocerdCallData || lastDayCTo.getCandleJSON() == null) {
 				for(String histoKey  : timeKeys) {									
 					
-					System.out.println("※차트 데이터 전체 갱신 수행※");
+					System.out.println("※차트 데이터 전체 갱신 수행 : "+ cliTo.getFromSymbol() + cliTo.getToSymbol() + histoKey +" ※");
 					setBasicChartJSON(cliTo, histoKey);
 				}				
 			}
-			
 		}
+		if(isFocerdCallData) {
+			isFocerdCallData = false;
+			masDAO.setFocerdCallData(isFocerdCallData);			
+		}
+		
 		/*
 		  */
 

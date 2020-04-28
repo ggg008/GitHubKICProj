@@ -253,6 +253,12 @@
     			
     			chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
     		});
+    		
+    		$.each(data.LastPriceData, function (i, item) {
+    			
+    		});
+    		
+    		$('#chartlit-container');
 
 	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
 	
@@ -334,6 +340,8 @@
 	}
 	draw3();
 	
+	var testCountFixed = 5;
+	var testCount = testCountFixed;
 	
 	var realtimePrice = function () {
 //	    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + fromSymbol + '&tsyms=' + toSymbol, function (data) {
@@ -357,7 +365,13 @@
 	        
 	        chart.series[0].setData(chartdata);
 	        
-//	        console.log(data);
+	        --testCount;
+	        if(testCount <= 0) {
+	        	testCount = testCountFixed;
+	        	console.log(data);	        	
+	        }
+	        
+	        
 	    });
 	    
 	};
@@ -416,7 +430,7 @@
 	        
 	        $('.highcharts-subtitle').eq(0).html((screen.width < 450 ? subtitleDecoSm : subtitleDecoLg) + remainTimeStr);
 //	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
-	        console.log(chart);
+	        //console.log(chart);
 	    }
 	
 	    if (updateTime <= standardTime + sec) {

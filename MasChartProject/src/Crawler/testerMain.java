@@ -48,6 +48,12 @@ public class testerMain
 		
 //		System.out.println(lastPrice);
 		
+		String strcandleKey = "BTCUSDminute1588062840";
+		
+		String propName = strcandleKey.replaceAll("minute", "").replaceAll("[0-9]", "");
+		
+		System.out.println(propName);
+		
 
 	}
 
