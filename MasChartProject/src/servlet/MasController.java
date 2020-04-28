@@ -23,7 +23,7 @@ import modelPaging.CandlestickTO;
 import modelPaging.ChartListInfoTOTemp;
 import modelPaging.MasDAO;
 import subController.ChartAction;
-
+import subController.CommentWriteAcion;
 import subController.MasAction;
 import subController.SignupAction;
 import subController.SignupOkAction;
@@ -154,6 +154,12 @@ public class MasController extends HttpServlet
 				urlPath = "";
 				url = "/dist/jsp/signup.jsp";
 			
+			} else if (path.equals("/comentwrite.do")) {
+				
+				masAction = new CommentWriteAcion();
+				masAction.execute(request, response);
+				urlPath = "";
+				url = "/dist/jsp/comment.jsp";
 				
 			} else if (path.equals("/form-basic.do")) {
 				// 프로필 보기 및 수정
