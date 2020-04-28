@@ -5,6 +5,12 @@ public class ChartListInfoTOTemp
 	private String fromSymbol;
 	private String toSymbol;
 	
+	public ChartListInfoTOTemp(String fromSymbol, String toSymbol)
+	{
+		this.fromSymbol = fromSymbol;
+		this.toSymbol = toSymbol;
+	}
+	
 	public String getFromSymbol()
 	{
 		return fromSymbol;

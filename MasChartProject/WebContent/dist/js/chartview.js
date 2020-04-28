@@ -150,6 +150,7 @@
 	var toSymbol = cookieJson.toSymbol != undefined ? cookieJson.toSymbol : 'USD';
 	
 	var chart = null;
+	var chartdata = [];
 	
 	var utcWeight = -2;//utc 시간보정	
 	var standardTime = 0;
@@ -238,7 +239,7 @@
 	        selBtn = customBtns.length - 1;
 	    }
 	
-	    var chartdata = [];
+	    chartdata = [];
 	    
 	    
 	    var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
@@ -266,10 +267,12 @@
 //    			$('#chartlist-container').append(elt);
 
     			$('#item'+ item.propName).find("#sym").text(item.propName);
-    			$('#item'+ item.propName).find("#price").text(item.close);
+    			$('#item'+ item.propName).find("#price").text( '$ ' + item.close);
     			
+    			$('#item' + item.propName).off();
+    			var idx = item.propName.indexOf('USD');
     			$('#item' + item.propName).on("click", function () {
-    			    draw3( undefined, item.propName.substring(0, 2), item.propName.substring(3, 5) );
+    			    draw3( undefined, item.propName.substring(0, idx), item.propName.substring(idx, item.propName.length) );
     			});
     			
     		});
@@ -349,7 +352,7 @@
 	        //			chart.reflow();
 	        //			console.log(chart.rangeSelector.buttonOptions);
 	        
-	        //console.log(chart);
+//	        console.log(chart);
 	    });
 	
 	}
@@ -363,7 +366,7 @@
 		/*
 		 */
 
-	    var chartdata = [];
+	    chartdata = [];
 		
 		var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
 	    $.getJSON(API, function (data) {
@@ -380,7 +383,7 @@
 	        
 	        $.each(data.LastPriceData, function (i, item) {
     			$('#item'+ item.propName).find("#sym").text(item.propName);
-    			$('#item'+ item.propName).find("#price").text(item.close);
+    			$('#item'+ item.propName).find("#price").text( '$ ' + item.close);
     		});
 	        
 	        chart.series[0].setData(chartdata);
@@ -388,7 +391,7 @@
 	        --testCount;
 	        if(testCount <= 0) {
 	        	testCount = testCountFixed;
-//	        	console.log(data);	        	
+	        	console.log(data);	        	
 	        }
 	        
 	        

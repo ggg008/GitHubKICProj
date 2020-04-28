@@ -41,30 +41,15 @@ public class MasDAO
 
 		// fixed리스트
 
-		ChartListInfoTOTemp crTo = new ChartListInfoTOTemp();
-		crTo.setFromSymbol("BTC");
-		crTo.setToSymbol("USD");
-		chartList.add(crTo);
-
-		ChartListInfoTOTemp crTo2 = new ChartListInfoTOTemp();
-		crTo2.setFromSymbol("ETH");
-		crTo2.setToSymbol("USD");
-		chartList.add(crTo2);
-
-		ChartListInfoTOTemp crTo3 = new ChartListInfoTOTemp();
-		crTo3.setFromSymbol("XRP");
-		crTo3.setToSymbol("USD");
-		chartList.add(crTo3);
-
-		ChartListInfoTOTemp crTo4 = new ChartListInfoTOTemp();
-		crTo4.setFromSymbol("BCH");
-		crTo4.setToSymbol("USD");
-		chartList.add(crTo4);
-
-		ChartListInfoTOTemp crTo5 = new ChartListInfoTOTemp();
-		crTo5.setFromSymbol("EOS");
-		crTo5.setToSymbol("USD");
-		chartList.add(crTo5);
+		chartList.add(new ChartListInfoTOTemp("BTC", "USD"));
+		chartList.add(new ChartListInfoTOTemp("ETH", "USD"));
+		chartList.add(new ChartListInfoTOTemp("XRP", "USD"));
+		chartList.add(new ChartListInfoTOTemp("BCH", "USD"));
+		chartList.add(new ChartListInfoTOTemp("EOS", "USD"));
+		chartList.add(new ChartListInfoTOTemp("LTC", "USD"));
+		chartList.add(new ChartListInfoTOTemp("ETC", "USD"));
+		chartList.add(new ChartListInfoTOTemp("BSV", "USD"));
+		
 	}
 
 	// charts
@@ -186,7 +171,7 @@ public class MasDAO
 
 			int result = pstmt.executeUpdate();
 
-			isSuccess = result == 1 ? true : false;
+			isSuccess = 0 < result ? true : false;
 
 		} catch (SQLException e) {
 			System.out.println(e.getClass().getName() + " : " + e.getMessage());
@@ -211,6 +196,47 @@ public class MasDAO
 		return isSuccess;
 
 	}
+	
+//	public void addCountCallRestApi() {
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		boolean isSuccess = false;
+//
+//		try {
+//			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
+//
+//			String sql = "UPDATE masconfig SET propertyValue=? WHERE propertyName=?";// 가능하면 *쓰지말고 다쓸
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, String.valueOf(focerdCallData));
+//			pstmt.setString(2, "forced_call_data");
+//
+//			int result = pstmt.executeUpdate();
+//
+//			isSuccess = 0 < result ? true : false;
+//
+//		} catch (SQLException e) {
+//			System.out.println(e.getClass().getName() + " : " + e.getMessage());
+//		} finally {
+//			if (rs != null)
+//				try {
+//					rs.close();
+//				} catch (SQLException e) {
+//				}
+//			if (pstmt != null)
+//				try {
+//					pstmt.close();
+//				} catch (SQLException e) {
+//				}
+//			if (conn != null)
+//				try {
+//					conn.close();
+//				} catch (SQLException e) {
+//				}
+//		}
+//
+//		return isSuccess;
+//	}
 
 	public CandlestickTO getCandlestick(CandlestickTO cTo)
 	{
@@ -314,6 +340,10 @@ public class MasDAO
 
 		try {
 			conn = dataSource.getConnection();
+			
+			if(cTo.getCandleKey().contains("XRPUSDminute")) {
+				System.out.println("리플 dao : " + cTo.getCandleJSON());
+			}
 
 			String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
 			pstmt = conn.prepareStatement(sql);
@@ -322,7 +352,7 @@ public class MasDAO
 			pstmt.setString(3, cTo.getCandleKey());// 존재시 덮어쓰우는 옵션
 			pstmt.setString(4, cTo.getCandleJSON());
 
-			isSuccess = pstmt.executeUpdate() == 1 ? true : false;
+			isSuccess = 0 < pstmt.executeUpdate() ? true : false;
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -355,19 +385,21 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();
 
-			String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
-			pstmt = conn.prepareStatement(sql);
+			System.out.println("＠대량 데이터 삽입 시도! 크기 : " + cToList.size() + " " + cToList.get(0).getCandleKey().replaceAll("[0-9]", ""));
 			for (CandlestickTO cTo : cToList) {
+				String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
+				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, cTo.getCandleKey());
 				pstmt.setString(2, cTo.getCandleJSON());
 				pstmt.setString(3, cTo.getCandleKey());// 존재시 덮어쓰우는 옵션
 				pstmt.setString(4, cTo.getCandleJSON());
 
-				isSuccess = pstmt.executeUpdate() == 1 ? true : false;
+				isSuccess = 0 < pstmt.executeUpdate() ? true : false;
 				if (!isSuccess) {
-					System.out.println("실패 : " + cTo.getCandleKey() + "-" + cTo.getCandleJSON());
+					System.out.println("＠실패 : " + cTo.getCandleKey() + "-" + cTo.getCandleJSON());
 				}
 			}
+			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

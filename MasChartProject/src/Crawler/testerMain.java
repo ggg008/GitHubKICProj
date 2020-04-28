@@ -31,6 +31,7 @@ public class testerMain
 	{
 		// TODO Auto-generated method stub
 
+		System.out.println("imTESTer");
 		
 //		Thread thread = new Thread(new testerMain().new TestCrawling());
 //		thread.start();

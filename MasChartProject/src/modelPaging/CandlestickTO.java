@@ -18,7 +18,7 @@ public class CandlestickTO
 		return candleJSON;
 	}
 	public void setCandleJSON(String candleJSON)
-	{
+	{		
 		this.candleJSON = candleJSON;
 	}
 }

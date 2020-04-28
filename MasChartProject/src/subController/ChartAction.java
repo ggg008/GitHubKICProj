@@ -19,7 +19,7 @@ public class ChartAction implements MasAction
 //		System.out.println("→ call " + this.getClass().getName() + " execute");
 		
 		MasDAO masDAO = new MasDAO();
-		ChartListInfoTOTemp chartListInfoTOTemp = new ChartListInfoTOTemp();
+		ChartListInfoTOTemp chartListInfoTOTemp = new ChartListInfoTOTemp(null, null);
 		chartListInfoTOTemp.setFromSymbol(request.getParameter("fsym"));
 		chartListInfoTOTemp.setToSymbol(request.getParameter("tsym"));
 		
