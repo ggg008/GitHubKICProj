@@ -31,7 +31,7 @@
 		
 		String propName = cTo.getCandleKey().replaceAll("minute", "").replaceAll("[0-9]", "");
 		
-		obj.put("PropName", propName);
+		obj.put("propName", propName);
 		jsonPriceArray.add(obj);
 	}
 	result.put("LastPriceData", jsonPriceArray);
