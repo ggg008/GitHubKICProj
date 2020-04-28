@@ -12,10 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
 	<style type="text/css">
     	  body {font-size: 70%;}
-    	  .filewrite {
-    	  	text-align: right;
-    	    color: #2196F3;
-    	  }
+    	  .filewrite {text-align: right;}
 	</style>
     <title>MAS Charts Views</title>
     <!-- Custom CSS -->
@@ -517,7 +514,7 @@
                                 <div class="row">
                                     <div class="col-9">
                                         <div class="input-field m-t-0 m-b-0">
-                                            <textarea id="textarea1" placeholder="Type and enter" class="form-control border-0"></textarea>
+                                            <textarea id="textarea1" name="cmttxt" placeholder="Type and enter" class="form-control border-0"></textarea>
                                         	
                                         	<!--
                                         	<span class="">
@@ -533,7 +530,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <a class="btn-circle btn-lg btn-cyan float-right text-white" href="javascript:void(0)"><i class="fas fa-paper-plane"></i></a>
+                                        <button class="btn-circle btn-lg btn-cyan float-right text-white" type="submit"><i class="fas fa-paper-plane"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1314,6 +1311,7 @@
 					//return json.flag;
 					
 					if(json.sessID != null) {
+						
 						//alert('로그인');
 						$('#login-form').show();
 						$('.sidebar-item').eq(1).hide();

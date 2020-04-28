@@ -618,6 +618,60 @@ public class MasDAO
 		return flag;
 
 	}
+	
+	
+	// comment.jsp
+	public int comentOk(MasCommentTO to) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		int flag = 1;
+
+		try {
+			conn = dataSource.getConnection();
+
+			String sql = "insert into comment values(0, ?, ?, ?, ?, ?, now())";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, to.getSeq());
+			
+			/*
+			pstmt.setString(2, to.getEmail());
+
+			if (to.getPassword().equals(to.getCpassword())) {
+
+				pstmt.setString(3, to.getPassword());
+
+			} else if (!to.getPassword().equals(to.getCpassword())) {
+				flag = 3;
+			}
+
+			int result = pstmt.executeUpdate();
+
+			if (result == 1) {
+				flag = 2;
+			}
+*/
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("에러:" + e.getMessage());
+		} finally {
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+		}
+
+		return flag;
+
+	}
+	
+	
 
 	// form-basic.html
 
