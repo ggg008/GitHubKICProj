@@ -12,14 +12,17 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 public class MasDAO
 {
 
 	private DataSource dataSource = null;
-	
-	//조회 목록
-	ArrayList<ChartListInfoTOTemp> chartList = null;
 
+	// 조회 목록
+	ArrayList<ChartListInfoTOTemp> chartList = null;
 
 	public MasDAO()
 	{
@@ -33,21 +36,45 @@ public class MasDAO
 			// TODO Auto-generated catch block
 			System.out.println("에러:" + e.getMessage());
 		}
-		
+
 		chartList = new ArrayList<>();
-		//fixed
+
+		// fixed리스트
+
 		ChartListInfoTOTemp crTo = new ChartListInfoTOTemp();
 		crTo.setFromSymbol("BTC");
 		crTo.setToSymbol("USD");
 		chartList.add(crTo);
+
+		ChartListInfoTOTemp crTo2 = new ChartListInfoTOTemp();
+		crTo2.setFromSymbol("ETH");
+		crTo2.setToSymbol("USD");
+		chartList.add(crTo2);
+
+		ChartListInfoTOTemp crTo3 = new ChartListInfoTOTemp();
+		crTo3.setFromSymbol("XRP");
+		crTo3.setToSymbol("USD");
+		chartList.add(crTo3);
+
+		ChartListInfoTOTemp crTo4 = new ChartListInfoTOTemp();
+		crTo4.setFromSymbol("BCH");
+		crTo4.setToSymbol("USD");
+		chartList.add(crTo4);
+
+		ChartListInfoTOTemp crTo5 = new ChartListInfoTOTemp();
+		crTo5.setFromSymbol("EOS");
+		crTo5.setToSymbol("USD");
+		chartList.add(crTo5);
 	}
+
+	// charts
 
 	public ArrayList<ChartListInfoTOTemp> getChartList()
 	{
 		return chartList;
 	}
-	
-	public int countCandelstick(ChartListInfoTOTemp chartListTO, String ... timeOption)
+
+	public int countCandelstick(ChartListInfoTOTemp chartListTO, String... timeOption)
 	{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -56,22 +83,22 @@ public class MasDAO
 		int count = 0;
 		try {
 			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
-			
+
 			String sql = "SELECT count(*) FROM chart_candlesticks";
 			pstmt = conn.prepareStatement(sql);
-			if(chartListTO != null) {
+			if (chartListTO != null) {
 				sql = "SELECT count(*) FROM chart_candlesticks WHERE candleKey LIKE ?";
 				pstmt = conn.prepareStatement(sql);
-				String range = chartListTO.getFromSymbol() + chartListTO.getToSymbol() + timeOption[0] + "%";				
-				pstmt.setString(1,  range);				
+				String range = chartListTO.getFromSymbol() + chartListTO.getToSymbol() + timeOption[0] + "%";
+				pstmt.setString(1, range);
 			}
-			
+
 			rs = pstmt.executeQuery();
-			
+
 			if (rs.next()) {
-				count = Integer.valueOf( rs.getString("count(*)") );
+				count = Integer.valueOf(rs.getString("count(*)"));
 			}
-			
+
 		} catch (SQLException e) {
 			System.out.println(e.getClass().getName() + " : " + e.getMessage());
 		} finally {
@@ -95,26 +122,116 @@ public class MasDAO
 		return count;
 	}
 
-	public CandlestickTO getCandlestick(CandlestickTO cTo) {		
+	public boolean getFocerdCallData()
+	{
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
+		boolean isFocerdCallData = false;
+
+		try {
+			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
+
+			String sql = "SELECT * FROM masconfig WHERE propertyName=?";
+			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
+
+			pstmt.setString(1, "forced_call_data");
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				isFocerdCallData = Boolean.valueOf(rs.getString("propertyValue"));
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getClass().getName() + " : " + e.getMessage());
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+		}
+
+		return isFocerdCallData;
+
+	}
+
+	public boolean setFocerdCallData(boolean focerdCallData)
+	{
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean isSuccess = false;
+
+		try {
+			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
+
+			String sql = "UPDATE masconfig SET propertyValue=? WHERE propertyName=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, String.valueOf(focerdCallData));
+			pstmt.setString(2, "forced_call_data");
+
+			int result = pstmt.executeUpdate();
+
+			isSuccess = result == 1 ? true : false;
+
+		} catch (SQLException e) {
+			System.out.println(e.getClass().getName() + " : " + e.getMessage());
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+		}
+
+		return isSuccess;
+
+	}
+
+	public CandlestickTO getCandlestick(CandlestickTO cTo)
+	{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
 		try {
 			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
 
 			String sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
 			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
-																											// 옵션
+																												// 옵션
 			pstmt.setString(1, cTo.getCandleKey() + "%");
-			
-			rs = pstmt.executeQuery();
 
+			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				cTo.setCandleJSON(rs.getString("candleJSON"));
 			}
-			
+
 		} catch (SQLException e) {
 			System.out.println(e.getClass().getName() + " : " + e.getMessage());
 		} finally {
@@ -137,67 +254,9 @@ public class MasDAO
 
 		return cTo;
 	}
-	
-	// authentication-login.html
-	public void login() {
-		
-	}
-	
-	// login.jsp
-	public int loginOk(MasUsersTO to) {
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		String id = to.getId();
-		String password = to.getPassword();
-		
-		String saved_id = "";
-		String saved_password = "";
-		
-		try {
-			conn = dataSource.getConnection();
-			String sql = "select id, password from users where id= ? and password= ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, password);
-			
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				saved_id =  rs.getString("id");
-				saved_password = rs.getString("password");
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("에러:" + e.getMessage());
-		} finally {
-			if(pstmt != null) try {pstmt.close();} catch(SQLException e) {}
-			if(conn != null) try {conn.close();} catch(SQLException e) {}
-			if(rs != null) try {rs.close();} catch (SQLException e) {}
-		}
-		
-	    int flag;
-	    
-	    if(id.equals("") && password.equals("")) {
-	        flag = 0;
-	    } else if(id.equals(saved_id) && password.equals(saved_password)) {
-	        flag = 1;
-	    } else {
-	    	flag = 2;
-	    }
-		
-		return flag;
-	}
-	
-	public void logout() {
-		
-	}
-	
 
-	public ArrayList<CandlestickTO> getCandlestickList(ChartListInfoTOTemp cliTo, String...timeOption) {		
+	public ArrayList<CandlestickTO> getCandlestickList(ChartListInfoTOTemp cliTo, String... timeOption)
+	{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -208,11 +267,10 @@ public class MasDAO
 
 			String sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
 			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
-																											// 옵션
+																												// 옵션
 			pstmt.setString(1, cliTo.getFromSymbol() + cliTo.getToSymbol() + timeOption[0] + "%");
-			
-			rs = pstmt.executeQuery();
 
+			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				CandlestickTO cto = new CandlestickTO();
@@ -222,7 +280,7 @@ public class MasDAO
 
 				candlestickList.add(cto);
 			}
-			
+
 		} catch (SQLException e) {
 			System.out.println(e.getClass().getName() + " : " + e.getMessage());
 		} finally {
@@ -245,7 +303,6 @@ public class MasDAO
 
 		return candlestickList;
 	}
-	
 
 	public boolean setCandlestick(CandlestickTO cTo)
 	{
@@ -262,11 +319,11 @@ public class MasDAO
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cTo.getCandleKey());
 			pstmt.setString(2, cTo.getCandleJSON());
-			pstmt.setString(3, cTo.getCandleKey());//존재시 덮어쓰우는 옵션
+			pstmt.setString(3, cTo.getCandleKey());// 존재시 덮어쓰우는 옵션
 			pstmt.setString(4, cTo.getCandleJSON());
-			
+
 			isSuccess = pstmt.executeUpdate() == 1 ? true : false;
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("에러:" + e.getMessage());
@@ -286,7 +343,7 @@ public class MasDAO
 		return isSuccess;
 
 	}
-	
+
 	public void setCandlestickBulk(ArrayList<CandlestickTO> cToList)
 	{
 
@@ -303,15 +360,15 @@ public class MasDAO
 			for (CandlestickTO cTo : cToList) {
 				pstmt.setString(1, cTo.getCandleKey());
 				pstmt.setString(2, cTo.getCandleJSON());
-				pstmt.setString(3, cTo.getCandleKey());//존재시 덮어쓰우는 옵션
+				pstmt.setString(3, cTo.getCandleKey());// 존재시 덮어쓰우는 옵션
 				pstmt.setString(4, cTo.getCandleJSON());
-				
+
 				isSuccess = pstmt.executeUpdate() == 1 ? true : false;
-				if(!isSuccess) {					
+				if (!isSuccess) {
 					System.out.println("실패 : " + cTo.getCandleKey() + "-" + cTo.getCandleJSON());
 				}
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("에러:" + e.getMessage());
@@ -328,7 +385,151 @@ public class MasDAO
 				}
 		}
 	}
+	
+	public ArrayList<CandlestickTO> getLastPriceCandlestickList()
+	{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
+		ArrayList<CandlestickTO> lastPriceCandlestickList = new ArrayList<>();
+		try {
+			conn = dataSource.getConnection();// 풀링에서 커넥션 가져옴
+
+			String sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
+			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
+																												// 옵션
+			pstmt.setString(1, "BTCUSDminute%");
+			
+			rs = pstmt.executeQuery();
+
+			String dataLastTime = "";
+			while (rs.next()) {
+				dataLastTime = rs.getString("candleKey");
+			}
+			
+			dataLastTime = dataLastTime.replaceAll("BTCUSDminute", "");			
+			
+			if(dataLastTime.equals("")) {
+				return lastPriceCandlestickList;
+			}
+			
+			sql = "SELECT * FROM chart_candlesticks WHERE candleKey LIKE ?";
+			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);// 갯수를
+			pstmt.setString(1, "%" + dataLastTime);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				CandlestickTO cto = new CandlestickTO();
+
+				cto.setCandleKey(rs.getString("candleKey"));
+				cto.setCandleJSON(rs.getString("candleJSON"));
+
+				lastPriceCandlestickList.add(cto);
+			}
+			
+
+		} catch (SQLException e) {
+			System.out.println(e.getClass().getName() + " : " + e.getMessage());
+	
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+		}
+
+		return lastPriceCandlestickList;
+	}
+	
+	// chart-end
+	
+	
+
+	// authentication-login.html
+	public void login()
+	{
+
+	}
+
+	// login.jsp
+	public int loginOk(MasUsersTO to)
+	{
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String id = to.getId();
+		String password = to.getPassword();
+
+		String saved_id = "";
+		String saved_password = "";
+
+		try {
+			conn = dataSource.getConnection();
+			String sql = "select id, password from users where id= ? and password= ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, password);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				saved_id = rs.getString("id");
+				saved_password = rs.getString("password");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("에러:" + e.getMessage());
+		} finally {
+			if (pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
+		}
+
+		int flag;
+
+		if (id.equals("") && password.equals("")) {
+			flag = 0;
+		} else if (id.equals(saved_id) && password.equals(saved_password)) {
+			flag = 1;
+		} else {
+			flag = 2;
+		}
+
+		return flag;
+	}
+
+	public void logout()
+	{
+
+	}
 
 	// authentication-register.html
 	public void signup()

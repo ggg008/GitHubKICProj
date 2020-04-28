@@ -23,6 +23,20 @@
 	}
 	result.put("Data", jsonArray);
 	
+	
+	ArrayList<CandlestickTO> lastPriceList = (ArrayList)request.getAttribute("LastPriceList");
+	JSONArray jsonPriceArray = new JSONArray();
+	for(CandlestickTO cTo : lastPriceList) {
+		JSONObject obj = (JSONObject) new JSONParser().parse(cTo.getCandleJSON());
+		
+		String propName = cTo.getCandleKey().replaceAll("minute", "").replaceAll("[0-9]", "");
+		
+		obj.put("PropName", propName);
+		jsonPriceArray.add(obj);
+	}
+	result.put("LastPriceData", jsonPriceArray);
+	
+	
 	out.println(result);
 %>
 

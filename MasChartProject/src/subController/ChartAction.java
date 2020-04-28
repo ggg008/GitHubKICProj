@@ -26,6 +26,11 @@ public class ChartAction implements MasAction
 		ArrayList<CandlestickTO> list = masDAO.getCandlestickList(chartListInfoTOTemp, request.getParameter("historyTime"));		
 
 		request.setAttribute("CandlestickList", list);
+		
+		ArrayList<CandlestickTO> lastPricelist = masDAO.getLastPriceCandlestickList();
+		
+		request.setAttribute("LastPriceList", lastPricelist);
+		
 	}
 
 }
