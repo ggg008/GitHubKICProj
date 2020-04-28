@@ -352,7 +352,7 @@
 	                                </div>
 	                                
 	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemXRPUSD">	   
-										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #da542e">              
+										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #000000">              
 											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
 											<div class="d-flex no-block align-items-center">
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -366,7 +366,7 @@
 	                                	                                
 	                                
 	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemBCHUSD">	   
-										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #ffb848">              
+										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #da542e">              
 											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
 											<div class="d-flex no-block align-items-center">
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -380,6 +380,45 @@
 	                                
 	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemEOSUSD">	   
 										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #28b779">              
+											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
+											<div class="d-flex no-block align-items-center">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                                       		<span id="sym">EOSUSD</span>
+		                                        <div class="ml-auto">
+		                                            <span id="price">12000</span>
+		                                        </div>
+                                    		</div>
+										</button>
+	                                </div>
+	                                
+	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemLTCUSD">	   
+										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #20364a">              
+											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
+											<div class="d-flex no-block align-items-center">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                                       		<span id="sym">EOSUSD</span>
+		                                        <div class="ml-auto">
+		                                            <span id="price">12000</span>
+		                                        </div>
+                                    		</div>
+										</button>
+	                                </div>
+	                                
+	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemETCUSD">	   
+										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #27a9e3">              
+											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
+											<div class="d-flex no-block align-items-center">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                                       		<span id="sym">EOSUSD</span>
+		                                        <div class="ml-auto">
+		                                            <span id="price">12000</span>
+		                                        </div>
+                                    		</div>
+										</button>
+	                                </div>
+	                                
+	                                <div class="d-flex flex-row m-t-5 card-hover" id="itemBSVUSD">	   
+										<button type="button" class="btn btn-sm w-100 text-white" style="background-color: #ffb848">              
 											<i class="fa fa-bookmark m-b-5 font-16 float-left"></i>
 											<div class="d-flex no-block align-items-center">
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -581,18 +620,19 @@
 					<!-- Column -->
 					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
 					<a href="#">
-						<div class="card card-hover">
+						<div class="card card-hover" id="bigitemBTCUSD">
 							<div class="box text-center" style="background-color: #9A2EFE">
 								<h1 class="font-light text-white">
 									<img class="list-icon-bitcoin" src="./assets/images/bitcoin.png" height="50"></img>
 								</h1>
-								<h6 class="text-white">BTC (USD)</h6>
+								<h6 class="text-white" id="sym">BTC (USD)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 					</a>
 					</div>
 					<!-- Column -->
-					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
+					<div class="col-6 col-md-6 col-lg-2 col-xlg-3" id="bigitemETHUSD">
 					<a class="testing" href="javascript:void(0)" aria-expanded="false">
 						<!-- 
 						<a class="testing" href="javascript:void(0)" aria-expanded="false">
@@ -602,7 +642,8 @@
 								<h1 class="font-light text-white">
 									<img class="list-icon-bitcoin" src="assets/images/ethereum.png" height="50"></img>									
 								</h1>
-								<h6 class="text-white">ETH (USD)</h6>
+								<h6 class="text-white" id="sym">ETH (USD)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 						<!-- 
@@ -611,53 +652,57 @@
 					</a>
 					</div>		
 					<!-- Column -->
-					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
+					<div class="col-6 col-md-6 col-lg-2 col-xlg-3" id="bigitemXRPUSD">
 					<a href="#">
 						<div class="card card-hover">
-							<div class="box text-center" style="background-color: #da542e">
+							<div class="box text-center" style="background-color: #000000">
 								<h1 class="font-light text-white">
-									<img class="list-icon-bitcoin" src="assets/images/gold.png" height="50"></img>
+									<img class="list-icon-bitcoin" src="assets/images/xrp.png" height="50"></img>
 								</h1>
-								<h6 class="text-white">GOLD (USD)</h6>
+								<h6 class="text-white" id="sym">GOLD (USD)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 					</a>
 					</div>
 					<!-- Column -->
-					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
+					<div class="col-6 col-md-6 col-lg-2 col-xlg-3" id="bigitemBCHUSD">
 					<a href="#">
 						<div class="card card-hover">
-							<div class="box text-center" style="background-color:#343a40">
+							<div class="box text-center" style="background-color:#da542e">
 								<h1 class="font-light text-white" >
-									<img class="list-icon-bitcoin" src="assets/images/OIL_BARREL-512.png" height="50"></img>
+									<img class="list-icon-bitcoin" src="assets/images/bitcoin-cash.png" height="50"></img>
 								</h1>
-								<h6 class="text-white">WTI (USD)</h6>
+								<h6 class="text-white" id="sym">WTI (USD)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 					</a>
 					</div>
 					<!-- Column -->
-					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
+					<div class="col-6 col-md-6 col-lg-2 col-xlg-3" id="bigitemEOSUSD">
 					<a href="#">
 						<div class="card card-hover">
 							<div class="box text-center" style="background-color: #28b779!important">
 								<h1 class="font-light text-white">
-									<img class="list-icon-bitcoin" src="assets/images/southkoreaflag.png" height="50"></img>
+									<img class="list-icon-bitcoin" src="assets/images/eos.png" height="50"></img>
 								</h1>
-								<h6 class="text-white">KOSPI200 (KRW)</h6>
+								<h6 class="text-white" id="sym">KOSPI200 (KRW)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 					</a>
 					</div>
                     <!-- Column -->
-					<div class="col-6 col-md-6 col-lg-2 col-xlg-3">
+					<div class="col-6 col-md-6 col-lg-2 col-xlg-3" id="bigitemLTCUSD">
 					<a href="#">
 						<div class="card card-hover">
-							<div class="box text-center" style="background-color: #ffb848">
+							<div class="box text-center" style="background-color: #20364a">
 								<h1 class="font-light text-white">
-									<img class="list-icon-bitcoin" src="assets/images/nasdaq.png" height="50"></img>
+									<img class="list-icon-bitcoin" src="assets/images/litecoin.png" height="50"></img>
 								</h1>
-								<h6 class="text-white">NASDAQ (USD)</h6>
+								<h6 class="text-white" id="sym">NASDAQ (USD)</h6>
+								<font class="text-white" id="price">0000</font>
 							</div>
 						</div>
 					</a>

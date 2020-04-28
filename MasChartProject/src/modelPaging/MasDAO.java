@@ -341,10 +341,7 @@ public class MasDAO
 		try {
 			conn = dataSource.getConnection();
 			
-			if(cTo.getCandleKey().contains("XRPUSDminute")) {
-				System.out.println("리플 dao : " + cTo.getCandleJSON());
-			}
-
+			
 			String sql = "INSERT INTO chart_candlesticks VALUES(?, ?) ON DUPLICATE KEY UPDATE candleKey=?, candleJSON=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cTo.getCandleKey());

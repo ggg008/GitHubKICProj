@@ -268,6 +268,8 @@
 
     			$('#item'+ item.propName).find("#sym").text(item.propName);
     			$('#item'+ item.propName).find("#price").text( '$ ' + item.close);
+    			$('#bigitem'+ item.propName).find("#sym").text(item.propName);
+    			$('#bigitem'+ item.propName).find("#price").text( '$ ' + item.close);
     			
     			$('#item' + item.propName).off();
     			var idx = item.propName.indexOf('USD');
@@ -278,7 +280,7 @@
     		});
     		
 
-	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
+	        $('#chart-price').text('$ ' + data.Data[data.Data.length - 1].close);
 	
 	    }).done(function () {
 	    	
@@ -373,7 +375,7 @@
 	    	
 	    	//console.log(data.Data[Data.length - 1]);
 	    	
-	        $('#chart-price').text(data.Data[data.Data.length - 1].close);
+	        $('#chart-price').text('$ ' + data.Data[data.Data.length - 1].close);
 	        
 	        $.each(data.Data, function (i, item) {
 	            //console.log(item);
@@ -384,6 +386,8 @@
 	        $.each(data.LastPriceData, function (i, item) {
     			$('#item'+ item.propName).find("#sym").text(item.propName);
     			$('#item'+ item.propName).find("#price").text( '$ ' + item.close);
+    			$('#bigitem'+ item.propName).find("#sym").text(item.propName);
+    			$('#bigitem'+ item.propName).find("#price").text( '$ ' + item.close);
     		});
 	        
 	        chart.series[0].setData(chartdata);

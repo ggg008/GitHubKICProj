@@ -314,7 +314,6 @@ public class ChartDataCollector
 						String key = chartListTO.getFromSymbol() + chartListTO.getToSymbol() + histoKey
 								+ tempObj.get("time");
 						candlestickTO.setCandleKey(key);
-						System.out.println("↔");
 						candlestickTO.setCandleJSON(tempObj.toJSONString());
 
 //		                System.out.println(tempObj.toJSONString());
