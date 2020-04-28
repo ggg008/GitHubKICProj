@@ -170,7 +170,7 @@ public class ChartDataCollector
 											String newCandleKey = cliTo.getFromSymbol() + cliTo.getToSymbol() + tk
 													+ standardTimes.get(tk);
 
-											String priceFormat = 1 <= lastPrice ? "%.2f" : "%f";
+											String priceFormat = 100 <= lastPrice ? "%.2f" : "%f";
 											String newCandleJson = String.format("{\"high\":" + priceFormat
 													+ ",\"low\":" + priceFormat
 													+ ",\"conversionSymbol\":\"\",\"volumeto\":%s,\"volumefrom\":%s,\"time\":%d,\"conversionType\":\"direct\",\"close\":"
@@ -386,7 +386,7 @@ public class ChartDataCollector
 							cliTo.getFromSymbol() + cliTo.getToSymbol() + timekey + crawlerStandardTimes.get(timekey));// standardTime.get(timekey));
 					lastCandlestickTO = masDAO.getCandlestick(lastCandlestickTO);
 
-					String priceFormat = 1 <= lastPrice ? "%.2f" : "%f";
+					String priceFormat = 100 <= lastPrice ? "%.2f" : "%f";
 					if (lastCandlestickTO.getCandleJSON() == null) {
 //						System.out.println("-없는캔들 : " + cliTo.getFromSymbol()+cliTo.getToSymbol()+timekey+crawlerStandardTimes.get(timekey));
 
