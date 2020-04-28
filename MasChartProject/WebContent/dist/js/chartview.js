@@ -268,6 +268,10 @@
     			$('#item'+ item.propName).find("#sym").text(item.propName);
     			$('#item'+ item.propName).find("#price").text(item.close);
     			
+    			$('#item' + item.propName).on("click", function () {
+    			    draw3( undefined, item.propName.substring(0, 2), item.propName.substring(3, 5) );
+    			});
+    			
     		});
     		
 
@@ -404,9 +408,7 @@
 	$('#dayBtn').on("click", function () {
 	    draw3('histoday');
 	});
-	$('#itemETHUSD').on("click", function () {
-	    draw3( undefined, 'ETH', 'USD' );
-	});
+
 	
 	
 	var limitConst = 5;
