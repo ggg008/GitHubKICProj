@@ -150,7 +150,6 @@
 	var toSymbol = cookieJson.toSymbol != undefined ? cookieJson.toSymbol : 'USD';
 	
 	var chart = null;
-	var chartdata = [];
 	
 	var utcWeight = -2;//utc 시간보정	
 	var standardTime = 0;
@@ -192,7 +191,8 @@
         if (chart != null) {
             chart.showCustomLoading('Loading data from server...');
         }
-	
+        chart = null;
+        
 	    historyTime = paramHistoryTime != undefined && paramHistoryTime !== '' ? paramHistoryTime : historyTime;
 	    fromSymbol = paramFromSymbol != undefined && paramFromSymbol !== '' ? paramFromSymbol : fromSymbol;
 	    toSymbol = paramToSymbol != undefined && paramToSymbol !== '' ? paramToSymbol : toSymbol;
@@ -251,7 +251,7 @@
 	        selBtn = customBtns.length - 1;
 	    }
 	
-	    chartdata = [];
+	    var chartdata = [];
 	    
 	    
 	    var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
@@ -262,10 +262,21 @@
     		//console.log(data);    		
 	        
 	        //console.log(chartdata);
+	        console.log('chartdata draw3');
     		$.each(data.Data, function (i, item) {
     			//console.log(item);
-    			
-    			chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
+
+    			var open = item.open;
+    			var close = item.close;
+	        	var high = item.high;
+	        	var low = item.low;
+	        	
+	        	high = close < high ? high : close;
+	        	high = open < high ? high : open;
+	        	low = low < close ? low : close;
+	        	low = low < open ? low : open;
+	        	
+	            chartdata.push([item.time * 1000, item.open, high, low, item.close]);
     		});
     		
 //    		$('#chartlist-container').empty();
@@ -380,7 +391,7 @@
 		/*
 		 */
 
-	    chartdata = [];
+	    var chartdata = [];
 		
 		var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
 	    $.getJSON(API, function (data) {
@@ -389,10 +400,22 @@
 	    	
 	        $('#chart-price').text('$ ' + data.Data[data.Data.length - 1].close);
 	        
+	        console.log('chartdata realtimePrice');
 	        $.each(data.Data, function (i, item) {
 	            //console.log(item);
 	
-	            chartdata.push([item.time * 1000, item.open, item.high, item.low, item.close]);
+
+    			var open = item.open;
+    			var close = item.close;
+	        	var high = item.high;
+	        	var low = item.low;
+	        	
+	        	high = close < high ? high : close;
+	        	high = open < high ? high : open;
+	        	low = low < close ? low : close;
+	        	low = low < open ? low : open;
+	        	
+	            chartdata.push([item.time * 1000, item.open, high, low, item.close]);
 	        });
 	        
 	        $.each(data.LastPriceData, function (i, item) {
@@ -402,12 +425,12 @@
     			$('#bigitem'+ item.propName).find("#price").text( '$ ' + item.close);
     		});
 	        
-	        chart.series[0].setData(chartdata);
+	        chart.series[0].setData(chartdata, true);
 	        
 	        --testCount;
 	        if(testCount <= 0) {
 	        	testCount = testCountFixed;
-	        	console.log(data);	        	
+//	        	console.log(data);	        	
 	        }
 	        
 	        
