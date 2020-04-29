@@ -156,8 +156,20 @@
 	var standardTime = 0;
 	var updateTime = 0;
 	var timeUnit = 0;
-	var preWidth = screen.width;
-	var preHeigth = screen.height;
+	var preWidth = window.outerWidth;
+	var preHeight = window.outerHeight;
+		
+	var changeCommunityHeight = function() {
+		$('#community-box').removeAttr('style');
+		var communtBoxHeight = $('.left-sidebarNeo').height() - $('#commentform').height();
+		communtBoxHeight -= ($('#navbarSupportedContent').height() * 2);//안전빵
+		
+		//$('.left-sidebarNeo').height();
+		
+		$('#community-box').attr('style', 'height : ' + communtBoxHeight + 'px;');
+	};
+	
+	changeCommunityHeight();
 	
 	var timeSetter = function () {	
 	    //갱신 시간 계산 알고리즘
@@ -287,14 +299,14 @@
 	        chart = Highcharts.stockChart('container', {
 	
 	            title: {
-	                text: 375 < screen.width ? fromSymbol + '/' + toSymbol + historyTime.replace('histo', ' ') : ''
+	                text: 375 < window.outerWidth ? fromSymbol + '/' + toSymbol + historyTime.replace('histo', ' ') : ''
 	            },
 	
 	            rangeSelector: {
 	                buttons: customBtns,
 	                selected: selBtn,
 	                inputEnabled: false,
-	                //y : 375 < screen.width ? 0 : -35
+	                //y : 375 < window.outerWidth ? 0 : -35
 	                
 	            },
 	            series: [{
@@ -307,11 +319,11 @@
 	            }],
 	
 	            subtitle: {
-	                text: (screen.width < 450 ? subtitleDecoSm : subtitleDecoLg) + timeDeco,
+	                text: (window.outerWidth < 450 ? subtitleDecoSm : subtitleDecoLg) + timeDeco,
 	                align: 'right',
 	                floating: true,
 	                x: 0,
-	                y: 375 < screen.width ? 52 : 42 
+	                y: 375 < window.outerWidth ? 52 : 42 
 	            },
 	
 	            xAxis: {
@@ -324,7 +336,7 @@
 	            exporting: {
 	    	        buttons: {
 	    	            contextButton: {
-	    	                text: 375 < screen.width ? 'Export' : ''
+	    	                text: 375 < window.outerWidth ? 'Export' : ''
 	    	            }
 	    	        }
 	    	    },
@@ -456,7 +468,7 @@
 	        
 	        
 	        
-	        $('.highcharts-subtitle').eq(0).html((screen.width < 450 ? subtitleDecoSm : subtitleDecoLg) + remainTimeStr);
+	        $('.highcharts-subtitle').eq(0).html((window.outerWidth < 450 ? subtitleDecoSm : subtitleDecoLg) + remainTimeStr);
 //	        $('.highcharts-subtitle').eq(0).html($('.highcharts-subtitle').eq(0).html() + log);
 	        //console.log(chart);
 	    }
@@ -473,11 +485,28 @@
 	}, 1000);
 	
 	$(window).resize(function() {
+
+		//console.log('창크기 변화 감지 ' + preHeight + ' '+ window.outerHeight + ' ' + window.outerHeight);
 		//창크기 변화 감지
-		if( (375 < preWidth && screen.width <= 375) || ( preWidth <= 375 && 375 < screen.width )){
-			preWidth = screen.width;
-			draw3();
+		if(preWidth != window.outerWidth){
+			if( (375 < preWidth && window.outerWidth <= 375) || ( preWidth <= 375 && 375 < window.outerWidth )){				
+				draw3();
+			}
+			
+			
+			preWidth = window.outerWidth;
 		}
+		if(preHeight != window.outerHeight){
+			
+			changeCommunityHeight();
+			
+			//console.log('호출 : ' + window.outerHeight + 'navbar : ' + $('#navbarSupportedContent').height() + ' ' + $('#commentform').height());
+			
+			
+			
+			preHeight = window.outerHeight;
+		}
+		
 		
 	});
 
