@@ -31,11 +31,14 @@ import subController.SignupOkAction;
 /**
  * Servlet implementation class MasController
  */
+
 @WebServlet("*.do")
 public class MasController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	ChartDataCollector chartDataCollector;
+	
+	boolean isServer = false;
 
 	public MasController()
 	{
@@ -53,8 +56,8 @@ public class MasController extends HttpServlet
 		}
 		
 		System.out.println("-os.name : " + System.getProperty("os.name"));
-		//윈도에서 실행 크라울링 안하기
-		if(!System.getProperty("os.name").contains("Win"))
+		//Server 아니면 크라울링 안하기
+		if(isServer)
 			chartDataCollector = new ChartDataCollector();
 		
 //		SeleniumTest sTest = new SeleniumTest();
