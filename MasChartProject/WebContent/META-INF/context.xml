@@ -9,7 +9,7 @@
 		username="root"
 		password="123456"/>
 	<Resource 
-		name="jdbc/mariadb-sumin"
+		name="jdbc/mariadb-test"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver"
