@@ -11,8 +11,8 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
 	<style type="text/css">
-    	  body {font-size: 70%;}
-    	  .filewrite {text-align: right;}
+		body {font-size: 70%;}
+		.filewrite {text-align: right;}
 	</style>
     <title>MAS Charts Views</title>
     <!-- Custom CSS -->
@@ -791,10 +791,6 @@
                                                 </a>
                                             </div>
                                             
-                                            
-                                            
-                                            
-                                            
                                         </div>
                                     </div>
                                     <!-- column -->
@@ -806,6 +802,29 @@
                 <!-- ============================================================== -->
                 <!-- Sales chart -->
                 <!-- ============================================================== -->
+                <div class="row" style="display:none">
+					<!-- Column -->
+					<div class="col-6 col-md-6 col-lg-6 col-xlg-6" id="containerRSI">
+					<a class="testing" href="javascript:void(0)" aria-expanded="false">
+						<div class="bg-dark p-10 text-white text-center card-hover" >
+							<div class="col-12" id="container2" style="line-height : 200px; height: 200px;">
+								<i class="fa fa-plus m-b-5 font-16"></i>
+							</div>
+						</div>
+					</a>
+					</div>	
+					<!-- Column -->
+					<div class="col-6 col-md-6 col-lg-6 col-xlg-6">
+					<a class="testing" href="javascript:void(0)" aria-expanded="false">
+						<div class="bg-dark p-10 text-white text-center card-hover" >
+							<div class="box text-center" style="line-height:200px;  height: 200px;">
+								<i class="fa fa-plus m-b-5 font-16"></i>
+							</div>
+						</div>
+					</a>
+					</div>	
+					
+                </div>
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
                 <!-- ============================================================== -->
@@ -1332,9 +1351,22 @@
     <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="dist/js/pages/chart/chart-page-init.js"></script>
-    <!--msk 추가! -->
+    <!--highchart 추가! -->
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
 	<script src="https://code.highcharts.com/stock/highstock.js"></script>
 	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>	
+	
+	
+	<script src="https://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+	
+	<script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+	
+	<script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+	<script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+	<script src="https://code.highcharts.com/modules/full-screen.js"></script>
+	
+	<script src="https://code.highcharts.com/modules/stock-tools.js"></script>
     <script src="dist/js/chartview.js"></script>
     <!--w3include 자바스크립트 -->
 	<!-- 
@@ -1399,7 +1431,6 @@
 					return 1;
 				}
 			})
-			
 		
     </script>
 </body>

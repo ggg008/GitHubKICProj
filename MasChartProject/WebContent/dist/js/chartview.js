@@ -68,13 +68,6 @@
 	            }
 	        }
 	    },
-	    yAxis: {
-	        labels: {
-	            style: {
-	                color: '#6e6e70'
-	            }
-	        }
-	    },
 	
 	    plotOptions: {
 	        series: {
@@ -150,6 +143,7 @@
 	var toSymbol = cookieJson.toSymbol != undefined ? cookieJson.toSymbol : 'USD';
 	
 	var chart = null;
+	var chart2 = null;
 	
 	var utcWeight = -2;//utc 시간보정	
 	var standardTime = 0;
@@ -252,6 +246,7 @@
 	    }
 	
 	    var chartdata = [];
+	    var chartdataRSI = [];
 	    
 	    
 	    var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
@@ -263,6 +258,13 @@
 	        
 	        //console.log(chartdata);
 	        console.log('chartdata draw3');
+	        
+	        var aus = [];
+	        var ads = [];
+
+        	var au = 0;
+        	var ad = 0;
+        	
     		$.each(data.Data, function (i, item) {
     			//console.log(item);
 
@@ -277,7 +279,47 @@
 	        	low = low < open ? low : open;
 	        	
 	            chartdata.push([item.time * 1000, item.open, high, low, item.close]);
+	            
+	            
+	            if(0 < i){
+	            	var compareVal = item.close - data.Data[i - 1].close;
+	            	
+	            	aus.push(0 < compareVal ? compareVal : 0);
+	            	ads.push(compareVal < 0 ? compareVal : 0);
+	            } else {
+	            	aus.push(0);
+	            	ads.push(0);	            	
+	            }
+	            
+	            var avg = 14;
+	            
+	            if(i < avg){
+	            	chartdataRSI.push([item.time * 1000, 0]);
+	            } else {
+	            	
+	            	if(chartdataRSI.length < avg + 1) {
+	            		au = 0;
+	            		ad = 0;
+	            		for(var idx = i - avg; idx < i; ++idx) {
+	            			au += aus[idx];
+	            			ad += Math.abs(ads[idx]);
+	            		}	            		
+	            	} else {
+	            		au = (au * 13 + aus[aus.length - 1]) / 14;
+	            		ad = (ad * 13 + Math.abs(ads[ads.length - 1]) ) / 14;
+	            	}
+	            	
+	            	
+	            	var rs = au / Math.abs(ad);
+	            	
+	            	chartdataRSI.push([item.time * 1000, au / (au + ad) * 100]);
+	            }
+	            
+	            
     		});
+    		
+
+	        console.log(chartdataRSI);
     		
 //    		$('#chartlist-container').empty();
     		$.each(data.LastPriceData, function (i, item) {
@@ -320,6 +362,31 @@
 	                //y : 375 < window.outerWidth ? 0 : -35
 	                
 	            },
+	            xAxis: {
+	            	events: {
+	            		afterSetExtremes: function () {
+	            			//							console.log('change navigator');
+	            		}
+	            	},
+	            },
+	    	    yAxis: [{
+	    	        labels: {
+	    	            style: {
+	    	                color: '#6e6e70'
+	    	            }
+	    	        },
+	                height: '80%',
+	    	        resize: {
+	    	            enabled: true
+	    	        }
+	    	    }, {
+	                labels: {
+	                    align: 'left'
+	                },
+	                top: '80%',
+	                height: '20%',
+	                offset: 0
+	            }],
 	            series: [{
 	                name: fromSymbol + toSymbol,
 	                type: 'candlestick',
@@ -327,8 +394,44 @@
 	                tooltip: {
 	                    valueDecimals: 8
 	                }
+	            }, {
+	                name: 'RSI',
+	                type: 'line',
+	                data: chartdataRSI, 
+	                yAxis: 1
 	            }],
-	
+	            tooltip: {
+	                shape: 'square',
+	                headerShape: 'callout',
+	                borderWidth: 0,
+	                shadow: false,
+	                positioner: function (width, height, point) {
+	                    var chart = this.chart,
+	                        position;
+
+	                    if (point.isHeader) {
+	                        position = {
+	                            x: Math.max(
+	                                // Left side limit
+	                                chart.plotLeft,
+	                                Math.min(
+	                                    point.plotX + chart.plotLeft - width / 2,
+	                                    // Right side limit
+	                                    chart.chartWidth - width - chart.marginRight
+	                                )
+	                            ),
+	                            y: point.plotY
+	                        };
+	                    } else {
+	                        position = {
+	                            x: point.series.chart.plotLeft,
+	                            y: point.series.yAxis.top - chart.plotTop
+	                        };
+	                    }
+
+	                    return position;
+	                }
+	            },
 	            subtitle: {
 	                text: (window.outerWidth < 450 ? subtitleDecoSm : subtitleDecoLg) + timeDeco,
 	                align: 'right',
@@ -337,13 +440,6 @@
 	                y: 375 < window.outerWidth ? 52 : 42 
 	            },
 	
-	            xAxis: {
-	                events: {
-	                    afterSetExtremes: function () {
-	                        //							console.log('change navigator');
-	                    }
-	                },
-	            },
 	            exporting: {
 	    	        buttons: {
 	    	            contextButton: {
@@ -351,6 +447,7 @@
 	    	            }
 	    	        }
 	    	    },
+	    	    
 	
 	
 	        });
@@ -368,7 +465,11 @@
 	        chart.hideCustomLoading();
 	
 	        timeSetter();
-	
+
+			$('.highcharts-indicators').hide();
+			$('.highcharts-separator').eq(0).hide();
+			$('.highcharts-credits').hide();
+			
 	        //			chart.rangeSelector.buttons.push(day);
 	        //			console.log(chart.rangeSelector);			
 	        //			console.log(chart.rangeSelector.buttonOptions);
@@ -378,7 +479,27 @@
 	        //			console.log(chart.rangeSelector.buttonOptions);
 	        
 //	        console.log(chart);
+	        
+//	        chart2 = Highcharts.stockChart('container2', {
+//	            series: [{
+//	                name: fromSymbol + toSymbol,
+//	                type: 'candlestick',
+//	                data: chartdata,
+//	                tooltip: {
+//	                    valueDecimals: 8
+//	                }
+//	            }],
+//	            navigator: {
+//	                enabled: false
+//	            },
+//	            rangeSelector: {
+//	                enabled: false
+//	            },
+//	        });
+	        
 	    });
+    	
+    	
 	
 	}
 	draw3();
@@ -392,6 +513,7 @@
 		 */
 
 	    var chartdata = [];
+	    var chartdataRSI = [];
 		
 		var API = './chartView.do?historyTime='+ historyTime.replace('histo', '') +'&fsym='+ fromSymbol +'&tsym=' + toSymbol;
 	    $.getJSON(API, function (data) {
@@ -401,6 +523,13 @@
 	        $('#chart-price').text('$ ' + data.Data[data.Data.length - 1].close);
 	        
 	        console.log('chartdata realtimePrice');
+	        	        
+	        var aus = [];
+	        var ads = [];
+
+        	var au = 0;
+        	var ad = 0;
+	        
 	        $.each(data.Data, function (i, item) {
 	            //console.log(item);
 	
@@ -416,6 +545,41 @@
 	        	low = low < open ? low : open;
 	        	
 	            chartdata.push([item.time * 1000, item.open, high, low, item.close]);
+	            
+
+	            if(0 < i){
+	            	var compareVal = item.close - data.Data[i - 1].close;
+	            	
+	            	aus.push(0 < compareVal ? compareVal : 0);
+	            	ads.push(compareVal < 0 ? compareVal : 0);
+	            } else {
+	            	aus.push(0);
+	            	ads.push(0);	            	
+	            }
+	            
+	            var avg = 14;
+	            
+	            if(i < avg){
+	            	chartdataRSI.push([item.time * 1000, 0]);
+	            } else {
+	            	
+	            	if(chartdataRSI.length < avg + 1) {
+	            		au = 0;
+	            		ad = 0;
+	            		for(var idx = i - avg; idx < i; ++idx) {
+	            			au += aus[idx];
+	            			ad += Math.abs(ads[idx]);
+	            		}	            		
+	            	} else {
+	            		au = (au * 13 + aus[aus.length - 1]) / 14;
+	            		ad = (ad * 13 + Math.abs(ads[ads.length - 1]) ) / 14;
+	            	}
+	            	
+	            	
+	            	var rs = au / Math.abs(ad);
+	            	
+	            	chartdataRSI.push([item.time * 1000, au / (au + ad) * 100]);
+	            }
 	        });
 	        
 	        $.each(data.LastPriceData, function (i, item) {
@@ -454,7 +618,7 @@
 	
 	
 	var limitConst = 5;
-	var limit =  limitConst;
+	var limit = limitConst;
 	
 	//console.log('리미트 시작값 : ' + standardTime + ':' + (standardTime + utcWeight) % limitConst);
 	setInterval(function () {
