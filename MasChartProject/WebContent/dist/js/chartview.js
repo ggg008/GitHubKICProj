@@ -319,7 +319,6 @@
     		});
     		
 
-	        console.log(chartdataRSI);
     		
 //    		$('#chartlist-container').empty();
     		$.each(data.LastPriceData, function (i, item) {
@@ -582,6 +581,8 @@
 	            }
 	        });
 	        
+//	        console.log(chartdataRSI);
+	        
 	        $.each(data.LastPriceData, function (i, item) {
     			$('#item'+ item.propName).find("#sym").text(item.propName);
     			$('#item'+ item.propName).find("#price").text( '$ ' + item.close);
@@ -590,6 +591,7 @@
     		});
 	        
 	        chart.series[0].setData(chartdata, true);
+	        chart.series[1].setData(chartdataRSI, true);
 	        
 	        --testCount;
 	        if(testCount <= 0) {
