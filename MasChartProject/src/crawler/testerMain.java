@@ -1,4 +1,4 @@
-package Crawler;
+package crawler;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
