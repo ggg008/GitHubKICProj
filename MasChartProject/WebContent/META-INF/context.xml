@@ -5,7 +5,7 @@
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver"
-		url="jdbc:mysql://52.79.239.108:3306/maschartdb"
+		url="jdbc:mysql://54.180.114.149:3306/maschartdb"
 		username="root"
 		password="123456"/>
 	<Resource 
