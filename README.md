@@ -5,4 +5,4 @@ kic 마지막 프로젝트
 실시간으로 CryptoCurrency 및 경제 동향에 관한 
 지표를 제공하는 편리하고 유용한 웹사이트 제작 목표
 
-http://ec2-54-180-114-149.ap-northeast-2.compute.amazonaws.com:8080/MasChartProject/
+http://ec2-3-34-126-22.ap-northeast-2.compute.amazonaws.com:8080/MasChartProject/
