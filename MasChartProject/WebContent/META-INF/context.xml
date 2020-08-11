@@ -7,7 +7,7 @@
 		driverClassName="org.mariadb.jdbc.Driver"
 		url="jdbc:mysql://3.34.126.22:3306/maschartdb"
 		username="root"
-		password="123456"/>
+		password="123456asdf"/>
 	<Resource 
 		name="jdbc/mariadb-localTest"
 		auth="Container"

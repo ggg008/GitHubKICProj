@@ -43,7 +43,11 @@ public class MasController extends HttpServlet
 	{
 		// TODO Auto-generated constructor stub
 		super();
-		System.out.println("안녕하세요! Mas컨트롤러 입니다! 초기화합니다!");
+		String serverMsg = " 서버가 아닙니다.";
+		if(isServer)
+			serverMsg = " 서버입니다.";
+		System.out.println("안녕하세요! Mas컨트롤러 입니다! 초기화합니다!" + serverMsg);
+		
 		InetAddress ip;
 		try {
 			ip = InetAddress.getLocalHost();
