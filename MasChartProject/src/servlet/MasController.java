@@ -37,15 +37,15 @@ public class MasController extends HttpServlet
 	private static final long serialVersionUID = 1L;
 	ChartDataCollector chartDataCollector;
 	
-	boolean isServer = false;
+	boolean isCrawlerServer = false;
 
 	public MasController()
 	{
 		// TODO Auto-generated constructor stub
 		super();
-		String serverMsg = " 서버가 아닙니다.";
-		if(isServer)
-			serverMsg = " 서버입니다.";
+		String serverMsg = " 크라울러가 아닙니다.";
+		if(isCrawlerServer)
+			serverMsg = " 크라울러입니다.";
 		System.out.println("안녕하세요! Mas컨트롤러 입니다! 초기화합니다!" + serverMsg);
 		
 		InetAddress ip;
@@ -60,7 +60,7 @@ public class MasController extends HttpServlet
 		
 		System.out.println("-os.name : " + System.getProperty("os.name"));
 		//Server 아니면 크라울링 안하기
-		if(isServer)
+		if(isCrawlerServer)
 			chartDataCollector = new ChartDataCollector();
 		
 //		SeleniumTest sTest = new SeleniumTest();

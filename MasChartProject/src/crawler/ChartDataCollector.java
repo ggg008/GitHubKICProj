@@ -9,6 +9,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
@@ -55,15 +59,24 @@ public class ChartDataCollector
 	public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
 
 	ArrayList<RunnableCrawlingSelenium> crawlingList = new ArrayList<>();
-
-//	ArrayList<DriverMaster> driverMasters = new ArrayList<>();
-//	int houwManyDriver = 1;
+	
 	int count = 0;
 
 	String systemOs = System.getProperty("os.name");
 
+	// 쓰레드풀 추가 20.08.12
+	int processCnt = Runtime.getRuntime().availableProcessors();
+	ExecutorService executorService = Executors.newFixedThreadPool(processCnt);
+
+//	int CORE_POOL_SIZE = 5;
+//	int MAX_POOL_SIZE = 5;
+//	int BLOCKING_QUEUE_SIZE = 1;
+//	ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE, 60, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(BLOCKING_QUEUE_SIZE));
+
 	public ChartDataCollector()
 	{
+		System.out.println("운용가능 프로세서 갯수 " + processCnt);
+
 		// 시간 초기화
 		timeUnits.put("minute", Integer.toUnsignedLong(60));
 		timeUnits.put("hour", Integer.toUnsignedLong(60 * 60));
@@ -124,7 +137,7 @@ public class ChartDataCollector
 		System.out.println("-크롬 드라이버 경로 : " + diverPath);
 		// System Property SetUp
 		System.setProperty(WEB_DRIVER_ID, diverPath.toString());
-//		for(int i = 0; i < houwManyDriver; ++i) {
+//		for(int i = 0; i < howManyDriver; ++i) {
 //			driverMasters.add(new DriverMaster());
 //		}
 
@@ -133,98 +146,89 @@ public class ChartDataCollector
 		Runnable runnableInterval = new Runnable() {
 			public void run()
 			{
-				while (true) {
-					// ------- code for task to run
-					// System.out.println("Hello !!");
-					now = System.currentTimeMillis() / 1000 + utcWeight;
+				try {
+					while (true) {
+						// ------- code for task to run
+//					 System.out.println("Hello !!");
 
-					for (int i = 0; i < timeKeys.length; ++i) {
-						String tk = timeKeys[i];
+						now = System.currentTimeMillis() / 1000 + utcWeight;
 
-						long sec = now - standardTimes.get(tk);
+						for (int i = 0; i < timeKeys.length; ++i) {
+							String tk = timeKeys[i];
 
-						if (tk.equals("minute")) {
-							long remainTime = timeUnits.get(tk) - sec;
+							long sec = now - standardTimes.get(tk);
+
+							if (tk.equals("minute")) {
+								long remainTime = timeUnits.get(tk) - sec;
 //							System.out.println("째깍 : " + remainTime);
-						}
+							}
 
-						// System.out.println("째깍 : ?");
+							// System.out.println("째깍 : ?");
 
-						// 기준시 갱신
-						if (updateTimes.get(tk) <= standardTimes.get(tk) + sec) {
-							standardTimes.put(tk, now - (now % timeUnits.get(tk)));
-							updateTimes.put(tk, standardTimes.get(tk) + timeUnits.get(tk));
+							// 기준시 갱신
+							if (updateTimes.get(tk) <= standardTimes.get(tk) + sec) {
+								standardTimes.put(tk, now - (now % timeUnits.get(tk)));
+								updateTimes.put(tk, standardTimes.get(tk) + timeUnits.get(tk));
 
-							System.out.println("-서버 인터벌 새로운 기준 " + tk + " : " + standardTimes.get(tk) + " / "
-									+ updateTimes.get(tk));
+								System.out.println("-서버 인터벌 새로운 기준 " + tk + " : " + standardTimes.get(tk) + " / "
+										+ updateTimes.get(tk));
 
-							switch (tk) {
-							case "minute":
-							case "hour":
-								if (!standardTimes.get(tk).equals(updateTimes.get("day"))) {
+								switch (tk) {
+								case "minute":
+								case "hour":
+									if (!standardTimes.get(tk).equals(updateTimes.get("day"))) {
 
-									for (ChartListInfoTOTemp cliTo : masDAO.getChartList()) {
-										if (lastPrices.containsKey(cliTo.getFromSymbol() + cliTo.getToSymbol())) {
-											double lastPrice = lastPrices
-													.get(cliTo.getFromSymbol() + cliTo.getToSymbol());
-											String newCandleKey = cliTo.getFromSymbol() + cliTo.getToSymbol() + tk
-													+ standardTimes.get(tk);
+										for (ChartListInfoTOTemp cliTo : masDAO.getChartList()) {
+											if (lastPrices.containsKey(cliTo.getFromSymbol() + cliTo.getToSymbol())) {
+												double lastPrice = lastPrices
+														.get(cliTo.getFromSymbol() + cliTo.getToSymbol());
+												String newCandleKey = cliTo.getFromSymbol() + cliTo.getToSymbol() + tk
+														+ standardTimes.get(tk);
 
-											String priceFormat = 100 <= lastPrice ? "%.2f" : "%f";
-											String newCandleJson = String.format("{\"high\":" + priceFormat
-													+ ",\"low\":" + priceFormat
-													+ ",\"conversionSymbol\":\"\",\"volumeto\":%s,\"volumefrom\":%s,\"time\":%d,\"conversionType\":\"direct\",\"close\":"
-													+ priceFormat + ",\"open\":" + priceFormat + "}", lastPrice,
-													lastPrice, "0", "0", standardTimes.get(tk), lastPrice, lastPrice);
+												String priceFormat = 100 <= lastPrice ? "%.2f" : "%f";
+												String newCandleJson = String.format("{\"high\":" + priceFormat
+														+ ",\"low\":" + priceFormat
+														+ ",\"conversionSymbol\":\"\",\"volumeto\":%s,\"volumefrom\":%s,\"time\":%d,\"conversionType\":\"direct\",\"close\":"
+														+ priceFormat + ",\"open\":" + priceFormat + "}", lastPrice,
+														lastPrice, "0", "0", standardTimes.get(tk), lastPrice,
+														lastPrice);
 
-											CandlestickTO cTo = new CandlestickTO();
-											cTo.setCandleKey(newCandleKey);											
-											cTo.setCandleJSON(newCandleJson);
+												CandlestickTO cTo = new CandlestickTO();
+												cTo.setCandleKey(newCandleKey);
+												cTo.setCandleJSON(newCandleJson);
 
-											masDAO.setCandlestick(cTo);
+												masDAO.setCandlestick(cTo);
 
-											System.out.println("-새로운 캔들 인터벌에서 삽입 : " + cTo.getCandleKey() + " : "
-													+ cTo.getCandleJSON());
+												System.out.println("-새로운 캔들 인터벌에서 삽입 : " + cTo.getCandleKey() + " : "
+														+ cTo.getCandleJSON());
+											}
+
 										}
-
 									}
-								}
-								break;
-							case "day":
-								// 차트 데이터 동기화 - 하루에 한번씩
-								callChartData(true);
-								break;
+									break;
+								case "day":
+									// 차트 데이터 동기화 - 하루에 한번씩
+									callChartData(true);
+									break;
 
-							default:
-								break;
+								default:
+									break;
+								}
 							}
 						}
-					}
 
-					RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
+						RunnableCrawlingJsoup target = new RunnableCrawlingJsoup(standardTimes);
 
-					Thread thread = new Thread(target);
-					thread.start();
+//					Thread thread = new Thread(target);
+//					thread.start();
 
-//					if(driverMasters.size() <= count ) {
-//						count = 0;
-//						System.out.println("-카운트 다시 0");
-//					}
-//					
-//					driverMasters.get(count).workDriver(standardTimes);
+						executorService.submit(target);
 
-//					crawlingList.add(target);
-//					
-//					while(5 < crawlingList.size()) {
-//						RunnableCrawlingSelenium runnable = crawlingList.get(0);
-//						if(runnable != null) {
-//							System.out.println("★ 강제 퇴거 실행!");
-//							crawlingList.get(0).stopCrawling();
-//						}
-//					}
+						ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
+						System.out.println("운용가능 Thread 갯수 " + threadPoolExecutor.getPoolSize());
 
-					// ------- ends here
-					try {
+
+						// ------- ends here
 						long ti = now * 1000 % timeInterval != 0 ? timeInterval - (now * 1000 % timeInterval)
 								: timeInterval;
 //						System.out.println(now * 1000 % timeInterval != 0 ? now * 1000 % timeInterval : timeInterval);
@@ -234,9 +238,12 @@ public class ChartDataCollector
 						++count;
 						Thread.sleep(ti);
 
-					} catch (InterruptedException e) {
-						e.printStackTrace();
 					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					executorService.shutdown();
+					System.out.println("쓰레드 풀 종료!!");
 				}
 			}
 
@@ -365,7 +372,8 @@ public class ChartDataCollector
 		}
 	}
 
-	private void setterCrawlingLastPrice(String fsym, String fsymPrice, HashMap<String, Long> crawlerStandardTimes,	double... priceWeight)
+	private void setterCrawlingLastPrice(String fsym, String fsymPrice, HashMap<String, Long> crawlerStandardTimes,
+			double... priceWeight)
 	{
 		for (ChartListInfoTOTemp cliTo : masDAO.getChartList()) {
 			if (cliTo.getFromSymbol().equals(fsym)) {
@@ -394,7 +402,7 @@ public class ChartDataCollector
 								+ ",\"conversionSymbol\":\"\",\"volumeto\":%s,\"volumefrom\":%s,\"time\":%d,\"conversionType\":\"direct\",\"close\":"
 								+ priceFormat + ",\"open\":" + priceFormat + "}", lastPrice, lastPrice, "0", "0",
 								standardTimes.get(timekey), lastPrice, lastPrice);
-						
+
 						lastCandlestickTO.setCandleJSON(newCandleJson);
 
 						masDAO.setCandlestick(lastCandlestickTO);
@@ -407,7 +415,6 @@ public class ChartDataCollector
 					try {
 						JSONObject jsonObj = (JSONObject) new JSONParser().parse(lastCandlestickTO.getCandleJSON());
 //											JSONArray datasindata = (JSONArray)((JSONObject) jsonObj.get("Data")).get("Data");
-
 
 						double high = Double.parseDouble(jsonObj.get("high").toString());
 						double low = Double.parseDouble(jsonObj.get("low").toString());
@@ -425,7 +432,6 @@ public class ChartDataCollector
 								crawlerStandardTimes.get(timekey), lastPrice,
 								Double.parseDouble(jsonObj.get("open").toString()));
 
-						
 						lastCandlestickTO.setCandleJSON(candleJSON);
 
 						masDAO.setCandlestick(lastCandlestickTO);
@@ -434,7 +440,8 @@ public class ChartDataCollector
 						// + lastCandlestickTO.getCandleJSON());
 
 						if (timekey.equals("minute")) {
-							System.out.println("-현재 " + cliTo.getFromSymbol() + cliTo.getToSymbol() + " 가격 : " + lastPrice);
+							System.out.println(
+									"-현재 " + cliTo.getFromSymbol() + cliTo.getToSymbol() + " 가격 : " + lastPrice);
 						}
 
 					} catch (ParseException e) {
@@ -493,6 +500,8 @@ public class ChartDataCollector
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				System.out.println("쓰레드 종료");
 			}
 //								System.out.println(document);
 //			writeLog(null, document.toString(), "html");
